@@ -1,11 +1,13 @@
-# 0 "/home/mellw/CLionProjects/NXlib/tools.cpp"
+# 0 "/home/mellw/CLionProjects/NXlib/color.cpp"
 # 1 "/home/mellw/CLionProjects/NXlib/cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<command-line>" 2
-# 1 "/home/mellw/CLionProjects/NXlib/tools.cpp"
-# 62 "/home/mellw/CLionProjects/NXlib/tools.cpp"
+# 1 "/home/mellw/CLionProjects/NXlib/color.cpp"
+# 63 "/home/mellw/CLionProjects/NXlib/color.cpp"
+# 1 "/home/mellw/CLionProjects/NXlib/color.h" 1
+# 64 "/home/mellw/CLionProjects/NXlib/color.h"
 # 1 "/home/mellw/CLionProjects/NXlib/globals.h" 1
 # 66 "/home/mellw/CLionProjects/NXlib/globals.h"
 # 1 "/usr/include/c++/14.1.1/string" 1 3
@@ -103010,191 +103012,305 @@ using i64 = int64_t;
 using i32 = int32_t;
 using i16 = int16_t;
 using i8 = int8_t;
-# 63 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
+# 65 "/home/mellw/CLionProjects/NXlib/color.h" 2
 
-# 1 "/home/mellw/CLionProjects/NXlib/tools.h" 1
-# 69 "/home/mellw/CLionProjects/NXlib/tools.h"
 using namespace std;
 
+using rgb_color_code = struct
+{
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+};
+
 namespace NXlib
 {
-    class tools
+    class Color
     {
+    private:
+
+        vector<pair<u8, u32>> colorVec;
+
+
+        [[nodiscard]] rgb_color_code static rgb_code(u8 input_color);
+        u32 static get_color(u8 input_color);
+        void init_colors(const vector<u8> &vec);
+
     public:
-        static size_t slen(const char* s);
-        static xcb_atom_t get_atom(const char* name);
-
-        class iAtomC
-        {
-        private:
-            xcb_intern_atom_cookie_t _cookie{};
-
-        public:
-            iAtomC(bool only_if_exists, const char* name);
-            explicit operator xcb_intern_atom_cookie_t() const;
-            explicit operator const xcb_intern_atom_cookie_t&() const;
-
-            explicit operator xcb_intern_atom_cookie_t();
-
-            [[nodiscard]] xcb_intern_atom_cookie_t cookie() const;
-        };
-
-        class iAtomR
-        {
-        private:
-            uint8_t response_type;
-            uint8_t pad0;
-            uint16_t sequence;
-            u32 length;
-            xcb_atom_t atom;
-
-        public:
-            explicit iAtomR(const iAtomC &cookie);
-            iAtomR(bool only_if_exists, const char* name);
-            explicit operator xcb_atom_t() const;
-            explicit operator xcb_atom_t &();
-            [[nodiscard]] bool is_not_valid() const;
-            [[nodiscard]] u32 Atom() const;
-        };
+        explicit Color(vector<u8> const &vec);
+        u32 get(u8 input_color);
     };
+    static Color* color;
 }
-# 65 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
+# 64 "/home/mellw/CLionProjects/NXlib/color.cpp" 2
 
+enum COLOR : u8
+{
+    BLACK = 0,
+    WHITE = 1,
+    RED = 2,
+    GREEN = 3,
+    BLUE = 4,
+    BLUE_2 = 5,
+    BLUE_3 = 6,
+    BLUE_4 = 7,
+    BLUE_5 = 8,
+    BLUE_6 = 9,
+    BLUE_7 = 10,
+    BLUE_8 = 11,
+    BLUE_9 = 12,
+    BLUE_10 = 13,
+    YELLOW = 14,
+    MAGENTA = 15,
+    CYAN = 16,
+    GREY = 17,
+    DARK_GREY = 18,
+    DARK_GREY_2 = 19,
+    DARK_GREY_3 = 20,
+    DARK_GREY_4 = 21,
+    LIGHT_GREY = 22,
+    ORANGE = 23,
+    BROWN = 24,
+    PINK = 25,
+    PURPLE = 26,
+    NO_COLOR = 27,
+    DEFAULT_COLOR = DARK_GREY
+};
 
 namespace NXlib
 {
-# 80 "/home/mellw/CLionProjects/NXlib/tools.cpp"
-    size_t tools::slen(const char* s)
+    rgb_color_code Color::rgb_code(u8 const input_color)
     {
-        size_t i(0);
-        for(; s[i]; ++i){}
-        return i;
+        rgb_color_code color;
+        u8 r, g, b;
+
+        switch (input_color)
+        {
+            case WHITE:
+            {
+                r = 255; g = 255; b = 255;
+                break;
+            }
+
+            case BLACK:
+            {
+                r = 0; g = 0; b = 0;
+                break;
+            }
+
+            case RED:
+            {
+                r = 255; g = 0; b = 0;
+                break;
+            }
+
+            case GREEN:
+            {
+                r = 0; g = 255; b = 0;
+                break;
+            }
+
+            case BLUE:
+            {
+                r = 0; g = 0; b = 255;
+                break;
+            }
+
+            case BLUE_2:
+            {
+                r = 0; g = 0; b = 230;
+                break;
+            }
+
+            case BLUE_3:
+            {
+                r = 0; g = 0; b = 204;
+                break;
+            }
+
+            case BLUE_4:
+            {
+                r = 0; g = 0; b = 178;
+                break;
+            }
+
+            case BLUE_5:
+            {
+                r = 0; g = 0; b = 153;
+                break;
+            }
+
+            case BLUE_6:
+            {
+                r = 0; g = 0; b = 128;
+                break;
+            }
+
+            case BLUE_7:
+            {
+                r = 0; g = 0; b = 102;
+                break;
+            }
+
+            case BLUE_8:
+            {
+                r = 0; g = 0; b = 76;
+                break;
+            }
+
+            case BLUE_9:
+            {
+                r = 0; g = 0; b = 51;
+                break;
+            }
+
+            case BLUE_10:
+            {
+                r = 0; g = 0; b = 26;
+                break;
+            }
+
+            case YELLOW:
+            {
+                r = 255; g = 255; b = 0;
+                break;
+            }
+
+            case CYAN:
+            {
+                r = 0; g = 255; b = 255;
+                break;
+            }
+
+            case MAGENTA:
+            {
+                r = 255; g = 0; b = 255;
+                break;
+            }
+
+            case GREY:
+            {
+                r = 128; g = 128; b = 128;
+                break;
+            }
+
+            case LIGHT_GREY:
+            {
+                r = 192; g = 192; b = 192;
+                break;
+            }
+
+            case DARK_GREY:
+            {
+                r = 64; g = 64; b = 64;
+                break;
+            }
+
+            case DARK_GREY_2: {
+                r = 70; g = 70; b = 70;
+                break;
+            }
+
+            case DARK_GREY_3:
+            {
+                r = 76; g = 76; b = 76;
+                break;
+            }
+
+            case DARK_GREY_4:
+            {
+                r = 82; g = 82; b = 82;
+                break;
+            }
+
+            case ORANGE:
+            {
+                r = 255; g = 165; b = 0;
+                break;
+            }
+
+            case PURPLE:
+            {
+                r = 128; g = 0; b = 128;
+                break;
+            }
+
+            case BROWN:
+            {
+                r = 165; g = 42; b = 42;
+                break;
+            }
+
+            case PINK:
+            {
+                r = 255; g = 192; b = 203;
+                break;
+            }
+
+            default:
+            {
+                r = 0; g = 0; b = 0;
+                break;
+            }
+        }
+
+        color.r = r;
+        color.g = g;
+        color.b = b;
+
+        return color;
     }
 
-    xcb_atom_t tools::get_atom(const char* name)
+    u32 Color::get_color(u8 const input_color)
     {
-        xcb_atom_t atom = 
-# 89 "/home/mellw/CLionProjects/NXlib/tools.cpp" 3 4
-                         0L
-# 89 "/home/mellw/CLionProjects/NXlib/tools.cpp"
-                                 ;
-
-        xcb_intern_atom_reply_t *reply = xcb_intern_atom_reply
+        xcb_colormap_t const cmap = screen->default_colormap;
+        rgb_color_code const ccode = {rgb_code(input_color)};
+        xcb_alloc_color_reply_t* r = xcb_alloc_color_reply
         (
             conn,
-            xcb_intern_atom
+            xcb_alloc_color
             (
                 conn,
-                0,
-                tools::slen(name),
-                name
+                cmap,
+                (ccode.r << 8) | ccode.r,
+                (ccode.g << 8) | ccode.g,
+                (ccode.b << 8) | ccode.b
             ),
             nullptr
         );
 
-        if (!reply)
+        if (!r)
         {
-            lout << ERROR << func(__func__) << line(106) << "reply is nullptr." << '\n';
-            return atom;
+            lout << ERROR << func(__func__) << line(302) << "xcb_alloc_color_reply_t returned nullptr" << '\n';
+            return 0;
         }
 
-        atom = reply->atom;
-        free(reply);
+        u32 const pi = r->pixel;
+        free(r);
 
-        return atom;
-    }
-# 129 "/home/mellw/CLionProjects/NXlib/tools.cpp"
-    tools::iAtomC::iAtomC(const bool only_if_exists, const char* name)
-    : _cookie
-    (
-        xcb_intern_atom
-        (
-            conn,
-            only_if_exists,
-            tools::slen(name),
-            name
-        )
-    )
-    {}
-
-    tools::iAtomC::operator xcb_intern_atom_cookie_t() const
-    {
-        return _cookie;
+        return pi;
     }
 
-    tools::iAtomC::operator const xcb_intern_atom_cookie_t&() const
+    void Color::init_colors(vector<u8> const &vec)
     {
-        return this->_cookie;
-    };
-
-    tools::iAtomC::operator xcb_intern_atom_cookie_t()
-    {
-        return _cookie;
-    }
-
-    xcb_intern_atom_cookie_t tools::iAtomC::cookie() const
-    {
-        return _cookie;
-    }
-# 175 "/home/mellw/CLionProjects/NXlib/tools.cpp"
-    tools::iAtomR::iAtomR(const iAtomC &cookie)
-    {
-        xcb_intern_atom_reply_t *reply = xcb_intern_atom_reply(conn, cookie.cookie(), nullptr);
-        if (!reply)
+        for (u8 const &i : vec)
         {
+            colorVec.emplace_back(i, get_color(i));
+        }
+    }
 
-            return;
+    Color::Color(vector<u8> const &vec)
+    {
+        init_colors(vec);
+    }
+
+    u32 Color::get(u8 const input_color)
+    {
+        for (auto const & [first, second] : colorVec)
+        {
+            if (first == input_color) return second;
         }
 
-        response_type = reply->response_type;
-        pad0 = reply->pad0;
-        sequence = reply->sequence;
-        length = reply->sequence;
-        atom = reply->atom;
-
-        free(reply);
-    }
-
-    tools::iAtomR::iAtomR(const bool only_if_exists, const char* name)
-    {
-        xcb_intern_atom_reply_t* reply = xcb_intern_atom_reply(conn, iAtomC(only_if_exists, name).cookie(), nullptr);
-        if (!reply)
-        {
-
-            return;
-        }
-
-        response_type = reply->response_type;
-        pad0 = reply->pad0;
-        sequence = reply->sequence;
-        length = reply->sequence;
-        atom = reply->atom;
-
-        free(reply);
-    }
-
-    tools::iAtomR::operator xcb_atom_t() const
-    {
-        return atom;
-    }
-
-    tools::iAtomR::operator xcb_atom_t&()
-    {
-        return atom;
-    }
-
-    bool tools::iAtomR::is_not_valid() const
-    {
-        return (
-            response_type == 1 << 7
-        && pad0 == 1 << 7
-        && sequence == 1 << 7
-        && length == 1 << 7
-        && atom == 1 << 7);
-    }
-
-    u32 tools::iAtomR::Atom() const
-    {
-        return atom;
+        return 0;
     }
 }

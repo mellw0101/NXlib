@@ -9,3 +9,5 @@ build CMakeFiles/NXlib.dir/prof.cpp.o: dyndep
 
 build CMakeFiles/NXlib.dir/tools.cpp.o: dyndep
 
+build CMakeFiles/NXlib.dir/color.cpp.o: dyndep
+

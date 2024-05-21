@@ -1,5 +1,6 @@
-CMakeFiles/NXlib.dir/tools.cpp.o.ddi: \
- /home/mellw/CLionProjects/NXlib/tools.cpp /usr/include/stdc-predef.h \
+CMakeFiles/NXlib.dir/color.cpp.o.ddi: \
+ /home/mellw/CLionProjects/NXlib/color.cpp /usr/include/stdc-predef.h \
+ /home/mellw/CLionProjects/NXlib/color.h \
  /home/mellw/CLionProjects/NXlib/globals.h /usr/include/c++/14.1.1/string \
  /usr/include/c++/14.1.1/bits/requires_hosted.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -199,5 +200,4 @@ CMakeFiles/NXlib.dir/tools.cpp.o.ddi: \
  /usr/include/c++/14.1.1/bits/ranges_algobase.h \
  /usr/include/c++/14.1.1/bits/unicode.h \
  /usr/include/c++/14.1.1/bits/unicode-data.h \
- /home/mellw/CLionProjects/NXlib/TIME.h \
- /home/mellw/CLionProjects/NXlib/tools.h
+ /home/mellw/CLionProjects/NXlib/TIME.h
