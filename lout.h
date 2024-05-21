@@ -191,7 +191,7 @@ public:
 
 	/**
 	 *
-	 * TODO: Add this into the logMessage function to append it to the log message
+	 * Add this into the logMessage function to append it to the log message
 	 *
 	 */
 	Lout& operator<<(const file_name_obj_t &name);
