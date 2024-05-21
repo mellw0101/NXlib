@@ -101132,16 +101132,16 @@ public:
 using namespace std;
 
 
-constexpr string log_RED = "\033[1;31m";
-constexpr string log_GREEN = "\033[1;32m";
-constexpr string log_YELLOW = "\033[1;33m";
-constexpr string log_BLUE = "\033[1;34m";
-constexpr string log_MEGENTA = "\033[1;35m";
-constexpr string log_CYAN = "\033[1;36m";
-constexpr string log_WHITE = "\033[1;37m";
-constexpr string log_BOLD = "\033[1m";
-constexpr string log_UNDERLINE = "\033[4m";
-constexpr string log_RESET = "\033[0m";
+constexpr auto log_RED = "\033[1;31m";
+constexpr auto log_GREEN = "\033[1;32m";
+constexpr auto log_YELLOW = "\033[1;33m";
+constexpr auto log_BLUE = "\033[1;34m";
+constexpr auto log_MEGENTA = "\033[1;35m";
+constexpr auto log_CYAN = "\033[1;36m";
+constexpr auto log_WHITE = "\033[1;37m";
+constexpr auto log_BOLD = "\033[1m";
+constexpr auto log_UNDERLINE = "\033[4m";
+constexpr auto log_RESET = "\033[0m";
 
 enum LogLevel
 {
@@ -101880,27 +101880,27 @@ string Lout::getLogPrefix(const LogLevel level)
     {
         case INFO:
         {
-            return log_GREEN + "[INFO]" + log_RESET;
+            return string(log_GREEN) + "[INFO]" + log_RESET;
         }
 
         case INFO_PRIORITY:
         {
-            return log_CYAN + "[INFO_PRIORITY]" + log_RESET;
+            return string(log_CYAN) + "[INFO_PRIORITY]" + log_RESET;
         }
 
         case WARNING:
         {
-            return log_YELLOW + "[WARNING]" + log_RESET;
+            return string(log_YELLOW) + "[WARNING]" + log_RESET;
         }
 
         case ERROR:
         {
-            return log_RED + "[ERROR]" + log_RESET;
+            return string(log_RED) + "[ERROR]" + log_RESET;
         }
 
         case FUNCTION:
         {
-            return log_MEGENTA + "[FUNC]" + log_RESET;
+            return string(log_MEGENTA) + "[FUNC]" + log_RESET;
         }
 
         default:

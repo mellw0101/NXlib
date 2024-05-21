@@ -187,27 +187,27 @@ string Lout::getLogPrefix(const LogLevel level)
     {
         case INFO:
         {
-            return log_GREEN + "[INFO]" + log_RESET;
+            return string(log_GREEN) + "[INFO]" + log_RESET;
         }
 
         case INFO_PRIORITY:
         {
-            return log_CYAN + "[INFO_PRIORITY]" + log_RESET;
+            return string(log_CYAN) + "[INFO_PRIORITY]" + log_RESET;
         }
 
         case WARNING:
         {
-            return log_YELLOW + "[WARNING]" + log_RESET;
+            return string(log_YELLOW) + "[WARNING]" + log_RESET;
         }
 
         case ERROR:
         {
-            return log_RED + "[ERROR]" + log_RESET;
+            return string(log_RED) + "[ERROR]" + log_RESET;
         }
 
         case FUNCTION:
         {
-            return log_MEGENTA + "[FUNC]" + log_RESET;
+            return string(log_MEGENTA) + "[FUNC]" + log_RESET;
         }
 
         default:
