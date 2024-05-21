@@ -63,13 +63,25 @@
 #define GLOBALS_H
 
 
+#include <cstdint>
 #include <xcb/xcb.h>
 #include <xcb/xcb_ewmh.h>
+#include <xcb/xproto.h>
+#include <string>
 
 extern xcb_connection_t* conn;
 extern xcb_screen_t* screen;
 extern xcb_ewmh_connection_t* ewmh;
 
-using u32 = unsigned int;
+using u64 = uint64_t;
+using u32 = uint32_t;
+using u16 = uint16_t;
+using u8  = uint8_t;
+
+using i64 = int64_t;
+using i32 = int32_t;
+using i16 = int16_t;
+using i8  = int8_t;
+
 
 #endif //GLOBALS_H

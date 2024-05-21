@@ -1,5 +1,4 @@
 /*
-
     MIT Open Source License
 
     Copyright (c) 2024 Melwin Svensson
@@ -17,7 +16,7 @@
     (the "Software") was created by Melwin Svensson, and that the modifications were made
     by a different author. The notice must explicitly state that Melwin Svensson created
     the precursor to the current work, and that (the "Software") has been modified since its
-    original creation. Additionally, a link to the original source code (https://github.com/mellw0101)
+    original creation. Additionally, a link to the original source code (https://github.com/mellw0101/mm_wm)
     must be included in a format similar to the following:
 
     "Melwin Svensson CREATED THE PRECURSOR TO 'the current file' AND IS THE SOLE OWNER AND AUTHOR OF THE PRECURSOR WORK."
@@ -52,73 +51,31 @@
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH (the "Software") OR THE USE OR OTHER DEALINGS IN (the "Software").
-
 */
 
 //
 // Created by mellw on 5/21/24.
 //
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef COLOR_H
+#define COLOR_H
 
 
-#include "globals.h"
+#include <iostream>
 
 using namespace std;
 
-using window_size_t = struct
-{
-    u32 parent = 0;
-    i16 x      = 0;
-    i16 y      = 0;
-    u16 width  = 0;
-    u16 height = 0;
-};
 
-/**
 
-    @brief Struct representing the _MOTIF_WM_HINTS property format
-
-*/
-using motif_wm_hints_t = struct
-{
-    u32 functions;
-    u32 flags;
-    u32 decorations;
-    i32 input_mode;
-    u32 status;
-};
-
-namespace NXlib
-{
-    class window
+    class color
     {
     private:
-        u32 _window = 0;
-        [[nodiscard]] u32    get_window_u32() const;
-
+    
     public:
-        explicit             operator u32() const;
-        window&              operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
-
-        void                 make_window(const window_size_t& window_size);
-        void                 map() const;
-        void                 unmap() const;
-        [[nodiscard]] bool   is_mapped() const;
-        [[nodiscard]] bool   check_frameless_window_hint() const;
-        [[nodiscard]] bool   is_EWMH_fullscreen() const;
-        [[nodiscard]] bool   is_active_EWMH_window() const;
-        void                 set_active_EWMH_window() const;
-        void                 set_EWMH_fullscreen_state() const;
-        void                 unset_EWMH_fullscreen_state() const;
-        [[nodiscard]] u32    get_transient() const;
-        [[nodiscard]] u32    get_pid() const;
-        [[nodiscard]] string get_net_wm_name_by_req() const;
-        void                 change_back_pixel(u32 pixel) const;
-        void                 apply_event_mask(u32 mask) const;
+    
     };
-}
 
 
-#endif //WINDOW_H
+
+
+#endif //COLOR_H

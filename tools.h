@@ -61,12 +61,12 @@
 #define TOOLS_H
 
 
+#include "globals.h"
+
 #include <iostream>
 #include <xcb/xcb.h>
 
 using namespace std;
-
-extern xcb_connection_t* conn;
 
 namespace NXlib
 {
@@ -75,6 +75,39 @@ namespace NXlib
     public:
         static size_t slen(const char* s);
         static xcb_atom_t get_atom(const char* name);
+
+        class iAtomC
+        {
+        private:
+            xcb_intern_atom_cookie_t _cookie{};
+
+        public:
+            iAtomC(bool only_if_exists, const char* name);
+            explicit operator xcb_intern_atom_cookie_t() const;
+            explicit operator const xcb_intern_atom_cookie_t&() const;
+
+            explicit operator xcb_intern_atom_cookie_t();
+
+            [[nodiscard]] xcb_intern_atom_cookie_t cookie() const;
+        };
+
+        class iAtomR
+        {
+        private:
+            uint8_t    response_type;
+            uint8_t    pad0;
+            uint16_t   sequence;
+            u32        length;
+            xcb_atom_t atom;
+
+        public:
+            explicit iAtomR(const iAtomC &cookie);
+            iAtomR(bool only_if_exists, const char* name);
+            explicit operator xcb_atom_t() const;
+            explicit operator xcb_atom_t &();
+            [[nodiscard]] bool is_not_valid() const;
+            [[nodiscard]] u32 Atom() const;
+        };
     };
 }
 

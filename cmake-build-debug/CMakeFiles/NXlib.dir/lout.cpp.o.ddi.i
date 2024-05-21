@@ -5,12 +5,9 @@
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<command-line>" 2
 # 1 "/home/mellw/CLionProjects/NXlib/lout.cpp"
-
-
-
-
+# 62 "/home/mellw/CLionProjects/NXlib/lout.cpp"
 # 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
-# 65 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 66 "/home/mellw/CLionProjects/NXlib/lout.h"
 # 1 "/usr/include/c++/14.1.1/utility" 1 3
 # 58 "/usr/include/c++/14.1.1/utility" 3
        
@@ -6763,7 +6760,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 230 "/usr/include/c++/14.1.1/utility" 3
 
 }
-# 66 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 67 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 # 1 "/usr/include/c++/14.1.1/string" 1 3
 # 36 "/usr/include/c++/14.1.1/string" 3
        
@@ -32047,7 +32044,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     }
 
 }
-# 67 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 68 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 # 1 "/usr/include/c++/14.1.1/cstdint" 1 3
 # 32 "/usr/include/c++/14.1.1/cstdint" 3
        
@@ -32161,7 +32158,7 @@ namespace std
   using ::uintptr_t;
 # 142 "/usr/include/c++/14.1.1/cstdint" 3
 }
-# 68 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 69 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 # 1 "/usr/include/c++/14.1.1/mutex" 1 3
 # 32 "/usr/include/c++/14.1.1/mutex" 3
        
@@ -38546,7 +38543,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 1021 "/usr/include/c++/14.1.1/mutex" 3
 
 }
-# 69 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 70 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 # 1 "/usr/include/c++/14.1.1/queue" 1 3
 # 58 "/usr/include/c++/14.1.1/queue" 3
        
@@ -47276,7 +47273,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
        
 # 48 "/usr/include/c++/14.1.1/bits/version.h" 3
 # 70 "/usr/include/c++/14.1.1/queue" 2 3
-# 70 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 71 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
 # 1 "/usr/include/c++/14.1.1/sstream" 1 3
@@ -58090,7 +58087,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 # 1239 "/usr/include/c++/14.1.1/sstream" 2 3
-# 73 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 74 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 # 1 "/usr/include/c++/14.1.1/fstream" 1 3
 # 36 "/usr/include/c++/14.1.1/fstream" 3
@@ -60706,7 +60703,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 # 1361 "/usr/include/c++/14.1.1/fstream" 2 3
-# 75 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 76 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
 # 1 "/usr/include/c++/14.1.1/chrono" 1 3
@@ -93285,7 +93282,7 @@ namespace __detail
 
 }
 # 3361 "/usr/include/c++/14.1.1/chrono" 2 3
-# 78 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 79 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
 # 1 "/usr/include/xcb/xproto.h" 1 3 4
@@ -101114,14 +101111,14 @@ xcb_no_operation (xcb_connection_t *c);
 
 
 }
-# 81 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 82 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
 
 # 1 "/home/mellw/CLionProjects/NXlib/TIME.h" 1
-# 67 "/home/mellw/CLionProjects/NXlib/TIME.h"
+# 68 "/home/mellw/CLionProjects/NXlib/TIME.h"
 
-# 67 "/home/mellw/CLionProjects/NXlib/TIME.h"
+# 68 "/home/mellw/CLionProjects/NXlib/TIME.h"
 using namespace std;
 
 class TIME
@@ -101130,7 +101127,7 @@ public:
     static string get();
     static string mili();
 };
-# 85 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+# 86 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 using namespace std;
 
@@ -101197,7 +101194,7 @@ private:
 
 class Lout
 {
-# 175 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 176 "/home/mellw/CLionProjects/NXlib/lout.h"
 public:
 
     Lout() = default;
@@ -101271,7 +101268,9 @@ line_obj_t line(int _line);
 window_obj_t window_id(uint32_t wid);
 
 errno_msg_t errno_msg(const char* str);
-# 6 "/home/mellw/CLionProjects/NXlib/lout.cpp" 2
+# 63 "/home/mellw/CLionProjects/NXlib/lout.cpp" 2
+
+
 
 
 
@@ -101753,21 +101752,20 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 }
-# 10 "/home/mellw/CLionProjects/NXlib/lout.cpp" 2
+# 69 "/home/mellw/CLionProjects/NXlib/lout.cpp" 2
+
+
 # 1 "/usr/include/c++/14.1.1/cerrno" 1 3
 # 39 "/usr/include/c++/14.1.1/cerrno" 3
        
 # 40 "/usr/include/c++/14.1.1/cerrno" 3
-# 11 "/home/mellw/CLionProjects/NXlib/lout.cpp" 2
+# 72 "/home/mellw/CLionProjects/NXlib/lout.cpp" 2
 
 
 
 
 
-
-
-
-# 18 "/home/mellw/CLionProjects/NXlib/lout.cpp"
+# 76 "/home/mellw/CLionProjects/NXlib/lout.cpp"
 void LogQueue::push(const LogMessage &message)
 {
     lock_guard<mutex> guard(mutex_);
@@ -101786,7 +101784,6 @@ bool LogQueue::try_pop(LogMessage &message)
     queue_.pop();
     return true;
 }
-
 
 
 
@@ -101858,6 +101855,9 @@ Lout& Lout::operator<<(const errno_msg_t &err)
     return* this;
 }
 
+
+
+
 template<typename T>
 enable_if_t<is_arithmetic_v<T>, Lout&>
 Lout::operator<<(T value)
@@ -101909,8 +101909,7 @@ string Lout::getLogPrefix(const LogLevel level)
         }
     }
 }
-
-
+# 228 "/home/mellw/CLionProjects/NXlib/lout.cpp"
 FuncNameWrapper func(const char* name)
 {
     return FuncNameWrapper{name};
@@ -101934,13 +101933,13 @@ window_obj_t window_id(const uint32_t wid)
 errno_msg_t errno_msg(const char* str)
 {
     const string s = string(str) + ": " + strerror(
-# 183 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
+# 250 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
                                                   (*__errno_location ())
-# 183 "/home/mellw/CLionProjects/NXlib/lout.cpp"
+# 250 "/home/mellw/CLionProjects/NXlib/lout.cpp"
                                                        ) + " (errno: " + to_string(
-# 183 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
+# 250 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
                                                                                    (*__errno_location ())
-# 183 "/home/mellw/CLionProjects/NXlib/lout.cpp"
+# 250 "/home/mellw/CLionProjects/NXlib/lout.cpp"
                                                                                         ) + ")";
     return {s};
 }

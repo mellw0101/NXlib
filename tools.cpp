@@ -55,21 +55,26 @@
 
 */
 
-
 //
 // Created by mellw on 5/21/24.
 //
 
-#include "tools.h"
+#include "globals.h"
 
+#include "tools.h"
 #include "lout.h"
 
 namespace NXlib
 {
     /**
 
-        @p '__s'
-        @brief function that @return's len of a 'const char *'
+        @class tools
+
+    */
+
+    /**
+
+        @brief function that @return`s the length of a 'const char*'
 
     */
     size_t tools::slen(const char* s)
@@ -105,6 +110,126 @@ namespace NXlib
         atom = reply->atom;
         free(reply);
 
+        return atom;
+    }
+
+    /**
+
+        END @class tools
+
+    */
+
+
+    /**
+
+        @class tools::iAtomC
+
+    */
+
+    tools::iAtomC::iAtomC(const bool only_if_exists, const char* name)
+    : _cookie
+    (
+        xcb_intern_atom
+        (
+            conn,
+            only_if_exists,
+            tools::slen(name),
+            name
+        )
+    )
+    {}
+
+    tools::iAtomC::operator xcb_intern_atom_cookie_t() const
+    {
+        return _cookie;
+    }
+
+    tools::iAtomC::operator const xcb_intern_atom_cookie_t&() const
+    {
+        return this->_cookie;
+    };
+
+    tools::iAtomC::operator xcb_intern_atom_cookie_t()
+    {
+        return _cookie;
+    }
+
+    xcb_intern_atom_cookie_t tools::iAtomC::cookie() const
+    {
+        return _cookie;
+    }
+
+    /**
+
+        END @class tools::iAtomC
+
+    */
+
+
+    /**
+
+        @class tools::iAtomR
+
+    */
+
+    tools::iAtomR::iAtomR(const iAtomC &cookie)
+    {
+        xcb_intern_atom_reply_t *reply = xcb_intern_atom_reply(conn, cookie.cookie(), nullptr);
+        if (!reply)
+        {
+            // set_ERR_STATE(response_type, pad0, sequence, length, atom);
+            return;
+        }
+
+        response_type = reply->response_type;
+        pad0          = reply->pad0;
+        sequence      = reply->sequence;
+        length        = reply->sequence;
+        atom          = reply->atom;
+
+        free(reply);
+    }
+
+    tools::iAtomR::iAtomR(const bool only_if_exists, const char* name)
+    {
+        xcb_intern_atom_reply_t* reply = xcb_intern_atom_reply(conn, iAtomC(only_if_exists, name).cookie(), nullptr);
+        if (!reply)
+        {
+            // set_ERR_STATE(response_type, pad0, sequence, length, atom);
+            return;
+        }
+
+        response_type = reply->response_type;
+        pad0          = reply->pad0;
+        sequence      = reply->sequence;
+        length        = reply->sequence;
+        atom          = reply->atom;
+
+        free(reply);
+    }
+
+    tools::iAtomR::operator xcb_atom_t() const
+    {
+        return atom;
+    }
+
+    tools::iAtomR::operator xcb_atom_t&()
+    {
+        return atom;
+    }
+
+    bool tools::iAtomR::is_not_valid() const
+    {
+        return (
+            response_type == 1 << 7
+        &&  pad0          == 1 << 7
+        &&  sequence      == 1 << 7
+        &&  length        == 1 << 7
+        &&  atom          == 1 << 7);
+    }
+
+    u32 tools::iAtomR::Atom() const
+    {
         return atom;
     }
 }

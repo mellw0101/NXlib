@@ -1,6 +1,4 @@
 ninja_dyndep_version = 1.0
-build CMakeFiles/NXlib.dir/library.cpp.o: dyndep
-
 build CMakeFiles/NXlib.dir/window.cpp.o: dyndep
 
 build CMakeFiles/NXlib.dir/lout.cpp.o: dyndep
@@ -8,4 +6,6 @@ build CMakeFiles/NXlib.dir/lout.cpp.o: dyndep
 build CMakeFiles/NXlib.dir/TIME.cpp.o: dyndep
 
 build CMakeFiles/NXlib.dir/prof.cpp.o: dyndep
+
+build CMakeFiles/NXlib.dir/tools.cpp.o: dyndep
 

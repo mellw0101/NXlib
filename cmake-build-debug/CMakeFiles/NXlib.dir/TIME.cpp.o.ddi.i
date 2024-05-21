@@ -10,7 +10,7 @@
 
 
 # 1 "/home/mellw/CLionProjects/NXlib/TIME.h" 1
-# 65 "/home/mellw/CLionProjects/NXlib/TIME.h"
+# 66 "/home/mellw/CLionProjects/NXlib/TIME.h"
 # 1 "/usr/include/c++/14.1.1/chrono" 1 3
 # 33 "/usr/include/c++/14.1.1/chrono" 3
        
@@ -86782,10 +86782,10 @@ namespace __detail
 
 }
 # 3361 "/usr/include/c++/14.1.1/chrono" 2 3
-# 66 "/home/mellw/CLionProjects/NXlib/TIME.h" 2
+# 67 "/home/mellw/CLionProjects/NXlib/TIME.h" 2
 
 
-# 67 "/home/mellw/CLionProjects/NXlib/TIME.h"
+# 68 "/home/mellw/CLionProjects/NXlib/TIME.h"
 using namespace std;
 
 class TIME

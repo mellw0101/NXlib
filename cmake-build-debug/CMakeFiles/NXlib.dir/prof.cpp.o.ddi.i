@@ -7,7 +7,7 @@
 # 1 "/home/mellw/CLionProjects/NXlib/prof.cpp"
 # 62 "/home/mellw/CLionProjects/NXlib/prof.cpp"
 # 1 "/home/mellw/CLionProjects/NXlib/prof.h" 1
-# 63 "/home/mellw/CLionProjects/NXlib/prof.h"
+# 64 "/home/mellw/CLionProjects/NXlib/prof.h"
 # 1 "/usr/include/c++/14.1.1/chrono" 1 3
 # 33 "/usr/include/c++/14.1.1/chrono" 3
        
@@ -86779,7 +86779,7 @@ namespace __detail
 
 }
 # 3361 "/usr/include/c++/14.1.1/chrono" 2 3
-# 64 "/home/mellw/CLionProjects/NXlib/prof.h" 2
+# 65 "/home/mellw/CLionProjects/NXlib/prof.h" 2
 # 1 "/usr/include/c++/14.1.1/map" 1 3
 # 58 "/usr/include/c++/14.1.1/map" 3
        
@@ -91239,7 +91239,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     }
 
 }
-# 65 "/home/mellw/CLionProjects/NXlib/prof.h" 2
+# 66 "/home/mellw/CLionProjects/NXlib/prof.h" 2
 
 
 # 1 "/usr/include/c++/14.1.1/numeric" 1 3
@@ -92050,14 +92050,14 @@ adjacent_difference(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _Forwa
 
 }
 # 740 "/usr/include/c++/14.1.1/numeric" 2 3
-# 68 "/home/mellw/CLionProjects/NXlib/prof.h" 2
+# 69 "/home/mellw/CLionProjects/NXlib/prof.h" 2
 
 
 
 
 
 
-# 73 "/home/mellw/CLionProjects/NXlib/prof.h"
+# 74 "/home/mellw/CLionProjects/NXlib/prof.h"
 using namespace std;
 
 namespace NXlib
@@ -92079,9 +92079,9 @@ namespace NXlib
     class GlobalProfiler
     {
     public:
-        void record(const std::string& name, double duration);
-        void report(const std::string& filename) const;
-        static GlobalProfiler *createNewGprof();
+        void record(const string &name, double duration);
+        void report(const string &filename) const;
+        static GlobalProfiler* createNewGprof();
 
     private:
         map<string, ProfilerStats> stats;
@@ -92106,7 +92106,6 @@ namespace NXlib
     void setupReportGeneration();
 
     void setupVulkanReportGen();
-
 }
 # 63 "/home/mellw/CLionProjects/NXlib/prof.cpp" 2
 

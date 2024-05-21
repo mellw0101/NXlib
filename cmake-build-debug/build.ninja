@@ -49,25 +49,11 @@ cmake_ninja_workdir = /home/mellw/CLionProjects/NXlib/cmake-build-debug/
 
 build cmake_object_order_depends_target_NXlib: phony || CMakeFiles/NXlib.dir
 
-build CMakeFiles/NXlib.dir/library.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CLionProjects/NXlib/library.cpp || cmake_object_order_depends_target_NXlib
-  DEP_FILE = CMakeFiles/NXlib.dir/library.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/library.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJ_FILE = CMakeFiles/NXlib.dir/library.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/library.cpp.o.ddi.i
-
-build CMakeFiles/NXlib.dir/library.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home/mellw/CLionProjects/NXlib/library.cpp || cmake_object_order_depends_target_NXlib CMakeFiles/NXlib.dir/CXX.dd CMakeFiles/NXlib.dir/library.cpp.o.modmap
-  DEP_FILE = CMakeFiles/NXlib.dir/library.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/library.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/NXlib.dir
-  OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
-  dyndep = CMakeFiles/NXlib.dir/CXX.dd
-
 build CMakeFiles/NXlib.dir/window.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CLionProjects/NXlib/window.cpp || cmake_object_order_depends_target_NXlib
   DEP_FILE = CMakeFiles/NXlib.dir/window.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/window.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib.dir/window.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/window.cpp.o.ddi.i
 
@@ -75,6 +61,7 @@ build CMakeFiles/NXlib.dir/window.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home
   DEP_FILE = CMakeFiles/NXlib.dir/window.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/window.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
   dyndep = CMakeFiles/NXlib.dir/CXX.dd
@@ -83,6 +70,7 @@ build CMakeFiles/NXlib.dir/lout.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CLi
   DEP_FILE = CMakeFiles/NXlib.dir/lout.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/lout.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib.dir/lout.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/lout.cpp.o.ddi.i
 
@@ -90,6 +78,7 @@ build CMakeFiles/NXlib.dir/lout.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home/m
   DEP_FILE = CMakeFiles/NXlib.dir/lout.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/lout.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
   dyndep = CMakeFiles/NXlib.dir/CXX.dd
@@ -98,6 +87,7 @@ build CMakeFiles/NXlib.dir/TIME.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CLi
   DEP_FILE = CMakeFiles/NXlib.dir/TIME.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/TIME.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib.dir/TIME.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/TIME.cpp.o.ddi.i
 
@@ -105,6 +95,7 @@ build CMakeFiles/NXlib.dir/TIME.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home/m
   DEP_FILE = CMakeFiles/NXlib.dir/TIME.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/TIME.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
   dyndep = CMakeFiles/NXlib.dir/CXX.dd
@@ -113,6 +104,7 @@ build CMakeFiles/NXlib.dir/prof.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CLi
   DEP_FILE = CMakeFiles/NXlib.dir/prof.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/prof.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib.dir/prof.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/prof.cpp.o.ddi.i
 
@@ -120,6 +112,7 @@ build CMakeFiles/NXlib.dir/prof.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home/m
   DEP_FILE = CMakeFiles/NXlib.dir/prof.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/prof.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
   dyndep = CMakeFiles/NXlib.dir/CXX.dd
@@ -128,6 +121,7 @@ build CMakeFiles/NXlib.dir/tools.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CL
   DEP_FILE = CMakeFiles/NXlib.dir/tools.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/tools.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib.dir/tools.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/tools.cpp.o.ddi.i
 
@@ -135,11 +129,29 @@ build CMakeFiles/NXlib.dir/tools.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home/
   DEP_FILE = CMakeFiles/NXlib.dir/tools.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/tools.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
   dyndep = CMakeFiles/NXlib.dir/CXX.dd
 
-build CMakeFiles/NXlib.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib.dir/CXXModules.json CMakeFiles/NXlib.dir/library.cpp.o.modmap CMakeFiles/NXlib.dir/window.cpp.o.modmap CMakeFiles/NXlib.dir/lout.cpp.o.modmap CMakeFiles/NXlib.dir/TIME.cpp.o.modmap CMakeFiles/NXlib.dir/prof.cpp.o.modmap CMakeFiles/NXlib.dir/tools.cpp.o.modmap: CXX_DYNDEP__NXlib_Debug CMakeFiles/NXlib.dir/library.cpp.o.ddi CMakeFiles/NXlib.dir/window.cpp.o.ddi CMakeFiles/NXlib.dir/lout.cpp.o.ddi CMakeFiles/NXlib.dir/TIME.cpp.o.ddi CMakeFiles/NXlib.dir/prof.cpp.o.ddi CMakeFiles/NXlib.dir/tools.cpp.o.ddi
+build CMakeFiles/NXlib.dir/color.cpp.o.ddi: CXX_SCAN__NXlib_Debug /home/mellw/CLionProjects/NXlib/color.cpp || cmake_object_order_depends_target_NXlib
+  DEP_FILE = CMakeFiles/NXlib.dir/color.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib.dir/color.cpp.o.ddi
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
+  OBJ_FILE = CMakeFiles/NXlib.dir/color.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib.dir/color.cpp.o.ddi.i
+
+build CMakeFiles/NXlib.dir/color.cpp.o: CXX_COMPILER__NXlib_scanned_Debug /home/mellw/CLionProjects/NXlib/color.cpp || cmake_object_order_depends_target_NXlib CMakeFiles/NXlib.dir/CXX.dd CMakeFiles/NXlib.dir/color.cpp.o.modmap
+  DEP_FILE = CMakeFiles/NXlib.dir/color.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib.dir/color.cpp.o.modmap
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
+  OBJECT_DIR = CMakeFiles/NXlib.dir
+  OBJECT_FILE_DIR = CMakeFiles/NXlib.dir
+  dyndep = CMakeFiles/NXlib.dir/CXX.dd
+
+build CMakeFiles/NXlib.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib.dir/CXXModules.json CMakeFiles/NXlib.dir/window.cpp.o.modmap CMakeFiles/NXlib.dir/lout.cpp.o.modmap CMakeFiles/NXlib.dir/TIME.cpp.o.modmap CMakeFiles/NXlib.dir/prof.cpp.o.modmap CMakeFiles/NXlib.dir/tools.cpp.o.modmap CMakeFiles/NXlib.dir/color.cpp.o.modmap: CXX_DYNDEP__NXlib_Debug CMakeFiles/NXlib.dir/window.cpp.o.ddi CMakeFiles/NXlib.dir/lout.cpp.o.ddi CMakeFiles/NXlib.dir/TIME.cpp.o.ddi CMakeFiles/NXlib.dir/prof.cpp.o.ddi CMakeFiles/NXlib.dir/tools.cpp.o.ddi CMakeFiles/NXlib.dir/color.cpp.o.ddi
 
 
 # =============================================================================
@@ -149,7 +161,7 @@ build CMakeFiles/NXlib.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-
 #############################################
 # Link the static library libNXlib.a
 
-build libNXlib.a: CXX_STATIC_LIBRARY_LINKER__NXlib_Debug CMakeFiles/NXlib.dir/library.cpp.o CMakeFiles/NXlib.dir/window.cpp.o CMakeFiles/NXlib.dir/lout.cpp.o CMakeFiles/NXlib.dir/TIME.cpp.o CMakeFiles/NXlib.dir/prof.cpp.o CMakeFiles/NXlib.dir/tools.cpp.o
+build libNXlib.a: CXX_STATIC_LIBRARY_LINKER__NXlib_Debug CMakeFiles/NXlib.dir/window.cpp.o CMakeFiles/NXlib.dir/lout.cpp.o CMakeFiles/NXlib.dir/TIME.cpp.o CMakeFiles/NXlib.dir/prof.cpp.o CMakeFiles/NXlib.dir/tools.cpp.o CMakeFiles/NXlib.dir/color.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/NXlib.dir
   POST_BUILD = :
@@ -179,6 +191,48 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/mellw/CLionProjects/NXlib/cmake-build-debug && /opt/clion/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/mellw/CLionProjects/NXlib/cmake-build-debug && /opt/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/mellw/CLionProjects/NXlib/cmake-build-debug && /opt/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
 
 # =============================================================================
 # Target aliases.

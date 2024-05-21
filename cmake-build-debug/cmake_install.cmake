@@ -42,6 +42,21 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/mellw/CLionProjects/NXlib/cmake-build-debug/libNXlib.a")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/NXlib" TYPE FILE FILES
+    "/home/mellw/CLionProjects/NXlib/window.h"
+    "/home/mellw/CLionProjects/NXlib/lout.h"
+    "/home/mellw/CLionProjects/NXlib/TIME.h"
+    "/home/mellw/CLionProjects/NXlib/prof.h"
+    "/home/mellw/CLionProjects/NXlib/tools.h"
+    "/home/mellw/CLionProjects/NXlib/globals.h"
+    )
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

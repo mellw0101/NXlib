@@ -17,7 +17,7 @@
     (the "Software") was created by Melwin Svensson, and that the modifications were made
     by a different author. The notice must explicitly state that Melwin Svensson created
     the precursor to the current work, and that (the "Software") has been modified since its
-    original creation. Additionally, a link to the original source code (https://github.com/mellw0101)
+    original creation. Additionally, a link to the original source code (https://github.com/mellw0101/mm_wm)
     must be included in a format similar to the following:
 
     "Melwin Svensson CREATED THE PRECURSOR TO 'the current file' AND IS THE SOLE OWNER AND AUTHOR OF THE PRECURSOR WORK."
@@ -55,9 +55,9 @@
 
 */
 
-#ifndef NXLIB_LIBRARY_H
-#define NXLIB_LIBRARY_H
 
-void hello();
+//
+// Created by mellw on 5/21/24.
+//
 
-#endif //NXLIB_LIBRARY_H
+#include "color.h"
