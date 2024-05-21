@@ -1,0 +1,19 @@
+# ninja log v5
+226	805	1716299457523828814	CMakeFiles/NXlib.dir/library.cpp.o	2d1a6d8a3990c862
+220	225	1716299456947162123	/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib.dir/CXXModules.json	add07bfc2c173c35
+2527	2583	1716299459303828891	libNXlib.a	f74ab5126795949f
+226	1962	1716299458680495530	CMakeFiles/NXlib.dir/window.cpp.o	14aff4a66900b1e6
+220	225	1716299456947162123	CMakeFiles/NXlib.dir/prof.cpp.o.modmap	add07bfc2c173c35
+220	225	1716299456947162123	CMakeFiles/NXlib.dir/TIME.cpp.o.modmap	add07bfc2c173c35
+220	225	1716299456947162123	CMakeFiles/NXlib.dir/CXX.dd	add07bfc2c173c35
+3	178	1716299456897162121	CMakeFiles/NXlib.dir/lout.cpp.o.ddi	9277d57cb4e11b3
+3	152	1716298920077139281	CMakeFiles/NXlib.dir/TIME.cpp.o.ddi	51882bd162d2ba96
+220	225	1716299456947162123	CMakeFiles/NXlib.dir/lout.cpp.o.modmap	add07bfc2c173c35
+220	225	1716299456947162123	CMakeFiles/NXlib.dir/library.cpp.o.modmap	add07bfc2c173c35
+220	225	1716299456947162123	CMakeFiles/NXlib.dir/window.cpp.o.modmap	add07bfc2c173c35
+3	198	1716298061213769429	CMakeFiles/NXlib.dir/prof.cpp.o.ddi	a8eaf3820e548a9d
+1	113	1716296490063702320	CMakeFiles/NXlib.dir/library.cpp.o.ddi	b73ad0331a8cf683
+226	1670	1716299458390495518	CMakeFiles/NXlib.dir/TIME.cpp.o	80a49bd0f1a3d0cc
+3	220	1716299456940495456	CMakeFiles/NXlib.dir/window.cpp.o.ddi	acd5cbe7c7a0ba26
+226	2527	1716299459247162221	CMakeFiles/NXlib.dir/prof.cpp.o	542df8ff19f0457c
+226	1998	1716299458717162198	CMakeFiles/NXlib.dir/lout.cpp.o	c4a4f114daaccffd

@@ -1,0 +1,3 @@
+/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib.dir
+/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
