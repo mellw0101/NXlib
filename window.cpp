@@ -62,6 +62,8 @@
 #include "globals.h"
 
 #include "window.h"
+
+#include "color.h"
 #include "lout.h"
 #include "tools.h"
 
@@ -107,6 +109,11 @@ namespace NXlib
             0,
             nullptr
         );
+
+        _x      = window_size.x;
+        _y      = window_size.y;
+        _width  = window_size.width;
+        _height = window_size.height;
 
         xcb_flush(conn);
     }
@@ -354,10 +361,78 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void set_backround_color(int color)
+    void window::clear() const
     {
-        _color = color;
-        change_back_pixel(Color->get(__color));
-        _font_gc_good = false;
+        xcb_clear_area(conn, 0, _window, 0, 0, _width, _height);
+        xcb_flush(conn);
+    }
+
+    void window::set_backround_color(u8 const input_color)
+    {
+        if (!color) return;
+        _color = input_color;
+        change_back_pixel(color->get(input_color));
+    }
+
+    void window::change_background_color(u8 const input_color)
+    {
+        set_backround_color(input_color);
+        clear();
+        xcb_flush(conn);
+    }
+
+    /**
+
+        @brief avalible 'revert_to' options
+
+        @p XCB_INPUT_FOCUS_NONE
+        @p XCB_INPUT_FOCUS_PARENT
+        @p XCB_INPUT_FOCUS_POINTER_ROOT
+
+        @p XCB_INPUT_FOCUS_FOLLOW_KEYBOARD NOTE: This is experemental
+
+    */
+    void window::focus() const
+    {
+        xcb_set_input_focus(conn, XCB_INPUT_FOCUS_POINTER_ROOT, _window, XCB_CURRENT_TIME);
+        xcb_flush(conn);
+
+        set_active_EWMH_window();
+
+        if (!is_active_EWMH_window())
+        {
+            loutEWin << "Failed to make window active EWMH window" << loutEND;
+            return;
+        }
+    }
+
+    void window::raise() const
+    {
+        u32 constexpr data[1] = {XCB_STACK_MODE_ABOVE};
+        xcb_configure_window(conn, _window, XCB_CONFIG_WINDOW_STACK_MODE, data);
+        xcb_flush(conn);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

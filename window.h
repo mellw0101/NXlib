@@ -95,7 +95,12 @@ namespace NXlib
     class window
     {
     private:
+        u8 _color = 0;
         u32 _window = 0;
+
+        i16 _x = 0, _y = 0;
+        u16 _width = 0, _height = 0;
+
         [[nodiscard]] u32    get_window_u32() const;
 
     public:
@@ -117,6 +122,11 @@ namespace NXlib
         [[nodiscard]] string get_net_wm_name_by_req() const;
         void                 change_back_pixel(u32 pixel) const;
         void                 apply_event_mask(u32 mask) const;
+        void                 clear() const;
+        void                 set_backround_color(u8 input_color);
+        void                 change_background_color(u8 input_color);
+        void                 focus() const;
+        void                 raise() const;
     };
 }
 

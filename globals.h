@@ -63,11 +63,15 @@
 #define GLOBALS_H
 
 
+#include <string>
+#include <iostream>
+#include <vector>
 #include <cstdint>
 #include <xcb/xcb.h>
 #include <xcb/xcb_ewmh.h>
 #include <xcb/xproto.h>
-#include <string>
+
+#include "lout.h"
 
 extern xcb_connection_t* conn;
 extern xcb_screen_t* screen;

@@ -61,21 +61,36 @@
 #define COLOR_H
 
 
-#include <iostream>
+#include "globals.h"
 
 using namespace std;
 
+using rgb_color_code = struct
+{
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+};
 
-
-    class color
+namespace NXlib
+{
+    class Color
     {
     private:
-    
+    /* Variabels */
+        vector<pair<u8, u32>> colorVec;
+
+    /* Methods   */
+        [[nodiscard]] rgb_color_code static rgb_code(u8 input_color);
+        u32 static                          get_color(u8 input_color);
+        void                                init_colors(const vector<u8> &vec);
+
     public:
-    
+        explicit                            Color(vector<u8> const &vec);
+        u32                                 get(u8 input_color);
     };
-
-
+    static Color* color;
+}
 
 
 #endif //COLOR_H

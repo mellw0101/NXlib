@@ -1,0 +1,7 @@
+/usr/local/lib/libNXlib.a
+/usr/local/include/NXlib/window.h
+/usr/local/include/NXlib/lout.h
+/usr/local/include/NXlib/TIME.h
+/usr/local/include/NXlib/prof.h
+/usr/local/include/NXlib/tools.h
+/usr/local/include/NXlib/globals.h
