@@ -67893,7 +67893,7 @@ namespace NXlib
 
     window::operator u32() const
     {
-        return this->_window;
+        return _window;
     }
 
 
@@ -67952,7 +67952,7 @@ namespace NXlib
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
         if (!reply)
         {
-
+            lout << ERROR << func(__func__) << line(144) << window_id(_window) << "Unable to get window attributes" << '\n';
             return false;
         }
 
@@ -68189,7 +68189,6 @@ namespace NXlib
 
     void window::set_backround_color(u8 const input_color)
     {
-        if (!color) return;
         _color = input_color;
         change_back_pixel(color->get(input_color));
     }
@@ -68200,13 +68199,13 @@ namespace NXlib
         clear();
         xcb_flush(conn);
     }
-# 400 "/home/mellw/CLionProjects/NXlib/window.cpp"
+# 399 "/home/mellw/CLionProjects/NXlib/window.cpp"
     void window::focus() const
     {
         xcb_set_input_focus(conn, XCB_INPUT_FOCUS_POINTER_ROOT, _window, 
-# 402 "/home/mellw/CLionProjects/NXlib/window.cpp" 3 4
+# 401 "/home/mellw/CLionProjects/NXlib/window.cpp" 3 4
                                                                         0L
-# 402 "/home/mellw/CLionProjects/NXlib/window.cpp"
+# 401 "/home/mellw/CLionProjects/NXlib/window.cpp"
                                                                                         );
         xcb_flush(conn);
 

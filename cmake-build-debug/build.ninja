@@ -168,7 +168,24 @@ build CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CXX_COMPILER__NXlib_static_scanne
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
   dyndep = CMakeFiles/NXlib_static.dir/CXX.dd
 
-build CMakeFiles/NXlib_static.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib_static.dir/CXXModules.json CMakeFiles/NXlib_static.dir/window.cpp.o.modmap CMakeFiles/NXlib_static.dir/lout.cpp.o.modmap CMakeFiles/NXlib_static.dir/TIME.cpp.o.modmap CMakeFiles/NXlib_static.dir/prof.cpp.o.modmap CMakeFiles/NXlib_static.dir/tools.cpp.o.modmap CMakeFiles/NXlib_static.dir/color.cpp.o.modmap CMakeFiles/NXlib_static.dir/NXlib.cpp.o.modmap: CXX_DYNDEP__NXlib_static_Debug CMakeFiles/NXlib_static.dir/window.cpp.o.ddi CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi CMakeFiles/NXlib_static.dir/color.cpp.o.ddi CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi
+build CMakeFiles/NXlib_static.dir/globals.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/globals.cpp || cmake_object_order_depends_target_NXlib_static
+  DEP_FILE = CMakeFiles/NXlib_static.dir/globals.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/globals.cpp.o.ddi
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
+  OBJ_FILE = CMakeFiles/NXlib_static.dir/globals.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/globals.cpp.o.ddi.i
+
+build CMakeFiles/NXlib_static.dir/globals.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/globals.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/globals.cpp.o.modmap
+  DEP_FILE = CMakeFiles/NXlib_static.dir/globals.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/globals.cpp.o.modmap
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
+  OBJECT_DIR = CMakeFiles/NXlib_static.dir
+  OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
+  dyndep = CMakeFiles/NXlib_static.dir/CXX.dd
+
+build CMakeFiles/NXlib_static.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib_static.dir/CXXModules.json CMakeFiles/NXlib_static.dir/window.cpp.o.modmap CMakeFiles/NXlib_static.dir/lout.cpp.o.modmap CMakeFiles/NXlib_static.dir/TIME.cpp.o.modmap CMakeFiles/NXlib_static.dir/prof.cpp.o.modmap CMakeFiles/NXlib_static.dir/tools.cpp.o.modmap CMakeFiles/NXlib_static.dir/color.cpp.o.modmap CMakeFiles/NXlib_static.dir/NXlib.cpp.o.modmap CMakeFiles/NXlib_static.dir/globals.cpp.o.modmap: CXX_DYNDEP__NXlib_static_Debug CMakeFiles/NXlib_static.dir/window.cpp.o.ddi CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi CMakeFiles/NXlib_static.dir/color.cpp.o.ddi CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi CMakeFiles/NXlib_static.dir/globals.cpp.o.ddi
 
 
 # =============================================================================
@@ -178,7 +195,7 @@ build CMakeFiles/NXlib_static.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake
 #############################################
 # Link the static library libNXlib.a
 
-build libNXlib.a: CXX_STATIC_LIBRARY_LINKER__NXlib_static_Debug CMakeFiles/NXlib_static.dir/window.cpp.o CMakeFiles/NXlib_static.dir/lout.cpp.o CMakeFiles/NXlib_static.dir/TIME.cpp.o CMakeFiles/NXlib_static.dir/prof.cpp.o CMakeFiles/NXlib_static.dir/tools.cpp.o CMakeFiles/NXlib_static.dir/color.cpp.o CMakeFiles/NXlib_static.dir/NXlib.cpp.o
+build libNXlib.a: CXX_STATIC_LIBRARY_LINKER__NXlib_static_Debug CMakeFiles/NXlib_static.dir/window.cpp.o CMakeFiles/NXlib_static.dir/lout.cpp.o CMakeFiles/NXlib_static.dir/TIME.cpp.o CMakeFiles/NXlib_static.dir/prof.cpp.o CMakeFiles/NXlib_static.dir/tools.cpp.o CMakeFiles/NXlib_static.dir/color.cpp.o CMakeFiles/NXlib_static.dir/NXlib.cpp.o CMakeFiles/NXlib_static.dir/globals.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   POST_BUILD = :
@@ -328,7 +345,26 @@ build CMakeFiles/NXlib_shared.dir/NXlib.cpp.o: CXX_COMPILER__NXlib_shared_scanne
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
   dyndep = CMakeFiles/NXlib_shared.dir/CXX.dd
 
-build CMakeFiles/NXlib_shared.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib_shared.dir/CXXModules.json CMakeFiles/NXlib_shared.dir/window.cpp.o.modmap CMakeFiles/NXlib_shared.dir/lout.cpp.o.modmap CMakeFiles/NXlib_shared.dir/TIME.cpp.o.modmap CMakeFiles/NXlib_shared.dir/prof.cpp.o.modmap CMakeFiles/NXlib_shared.dir/tools.cpp.o.modmap CMakeFiles/NXlib_shared.dir/color.cpp.o.modmap CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.modmap: CXX_DYNDEP__NXlib_shared_Debug CMakeFiles/NXlib_shared.dir/window.cpp.o.ddi CMakeFiles/NXlib_shared.dir/lout.cpp.o.ddi CMakeFiles/NXlib_shared.dir/TIME.cpp.o.ddi CMakeFiles/NXlib_shared.dir/prof.cpp.o.ddi CMakeFiles/NXlib_shared.dir/tools.cpp.o.ddi CMakeFiles/NXlib_shared.dir/color.cpp.o.ddi CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.ddi
+build CMakeFiles/NXlib_shared.dir/globals.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug /home/mellw/CLionProjects/NXlib/globals.cpp || cmake_object_order_depends_target_NXlib_shared
+  DEFINES = -DNXlib_shared_EXPORTS
+  DEP_FILE = CMakeFiles/NXlib_shared.dir/globals.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/globals.cpp.o.ddi
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
+  OBJ_FILE = CMakeFiles/NXlib_shared.dir/globals.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/globals.cpp.o.ddi.i
+
+build CMakeFiles/NXlib_shared.dir/globals.cpp.o: CXX_COMPILER__NXlib_shared_scanned_Debug /home/mellw/CLionProjects/NXlib/globals.cpp || cmake_object_order_depends_target_NXlib_shared CMakeFiles/NXlib_shared.dir/CXX.dd CMakeFiles/NXlib_shared.dir/globals.cpp.o.modmap
+  DEFINES = -DNXlib_shared_EXPORTS
+  DEP_FILE = CMakeFiles/NXlib_shared.dir/globals.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/globals.cpp.o.modmap
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  INCLUDES = -I/home/mellw/CLionProjects/NXlib
+  OBJECT_DIR = CMakeFiles/NXlib_shared.dir
+  OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
+  dyndep = CMakeFiles/NXlib_shared.dir/CXX.dd
+
+build CMakeFiles/NXlib_shared.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib_shared.dir/CXXModules.json CMakeFiles/NXlib_shared.dir/window.cpp.o.modmap CMakeFiles/NXlib_shared.dir/lout.cpp.o.modmap CMakeFiles/NXlib_shared.dir/TIME.cpp.o.modmap CMakeFiles/NXlib_shared.dir/prof.cpp.o.modmap CMakeFiles/NXlib_shared.dir/tools.cpp.o.modmap CMakeFiles/NXlib_shared.dir/color.cpp.o.modmap CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.modmap CMakeFiles/NXlib_shared.dir/globals.cpp.o.modmap: CXX_DYNDEP__NXlib_shared_Debug CMakeFiles/NXlib_shared.dir/window.cpp.o.ddi CMakeFiles/NXlib_shared.dir/lout.cpp.o.ddi CMakeFiles/NXlib_shared.dir/TIME.cpp.o.ddi CMakeFiles/NXlib_shared.dir/prof.cpp.o.ddi CMakeFiles/NXlib_shared.dir/tools.cpp.o.ddi CMakeFiles/NXlib_shared.dir/color.cpp.o.ddi CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.ddi CMakeFiles/NXlib_shared.dir/globals.cpp.o.ddi
 
 
 # =============================================================================
@@ -338,7 +374,7 @@ build CMakeFiles/NXlib_shared.dir/CXX.dd | /home/mellw/CLionProjects/NXlib/cmake
 #############################################
 # Link the shared library libNXlib.so
 
-build libNXlib.so: CXX_SHARED_LIBRARY_LINKER__NXlib_shared_Debug CMakeFiles/NXlib_shared.dir/window.cpp.o CMakeFiles/NXlib_shared.dir/lout.cpp.o CMakeFiles/NXlib_shared.dir/TIME.cpp.o CMakeFiles/NXlib_shared.dir/prof.cpp.o CMakeFiles/NXlib_shared.dir/tools.cpp.o CMakeFiles/NXlib_shared.dir/color.cpp.o CMakeFiles/NXlib_shared.dir/NXlib.cpp.o
+build libNXlib.so: CXX_SHARED_LIBRARY_LINKER__NXlib_shared_Debug CMakeFiles/NXlib_shared.dir/window.cpp.o CMakeFiles/NXlib_shared.dir/lout.cpp.o CMakeFiles/NXlib_shared.dir/TIME.cpp.o CMakeFiles/NXlib_shared.dir/prof.cpp.o CMakeFiles/NXlib_shared.dir/tools.cpp.o CMakeFiles/NXlib_shared.dir/color.cpp.o CMakeFiles/NXlib_shared.dir/NXlib.cpp.o CMakeFiles/NXlib_shared.dir/globals.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   POST_BUILD = :

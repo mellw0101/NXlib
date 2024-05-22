@@ -105,7 +105,7 @@ namespace NXlib
     u32 create_font_gc(u32 const window, u8 const text_color, u8 const background_color, u32 const font)
     {
         u32 const font_gc = xcb_generate_id(conn);
-        u32 const data[3] = {color->get(text_color), color->get(background_color), font};
+        u32 const data[3] = {Color::get_color(text_color), Color::get_color(background_color), font};
 
         xcb_create_gc
         (

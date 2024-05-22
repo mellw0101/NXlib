@@ -69,6 +69,7 @@
 #include "globals.h"
 
 #include <string>
+#include "color.h"
 
 using namespace std;
 
@@ -103,31 +104,45 @@ namespace NXlib
         window() = default;
 
         operator             u32() const;
-        window&              operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
+        window& operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
 
-        void                 make_window(const window_size_t &window_size);
-        void                 map() const;
-        void                 unmap() const;
-        void                 focus() const;
-        void                 clear() const;
-        void                 raise() const;
-        [[nodiscard]] bool   is_mapped() const;
-        [[nodiscard]] bool   check_frameless_window_hint() const;
-        [[nodiscard]] bool   is_EWMH_fullscreen() const;
-        [[nodiscard]] bool   is_active_EWMH_window() const;
-        void                 set_active_EWMH_window() const;
-        void                 set_EWMH_fullscreen_state() const;
-        void                 unset_EWMH_fullscreen_state() const;
-        [[nodiscard]] u32    get_transient() const;
-        [[nodiscard]] u32    get_pid() const;
-        [[nodiscard]] string get_net_wm_name_by_req() const;
-        void                 change_back_pixel(u32 pixel) const;
-        void                 apply_event_mask(u32 mask) const;
-        void                 set_backround_color(u8 input_color);
-        void                 change_background_color(u8 input_color);
-        void                 reparent(u32 new_parent, i16 x, i16 y) const;
-        [[nodiscard]] bool   is_active_input_focus() const;
-        void                 draw_text_8(const char* str, u8 text_color, u8 background_color, const char *font_name, i16 x, i16 y);
+        // void                 make_window(const window_size_t &window_size);
+        void create_window(
+            u32         parent,
+            i16         x,
+            i16         y,
+            u16         width,
+            u16         height,
+            u8          color = DEFAULT_COLOR,
+            uint32_t    event_mask = 0,
+            i32         flags = 0,
+            const void* border_data = nullptr
+        );
+        void                                   map() const;
+        void                                   unmap() const;
+        void                                   focus() const;
+        void                                   clear() const;
+        void                                   raise() const;
+        [[nodiscard]] bool                     is_mapped() const;
+        [[nodiscard]] bool                     check_frameless_window_hint() const;
+        [[nodiscard]] bool                     is_EWMH_fullscreen() const;
+        [[nodiscard]] bool                     is_active_EWMH_window() const;
+        void                                   set_active_EWMH_window() const;
+        void                                   set_EWMH_fullscreen_state() const;
+        void                                   unset_EWMH_fullscreen_state() const;
+        [[nodiscard]] u32                      get_transient() const;
+        [[nodiscard]] u32                      get_pid() const;
+        [[nodiscard]] string                   get_net_wm_name_by_req() const;
+        void                                   change_back_pixel(u32 pixel) const;
+        void                                   apply_event_mask(u32 mask) const;
+        void                                   set_backround_color(u8 input_color);
+        void                                   change_background_color(u8 input_color);
+        void                                   reparent(u32 new_parent, i16 x, i16 y) const;
+        [[nodiscard]] bool                     is_active_input_focus() const;
+        void                                   draw_text_8(const char* str, u8 text_color, u8 background_color, const char *font_name, i16 x, i16 y);
+        [[nodiscard]] u32                      check_event_mask_sum() const;
+        [[nodiscard]] vector<xcb_event_mask_t> check_event_mask_codes() const;
+        [[nodiscard]] bool                     is_mask_active(u32 event_mask) const;
 
     private:
         u32 _window  = 0;
@@ -144,6 +159,7 @@ namespace NXlib
 
         [[nodiscard]] u32 get_window_u32() const;
         void              create_font_gc(u8 text_color, u8 background_color, u32 font);
+        void              make_window();
     };
 }
 

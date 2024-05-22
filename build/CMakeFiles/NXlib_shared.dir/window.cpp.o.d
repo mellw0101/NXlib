@@ -44,8 +44,8 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/c++/14.1.1/bits/std_abs.h \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/string \
+ /usr/include/c++/14.1.1/bits/std_abs.h /usr/include/c++/14.1.1/cstdint \
+ /home/mellw/CLionProjects/NXlib/window.h /usr/include/c++/14.1.1/string \
  /usr/include/c++/14.1.1/bits/requires_hosted.h \
  /usr/include/c++/14.1.1/bits/stringfwd.h \
  /usr/include/c++/14.1.1/bits/memoryfwd.h \
@@ -122,8 +122,13 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/bits/uses_allocator.h \
  /usr/include/c++/14.1.1/bits/uses_allocator_args.h \
  /usr/include/c++/14.1.1/tuple /usr/include/c++/14.1.1/bits/ranges_util.h \
- /usr/include/c++/14.1.1/mutex /usr/include/c++/14.1.1/bits/chrono.h \
- /usr/include/c++/14.1.1/ratio /usr/include/c++/14.1.1/cstdint \
+ /home/mellw/CLionProjects/NXlib/color.h /usr/include/c++/14.1.1/vector \
+ /usr/include/c++/14.1.1/bits/stl_uninitialized.h \
+ /usr/include/c++/14.1.1/bits/stl_vector.h \
+ /usr/include/c++/14.1.1/bits/stl_bvector.h \
+ /usr/include/c++/14.1.1/bits/vector.tcc \
+ /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
+ /usr/include/c++/14.1.1/bits/chrono.h /usr/include/c++/14.1.1/ratio \
  /usr/include/c++/14.1.1/limits /usr/include/c++/14.1.1/ctime \
  /usr/include/c++/14.1.1/bits/parse_numbers.h \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
@@ -134,13 +139,8 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/ext/atomicity.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
  /usr/include/sys/single_threaded.h /usr/include/c++/14.1.1/queue \
- /usr/include/c++/14.1.1/deque \
- /usr/include/c++/14.1.1/bits/stl_uninitialized.h \
- /usr/include/c++/14.1.1/bits/stl_deque.h \
- /usr/include/c++/14.1.1/bits/deque.tcc /usr/include/c++/14.1.1/vector \
- /usr/include/c++/14.1.1/bits/stl_vector.h \
- /usr/include/c++/14.1.1/bits/stl_bvector.h \
- /usr/include/c++/14.1.1/bits/vector.tcc \
+ /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \
+ /usr/include/c++/14.1.1/bits/deque.tcc \
  /usr/include/c++/14.1.1/bits/stl_heap.h \
  /usr/include/c++/14.1.1/bits/stl_queue.h /usr/include/c++/14.1.1/sstream \
  /usr/include/c++/14.1.1/istream /usr/include/c++/14.1.1/ios \
@@ -167,7 +167,5 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/ostream /usr/include/c++/14.1.1/bits/ostream.tcc \
  /usr/include/c++/14.1.1/bits/istream.tcc \
  /usr/include/c++/14.1.1/bits/sstream.tcc \
- /home/mellw/CLionProjects/NXlib/window.h \
  /home/mellw/CLionProjects/NXlib/tools.h \
- /home/mellw/CLionProjects/NXlib/color.h \
  /home/mellw/CLionProjects/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream

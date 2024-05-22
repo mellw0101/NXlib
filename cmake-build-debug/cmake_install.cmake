@@ -75,6 +75,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/mellw/CLionProjects/NXlib/globals.h"
     "/home/mellw/CLionProjects/NXlib/color.h"
     "/home/mellw/CLionProjects/NXlib/NXlib.h"
+    "/home/mellw/CLionProjects/NXlib/globals.cpp"
     )
 endif()
 

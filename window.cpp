@@ -82,17 +82,67 @@ namespace NXlib
 
     window::operator u32() const
     {
-        return this->_window;
+        return _window;
     }
 
     // Overload the assignment operator for 'unsigned int'
+
     window& window::operator=(u32 const new_window)
     {
         _window = new_window;
         return *this;
     }
 
-    void window::make_window(const window_size_t &window_size)
+    void window::create_window
+    (
+        u32 const   parent,
+        i16 const   x,
+        i16 const   y,
+        u16 const   width,
+        u16 const   height,
+        u8  const   color,
+        u32         event_mask,
+        i32         flags,
+        const void* border_data
+    )
+    {
+        _parent = parent;
+        _x      = x;
+        _y      = y;
+        _width  = width;
+        _height = height;
+
+        make_window();
+        set_backround_color(color);
+        /*if (__flags & DEFAULT_KEYS   ) grab_default_keys();
+        if (__flags & KEYS_FOR_TYPING) grab_keys_for_typing();
+        if (__flags & FOCUS_INPUT    ) focus_input();
+        if (__flags & MAP)
+        {
+            map();
+            raise();
+        }
+
+        if (__event_mask > 0) apply_event_mask(&__event_mask);
+
+        if (__border_data != nullptr)
+        {
+            const int *border_data = static_cast<const int *>(__border_data);
+            make_borders(border_data[0], border_data[1], border_data[2]);
+        }
+
+        if (__cursor != CURSOR::arrow)
+        {
+            set_pointer(__cursor);
+        }
+
+        if (__flags & RAISE)
+        {
+            raise();
+        }*/
+    }
+
+    /*void window::make_window(const window_size_t &window_size)
     {
         _window = xcb_generate_id(conn);
         if (_window == u32MAX) return;
@@ -121,7 +171,7 @@ namespace NXlib
         _height = window_size.height;
 
         xcb_flush(conn);
-    }
+    }*/
 
     void window::map() const
     {
@@ -141,7 +191,7 @@ namespace NXlib
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
         if (!reply)
         {
-            // loutEWin << "Unable to get window attributes" << loutEND;
+            loutEWin << "Unable to get window attributes" << loutEND;
             return false;
         }
 
@@ -313,7 +363,7 @@ namespace NXlib
 
         if (property == XCB_ATOM_NONE)
         {
-            // loutEWin << "Unable to find _NET_WM_PID atom." << '\n';
+            loutEWin << "Unable to find _NET_WM_PID atom." << '\n';
             return 0;
         }
 
@@ -362,7 +412,14 @@ namespace NXlib
     void window::apply_event_mask(u32 const mask) const
     {
         u32 const data[1] = {mask};
-        xcb_configure_window(conn, _window, XCB_CW_EVENT_MASK, data);
+        xcb_change_window_attributes
+        (
+            conn,
+            _window,
+            XCB_CW_EVENT_MASK,
+            data
+        );
+
         xcb_flush(conn);
     }
 
@@ -374,9 +431,8 @@ namespace NXlib
 
     void window::set_backround_color(u8 const input_color)
     {
-        if (!color) return;
         _color = input_color;
-        change_back_pixel(color->get(input_color));
+        change_back_pixel(Color::get_color(input_color));
     }
 
     void window::change_background_color(u8 const input_color)
@@ -406,8 +462,7 @@ namespace NXlib
 
         if (!is_active_EWMH_window())
         {
-            // loutEWin << "Failed to make window active EWMH window" << loutEND;
-            return;
+            loutEWin << "Failed to make window active EWMH window" << loutEND;
         }
     }
 
@@ -436,14 +491,14 @@ namespace NXlib
         return false;
     }
 
-    void window::draw_text_8(const char *str, u8 const text_color, u8 const background_color, const char* font_name, i16 const x, i16 const y)
+    void window::draw_text_8(const char* str, u8 const text_color, u8 const background_color, const char* font_name, i16 const x, i16 const y)
     {
         if (!_font)
         {
             _font = open_font(font_name);
         }
 
-        if (_font_gc)
+        if (!_font_gc)
         {
             create_font_gc(text_color, background_color, _font);
         }
@@ -465,7 +520,7 @@ namespace NXlib
     void window::create_font_gc(u8 const text_color, u8 const background_color, u32 const font)
     {
         _font_gc = xcb_generate_id(conn);
-        u32 const data[3] = {color->get(text_color), color->get(background_color), font};
+        u32 const data[3] = {Color::get_color(text_color), Color::get_color(background_color), font};
 
         xcb_create_gc
         (
@@ -477,5 +532,77 @@ namespace NXlib
         );
 
         xcb_flush(conn);
+    }
+
+    void window::make_window()
+    {
+        if ((_window = xcb_generate_id(conn)) == u32MAX)
+        {
+            loutEWin << "Could not generate id for window" << '\n';
+            return;
+        }
+
+        xcb_create_window
+        (
+            conn,
+            screen->root_depth,
+            _window,
+            _parent,
+            _x,
+            _y,
+            _width,
+            _height,
+            0,
+            XCB_WINDOW_CLASS_INPUT_OUTPUT,
+            screen->root_visual,
+            0,
+            nullptr
+        );
+
+        xcb_flush(conn);
+    }
+
+    u32 window::check_event_mask_sum() const
+    {
+        xcb_get_window_attributes_cookie_t cookie = xcb_get_window_attributes(conn, _window);
+        xcb_get_window_attributes_reply_t *reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
+
+        uint32_t mask = (reply == nullptr) ? 0 : reply->all_event_masks;
+        if (!mask)
+        {
+            loutE << "Error retriving window attributes" << loutEND;
+        }
+
+        free(reply);
+        return mask;
+    }
+
+    vector<xcb_event_mask_t> window::check_event_mask_codes() const
+    {
+        uint32_t const maskSum = check_event_mask_sum();
+        vector<xcb_event_mask_t> setMasks;
+        for (int mask = XCB_EVENT_MASK_KEY_PRESS; mask <= XCB_EVENT_MASK_OWNER_GRAB_BUTTON; mask <<= 1)
+        {
+            if (maskSum & mask)
+            {
+                setMasks.push_back(static_cast<xcb_event_mask_t>(mask));
+            }
+        }
+
+        return setMasks;
+    }
+
+    bool window::is_mask_active(u32 const event_mask) const
+    {
+        vector<xcb_event_mask_t> const masks = check_event_mask_codes();
+        for (const auto &ev_mask : masks)
+        {
+            if (ev_mask == event_mask)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

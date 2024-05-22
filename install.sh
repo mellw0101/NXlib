@@ -3,6 +3,4 @@
 cmake -B build
 cmake --build build
 
-cd ./build
-
-sudo cmake --install .
+sudo cmake --install build --prefix /usr

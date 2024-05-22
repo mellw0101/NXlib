@@ -68,7 +68,7 @@
 
 #include <xcb/xcb.h>
 #include <xcb/xcb_ewmh.h>
-
+#include <cstdint>
 
 extern xcb_connection_t*      conn;
 extern xcb_screen_t*          screen;
@@ -90,7 +90,5 @@ using i16 = int16_t;
 using i8  = int8_t;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
-
-#include "lout.h"
 
 #endif //GLOBALS_H

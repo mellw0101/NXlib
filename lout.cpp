@@ -183,12 +183,7 @@ void Lout::logMessage()
 {
     lock_guard<mutex> guard(log_mutex);
 
-    if (cur_user.empty())
-    {
-        cur_user = NXlib::tools::get_cur_user();
-    }
-
-    if (ofstream file("/home/" + cur_user + "/nlog", ios::app); file)
+    if (ofstream file("/home/mellw/nlog", ios::app); file)
     {
         file << TIME::mili() << ":" << getLogPrefix(currentLevel) << ":" << log_YELLOW << "[Line:" << current_line << "]" << log_RESET << ":" << log_MEGENTA << "[" << currentFunction << "]" << log_RESET << ": " << buffer.str() << "\n";
     }

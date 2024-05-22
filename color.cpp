@@ -69,9 +69,9 @@
 
 namespace NXlib
 {
-    rgb_color_code Color::rgb_code(u8 const input_color)
+    rgb_color_code_t Color::rgb_code(u8 const input_color)
     {
-        rgb_color_code color;
+        rgb_color_code_t color;
         u8 r, g, b;
 
         switch (input_color)
@@ -254,7 +254,7 @@ namespace NXlib
     u32 Color::get_color(u8 const input_color)
     {
         xcb_colormap_t const     cmap  = screen->default_colormap;
-        rgb_color_code const     ccode = {rgb_code(input_color)};
+        rgb_color_code_t const     ccode = rgb_code(input_color);
         xcb_alloc_color_reply_t* r     = xcb_alloc_color_reply
         (
             conn,
@@ -281,19 +281,6 @@ namespace NXlib
         return pi;
     }
 
-    void Color::init_colors(vector<u8> const &vec)
-    {
-        for (u8 const &i : vec)
-        {
-            colorVec.emplace_back(i, get_color(i));
-        }
-    }
-
-    Color::Color(vector<u8> const &vec)
-    {
-        init_colors(vec);
-    }
-
     u32 Color::get(u8 const input_color)
     {
         for (auto const & [first, second] : colorVec)
@@ -301,6 +288,9 @@ namespace NXlib
             if (first == input_color) return second;
         }
 
-        return 0;
+        u32 const col = get_color(input_color);
+
+        colorVec.push_back({input_color, col});
+        return col;
     }
 }
