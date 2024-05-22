@@ -90,4 +90,37 @@ using i8  = int8_t;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
 
+enum COLOR : u8
+{
+    BLACK   = 0,
+    WHITE   = 1,
+    RED     = 2,
+    GREEN   = 3,
+    BLUE    = 4,
+    BLUE_2  = 5,
+    BLUE_3  = 6,
+    BLUE_4  = 7,
+    BLUE_5  = 8,
+    BLUE_6  = 9,
+    BLUE_7  = 10,
+    BLUE_8  = 11,
+    BLUE_9  = 12,
+    BLUE_10 = 13,
+    YELLOW  = 14,
+    MAGENTA = 15,
+    CYAN = 16,
+    GREY = 17,
+    DARK_GREY = 18,
+    DARK_GREY_2 = 19,
+    DARK_GREY_3 = 20,
+    DARK_GREY_4 = 21,
+    LIGHT_GREY = 22,
+    ORANGE = 23,
+    BROWN = 24,
+    PINK = 25,
+    PURPLE = 26,
+    NO_COLOR = 27,
+    DEFAULT_COLOR = DARK_GREY
+};
+
 #endif //GLOBALS_H

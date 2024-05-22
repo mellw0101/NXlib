@@ -59,6 +59,9 @@
 // Created by mellw on 5/21/24.
 //
 
+
+
+
 #ifndef WINDOW_H
 #define WINDOW_H
 
@@ -99,7 +102,7 @@ namespace NXlib
     {
     public:
         window() = default;
-        
+
         operator             u32() const;
         window&              operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
 
