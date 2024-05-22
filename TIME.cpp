@@ -4,6 +4,9 @@
 
 #include "TIME.h"
 
+#include <string>
+#include <chrono>
+
 using namespace std;
 
 string TIME::get()

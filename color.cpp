@@ -62,6 +62,8 @@
 
 #include "color.h"
 
+#include "lout.h"
+
 enum COLOR : u8
 {
     BLACK   = 0,

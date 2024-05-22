@@ -69,6 +69,13 @@
 
 // For errno
 #include <cerrno>
+#include <fstream>
+
+#include "TIME.h"
+#include "sstream"
+#include <type_traits>
+
+using namespace std;
 
 
 /// @class LogQueue
@@ -162,9 +169,6 @@ Lout& Lout::operator<<(const errno_msg_t &err)
     return* this;
 }
 
-/// END @class Lout
-
-
 template<typename T>
 enable_if_t<is_arithmetic_v<T>, Lout&>
 Lout::operator<<(T value)
@@ -179,6 +183,16 @@ Lout::operator<<(const T &message)
 {
     buffer << message;
     return* this;
+}
+
+void Lout::logMessage()
+{
+    lock_guard<mutex> guard(log_mutex);
+
+    if (ofstream file("/home/mellw/nlog", ios::app); file)
+    {
+        file << TIME::mili() << ":" << getLogPrefix(currentLevel) << ":" << log_YELLOW << "[Line:" << current_line << "]" << log_RESET << ":" << log_MEGENTA << "[" << currentFunction << "]" << log_RESET << ": " << buffer.str() << "\n";
+    }
 }
 
 string Lout::getLogPrefix(const LogLevel level)
@@ -216,6 +230,8 @@ string Lout::getLogPrefix(const LogLevel level)
         }
     }
 }
+
+/// END @class Lout
 
 
 /**

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libNXlib.so -o libNXlib.so CMakeFiles/NXlib_shared.dir/window.cpp.o CMakeFiles/NXlib_shared.dir/lout.cpp.o CMakeFiles/NXlib_shared.dir/TIME.cpp.o CMakeFiles/NXlib_shared.dir/prof.cpp.o CMakeFiles/NXlib_shared.dir/tools.cpp.o CMakeFiles/NXlib_shared.dir/color.cpp.o

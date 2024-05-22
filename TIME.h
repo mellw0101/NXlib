@@ -63,7 +63,9 @@
 #define TIME_H
 
 
-#include <chrono>
+#include "globals.h"
+
+#include <string>
 
 using namespace std;
 

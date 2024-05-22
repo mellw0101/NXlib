@@ -88,7 +88,7 @@ namespace NXlib
     {
         xcb_atom_t atom = XCB_NONE;
 
-        xcb_intern_atom_reply_t *reply = xcb_intern_atom_reply
+        xcb_intern_atom_reply_t* reply = xcb_intern_atom_reply
         (
             conn,
             xcb_intern_atom

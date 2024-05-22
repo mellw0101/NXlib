@@ -65,6 +65,8 @@
 
 #include "globals.h"
 
+#include <string>
+
 using namespace std;
 
 using window_size_t = struct

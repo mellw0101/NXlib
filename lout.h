@@ -63,26 +63,10 @@
 #define LOUT_H
 
 
-#include <utility>
 #include <string>
-#include <cstdint>
 #include <mutex>
 #include <queue>
-#include <cstdint>
-#include <string>
 #include <sstream>
-#include <string>
-#include <fstream>
-#include <string>
-#include <string>
-#include <chrono>
-#include <iomanip>
-#include <sstream>
-#include <xcb/xproto.h>
-#include <mutex>
-#include <queue>
-
-#include "TIME.h"
 
 using namespace std;
 
@@ -219,18 +203,10 @@ private:
 	string current_file{};
 	int current_line{};
 	ostringstream buffer{};
-	mutex log_mutex;
+	mutex log_mutex{};
 
 /* Methods 	 */
-	void logMessage()
-	{
-		lock_guard<mutex> guard(log_mutex);
-
-		if (ofstream file("/home/mellw/nlog", ios::app); file)
-		{
-			file << TIME::mili() << ":" << getLogPrefix(currentLevel) << ":" << log_YELLOW << "[Line:" << current_line << "]" << log_RESET << ":" << log_MEGENTA << "[" << currentFunction << "]" << log_RESET << ": " << buffer.str() << "\n";
-		}
-	}
+	void logMessage();
 
 	static string getLogPrefix(LogLevel level);
 };

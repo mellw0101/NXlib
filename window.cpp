@@ -62,13 +62,11 @@
 #include "globals.h"
 
 #include "window.h"
-
-#include "color.h"
 #include "lout.h"
 #include "tools.h"
+#include "color.h"
 
 using namespace std;
-
 namespace NXlib
 {
     u32 window::get_window_u32() const

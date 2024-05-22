@@ -63,7 +63,6 @@
 
 #include "globals.h"
 
-#include <iostream>
 #include <xcb/xcb.h>
 
 using namespace std;

@@ -57,11 +57,13 @@
 // Created by mellw on 5/21/24.
 //
 
+
 #ifndef COLOR_H
 #define COLOR_H
 
 
 #include "globals.h"
+#include <vector>
 
 using namespace std;
 
