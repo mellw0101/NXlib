@@ -62,6 +62,7 @@
 #ifndef LOUT_H
 #define LOUT_H
 
+#include "globals.h"
 
 #include <string>
 #include <mutex>
@@ -91,19 +92,23 @@ enum LogLevel
 	FUNCTION
 };
 
-typedef struct {
+typedef struct event_type_obj_t {
+	string value;
+} event_type_obj_t;
+
+typedef struct FuncNameWrapper {
     string value;
 } FuncNameWrapper;
 
-typedef struct {
+typedef struct file_name_obj_t {
 	string value;
 } file_name_obj_t;
 
-typedef struct {
-	int line;
+typedef struct line_obj_t {
+	i32 line;
 } line_obj_t;
 
-typedef struct {
+typedef struct LogMessage {
     LogLevel level;
     string function;
     int line;
@@ -111,11 +116,11 @@ typedef struct {
     // Include a timestamp if you prefer logging it to be handled by the logger rather than each log call
 } LogMessage;
 
-typedef struct {
-    uint32_t value;
+typedef struct window_obj_t {
+    u32 value;
 } window_obj_t;
 
-typedef struct {
+typedef struct errno_msg_t {
 	string value;
 } errno_msg_t;
 
@@ -159,15 +164,11 @@ class Lout
 
 public:
 /* Methods 	 */
-    Lout() = default;
+	Lout();
 
 	Lout& operator<<(LogLevel logLevel);
 
-	/*Lout& operator<<(const event_type_obj_t &event_type)
-	{
-		buffer << "event_type" << '(' << log_BLUE << event_type.value << log_RESET << ')';
-		return *this;
-	}*/
+	Lout& operator<<(const event_type_obj_t &event_type);
 
 	Lout& operator<<(const FuncNameWrapper &funcName);
 
@@ -210,7 +211,7 @@ private:
 
 	static string getLogPrefix(LogLevel level);
 };
-static class Lout lout;
+static Lout lout;
 
 // Utility function for wrapping function names
 FuncNameWrapper func(const char* name);

@@ -103,7 +103,7 @@ namespace NXlib
 
         if (!reply)
         {
-            loutE << "reply is nullptr." << loutEND;
+            // loutE << "reply is nullptr." << loutEND;
             return atom;
         }
 

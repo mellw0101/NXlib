@@ -62,7 +62,7 @@
 #include "globals.h"
 
 #include "window.h"
-#include "lout.h"
+// #include "lout.h"
 #include "tools.h"
 #include "color.h"
 
@@ -134,7 +134,7 @@ namespace NXlib
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
         if (!reply)
         {
-            loutEWin << "Unable to get window attributes" << '\n';
+            // loutEWin << "Unable to get window attributes" << '\n';
             return false;
         }
 
@@ -173,7 +173,7 @@ namespace NXlib
             }
             else
             {
-                loutEWin << "No _MOTIF_WM_HINTS property found." << loutEND;
+                // loutEWin << "No _MOTIF_WM_HINTS property found." << loutEND;
             }
 
             free(reply);
@@ -212,7 +212,7 @@ namespace NXlib
         if (uint8_t const error = xcb_ewmh_get_active_window_reply(ewmh,
             xcb_ewmh_get_active_window(ewmh, 0), &active_window, nullptr); !error)
         {
-            loutE << "xcb_ewmh_get_active_window_reply failed" << loutEND;
+            // loutE << "xcb_ewmh_get_active_window_reply failed" << loutEND;
         }
 
         return _window == active_window;
@@ -223,8 +223,8 @@ namespace NXlib
         if (xcb_generic_error_t* error =
             xcb_request_check(conn, xcb_ewmh_set_active_window_checked(ewmh, 0, _window)))
         {
-            loutE << "Failed to set " << WINDOW_ID_BY_INPUT(_window) <<
-                " as active ewmh window error_code" << error->error_code << loutEND;
+            // loutE << "Failed to set " << WINDOW_ID_BY_INPUT(_window) <<
+            //     " as active ewmh window error_code" << error->error_code << loutEND;
             
             free(error);
         }
@@ -306,7 +306,7 @@ namespace NXlib
 
         if (property == XCB_ATOM_NONE)
         {
-            loutEWin << "Unable to find _NET_WM_PID atom." << '\n';
+            // loutEWin << "Unable to find _NET_WM_PID atom." << '\n';
             return 0;
         }
 
@@ -314,14 +314,14 @@ namespace NXlib
         xcb_get_property_reply_t* prop_reply = xcb_get_property_reply(conn, prop_cookie, nullptr);
         if (!prop_reply)
         {
-            loutEWin << "Unable to get window property." << '\n';
+            // loutEWin << "Unable to get window property." << '\n';
             return 0;
         }
 
         if (xcb_get_property_value_length(prop_reply) == 0)
         {
             free(prop_reply);
-            loutEWin << "The window does not have the _NET_WM_PID property." << '\n';
+            // loutEWin << "The window does not have the _NET_WM_PID property." << '\n';
             return 0;
         }
 
@@ -399,7 +399,7 @@ namespace NXlib
 
         if (!is_active_EWMH_window())
         {
-            loutEWin << "Failed to make window active EWMH window" << loutEND;
+            // loutEWin << "Failed to make window active EWMH window" << loutEND;
             return;
         }
     }

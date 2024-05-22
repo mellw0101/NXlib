@@ -3,4 +3,4 @@
 cmake -B build
 cmake --build build
 
-sudo cmake --install build --prefix /usr/local
+sudo cmake --install build --prefix /usr

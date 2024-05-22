@@ -66,31 +66,32 @@
 #include "globals.h"
 
 #include <string>
+#include "lout.h"
 
 using namespace std;
 
-using window_size_t = struct
+typedef struct window_size_t
 {
     u32 parent = 0;
     i16 x      = 0;
     i16 y      = 0;
     u16 width  = 0;
     u16 height = 0;
-};
+} window_size_t;
 
 /**
 
     @brief Struct representing the _MOTIF_WM_HINTS property format
 
 */
-using motif_wm_hints_t = struct
+typedef struct motif_wm_hints_t
 {
     u32 functions;
     u32 flags;
     u32 decorations;
     i32 input_mode;
     u32 status;
-};
+} motif_wm_hints_t;
 
 namespace NXlib
 {
@@ -109,7 +110,7 @@ namespace NXlib
         explicit             operator u32() const;
         window&              operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
 
-        void                 make_window(const window_size_t& window_size);
+        void                 make_window(const window_size_t &window_size);
         void                 map() const;
         void                 unmap() const;
         [[nodiscard]] bool   is_mapped() const;

@@ -80,10 +80,18 @@ using namespace std;
 
 /// @class LogQueue
 
+Lout::Lout() = default;
+
 void LogQueue::push(const LogMessage &message)
 {
     lock_guard<mutex> guard(mutex_);
     queue_.push(message);
+}
+
+Lout& Lout::operator<<(const event_type_obj_t &event_type)
+{
+    buffer << "event_type" << '(' << log_BLUE << event_type.value << log_RESET << ')';
+    return *this;
 }
 
 bool LogQueue::try_pop(LogMessage &message)
