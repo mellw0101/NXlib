@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles/NXlib_static.dir/TIME.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

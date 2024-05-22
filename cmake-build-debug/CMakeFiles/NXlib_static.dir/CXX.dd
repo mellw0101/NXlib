@@ -1,0 +1,15 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/NXlib_static.dir/window.cpp.o: dyndep
+
+build CMakeFiles/NXlib_static.dir/lout.cpp.o: dyndep
+
+build CMakeFiles/NXlib_static.dir/TIME.cpp.o: dyndep
+
+build CMakeFiles/NXlib_static.dir/prof.cpp.o: dyndep
+
+build CMakeFiles/NXlib_static.dir/tools.cpp.o: dyndep
+
+build CMakeFiles/NXlib_static.dir/color.cpp.o: dyndep
+
+build CMakeFiles/NXlib_static.dir/NXlib.cpp.o: dyndep
+
