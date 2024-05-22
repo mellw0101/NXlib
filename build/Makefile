@@ -187,6 +187,33 @@ NXlib_shared/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/build
 .PHONY : NXlib_shared/fast
 
+NXlib.o: NXlib.cpp.o
+.PHONY : NXlib.o
+
+# target to build an object file
+NXlib.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/NXlib.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/NXlib.cpp.o
+.PHONY : NXlib.cpp.o
+
+NXlib.i: NXlib.cpp.i
+.PHONY : NXlib.i
+
+# target to preprocess a source file
+NXlib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/NXlib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/NXlib.cpp.i
+.PHONY : NXlib.cpp.i
+
+NXlib.s: NXlib.cpp.s
+.PHONY : NXlib.s
+
+# target to generate assembly for a file
+NXlib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/NXlib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/NXlib.cpp.s
+.PHONY : NXlib.cpp.s
+
 TIME.o: TIME.cpp.o
 .PHONY : TIME.o
 
@@ -363,6 +390,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... NXlib_shared"
 	@echo "... NXlib_static"
+	@echo "... NXlib.o"
+	@echo "... NXlib.i"
+	@echo "... NXlib.s"
 	@echo "... TIME.o"
 	@echo "... TIME.i"
 	@echo "... TIME.s"

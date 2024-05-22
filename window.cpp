@@ -59,16 +59,22 @@
 // Created by mellw on 5/21/24.
 //
 
+
 #include "globals.h"
 
 #include "window.h"
 // #include "lout.h"
 #include "tools.h"
 #include "color.h"
+#include "NXlib.h"
 
 using namespace std;
 namespace NXlib
 {
+    /// @class window
+
+    /// PUBLIC:
+
     u32 window::get_window_u32() const
     {
         return _window;
@@ -86,10 +92,15 @@ namespace NXlib
         return* this;
     }
 
+    bool window::operator==(uint32_t const id) const
+    {
+        return _window == id;
+    }
+
     void window::make_window(const window_size_t &window_size)
     {
         _window = xcb_generate_id(conn);
-        if (_window == 0L) return;
+        if (_window == u32MAX) return;
 
         xcb_create_window
         (
@@ -108,6 +119,7 @@ namespace NXlib
             nullptr
         );
 
+        _parent = window_size.parent;
         _x      = window_size.x;
         _y      = window_size.y;
         _width  = window_size.width;
@@ -134,7 +146,7 @@ namespace NXlib
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
         if (!reply)
         {
-            // loutEWin << "Unable to get window attributes" << '\n';
+            loutEWin << "Unable to get window attributes" << loutEND;
             return false;
         }
 
@@ -173,7 +185,7 @@ namespace NXlib
             }
             else
             {
-                // loutEWin << "No _MOTIF_WM_HINTS property found." << loutEND;
+                loutEWin << "No _MOTIF_WM_HINTS property found." << loutEND;
             }
 
             free(reply);
@@ -212,7 +224,7 @@ namespace NXlib
         if (uint8_t const error = xcb_ewmh_get_active_window_reply(ewmh,
             xcb_ewmh_get_active_window(ewmh, 0), &active_window, nullptr); !error)
         {
-            // loutE << "xcb_ewmh_get_active_window_reply failed" << loutEND;
+            loutE << "xcb_ewmh_get_active_window_reply failed" << loutEND;
         }
 
         return _window == active_window;
@@ -223,9 +235,9 @@ namespace NXlib
         if (xcb_generic_error_t* error =
             xcb_request_check(conn, xcb_ewmh_set_active_window_checked(ewmh, 0, _window)))
         {
-            // loutE << "Failed to set " << WINDOW_ID_BY_INPUT(_window) <<
-            //     " as active ewmh window error_code" << error->error_code << loutEND;
-            
+            loutE << "Failed to set " << WINDOW_ID_BY_INPUT(_window) <<
+                " as active ewmh window error_code" << error->error_code << loutEND;
+
             free(error);
         }
 
@@ -314,14 +326,14 @@ namespace NXlib
         xcb_get_property_reply_t* prop_reply = xcb_get_property_reply(conn, prop_cookie, nullptr);
         if (!prop_reply)
         {
-            // loutEWin << "Unable to get window property." << '\n';
+            loutEWin << "Unable to get window property." << '\n';
             return 0;
         }
 
         if (xcb_get_property_value_length(prop_reply) == 0)
         {
             free(prop_reply);
-            // loutEWin << "The window does not have the _NET_WM_PID property." << '\n';
+            loutEWin << "The window does not have the _NET_WM_PID property." << '\n';
             return 0;
         }
 
@@ -408,6 +420,50 @@ namespace NXlib
     {
         u32 constexpr data[1] = {XCB_STACK_MODE_ABOVE};
         xcb_configure_window(conn, _window, XCB_CONFIG_WINDOW_STACK_MODE, data);
+        xcb_flush(conn);
+    }
+
+    void window::reparent(u32 const new_parent, i16 const x, i16 const y) const
+    {
+        xcb_reparent_window(conn, _window, new_parent, x, y);
+        xcb_flush(conn);
+    }
+
+    bool window::is_active_input_focus() const
+    {
+        u32 const focused_window = NXlib::get_input_focus_window();
+
+        if (focused_window == _window)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    void window::draw_text_8(const char *str, u8 const text_color, u8 const background_color, const char* font_name, i16 const x, i16 const y)
+    {
+        if (!_font)
+        {
+            _font = open_font(font_name);
+        }
+
+        if (_font_gc)
+        {
+            _font_gc = create_font_gc(_window, text_color, background_color, _font);
+        }
+
+        xcb_image_text_8
+        (
+            conn,
+            tools::slen(str),
+            _window,
+            _font_gc,
+            x,
+            y,
+            str
+        );
+
         xcb_flush(conn);
     }
 }

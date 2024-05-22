@@ -17,13 +17,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 26,
+				"line" : 152,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 33,
+				"line" : 157,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 163,
 				"parent" : 0
 			}
 		]
@@ -38,12 +44,24 @@
 			[
 				"libNXlib.a"
 			],
-			"targetId" : "NXlib::@6890427a1f51a3e7e1df",
-			"targetIndex" : 0,
+			"targetId" : "NXlib_static::@6890427a1f51a3e7e1df",
+			"targetIndex" : 1,
 			"type" : "target"
 		},
 		{
 			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libNXlib.so"
+			],
+			"targetId" : "NXlib_shared::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
 			"component" : "Unspecified",
 			"destination" : "include/NXlib",
 			"paths" : 
@@ -53,7 +71,10 @@
 				"TIME.h",
 				"prof.h",
 				"tools.h",
-				"globals.h"
+				"globals.h",
+				"color.h",
+				"NXlib.cpp",
+				"NXlib.h"
 			],
 			"type" : "file"
 		}

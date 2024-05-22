@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o"
+  "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.d"
   "CMakeFiles/NXlib_shared.dir/TIME.cpp.o"
   "CMakeFiles/NXlib_shared.dir/TIME.cpp.o.d"
   "CMakeFiles/NXlib_shared.dir/color.cpp.o"

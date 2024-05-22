@@ -60,6 +60,8 @@
 //
 
 
+
+
 #include "color.h"
 
 #include "lout.h"
@@ -301,7 +303,7 @@ namespace NXlib
 
         if (!r)
         {
-            // loutE << "xcb_alloc_color_reply_t returned nullptr" << loutEND;
+            loutE << "xcb_alloc_color_reply_t returned nullptr" << loutEND;
             return 0;
         }
 

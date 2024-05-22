@@ -174,4 +174,5 @@ CMakeFiles/NXlib_shared.dir/lout.cpp.o: \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/14.1.1/bits/fstream.tcc \
- /home/mellw/CLionProjects/NXlib/TIME.h
+ /home/mellw/CLionProjects/NXlib/TIME.h \
+ /home/mellw/CLionProjects/NXlib/tools.h

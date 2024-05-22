@@ -169,4 +169,5 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/bits/istream.tcc \
  /usr/include/c++/14.1.1/bits/sstream.tcc \
  /home/mellw/CLionProjects/NXlib/tools.h \
- /home/mellw/CLionProjects/NXlib/color.h
+ /home/mellw/CLionProjects/NXlib/color.h \
+ /home/mellw/CLionProjects/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream

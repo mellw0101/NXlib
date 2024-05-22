@@ -59,14 +59,18 @@
 // Created by mellw on 5/21/24.
 //
 
+
+
+
 #ifndef GLOBALS_H
 #define GLOBALS_H
+
 
 #include <xcb/xcb.h>
 #include <xcb/xcb_ewmh.h>
 
-extern xcb_connection_t* conn;
-extern xcb_screen_t* screen;
+extern xcb_connection_t*      conn;
+extern xcb_screen_t*          screen;
 extern xcb_ewmh_connection_t* ewmh;
 
 using u64 = uint64_t;
@@ -74,10 +78,16 @@ using u32 = uint32_t;
 using u16 = uint16_t;
 using u8  = uint8_t;
 
+static constexpr u64 u64MAX = 0xFFFFFFFFFFFFFFFF;
+static constexpr u32 u32MAX = 0xFFFFFFFF;
+static constexpr u16 u16MAX = 0xFFFF;
+static constexpr u8  u8MAX  = 0xFF;
+
 using i64 = int64_t;
 using i32 = int32_t;
 using i16 = int16_t;
 using i8  = int8_t;
 
+static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
 
 #endif //GLOBALS_H

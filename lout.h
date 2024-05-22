@@ -206,6 +206,8 @@ private:
 	ostringstream buffer{};
 	mutex log_mutex{};
 
+	string cur_user{};
+
 /* Methods 	 */
 	void logMessage();
 

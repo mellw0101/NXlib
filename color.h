@@ -78,18 +78,16 @@ namespace NXlib
 {
     class Color
     {
-    private:
-    /* Variabels */
-        vector<pair<u8, u32>> colorVec;
-
-    /* Methods   */
-        [[nodiscard]] rgb_color_code static rgb_code(u8 input_color);
-        u32 static                          get_color(u8 input_color);
-        void                                init_colors(const vector<u8> &vec);
-
     public:
         explicit                            Color(vector<u8> const &vec);
         u32                                 get(u8 input_color);
+
+    private:
+        vector<pair<u8, u32>>               colorVec;
+
+        [[nodiscard]] rgb_color_code static rgb_code(u8 input_color);
+        u32 static                          get_color(u8 input_color);
+        void                                init_colors(const vector<u8> &vec);
     };
     static Color* color;
 }

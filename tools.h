@@ -57,23 +57,31 @@
 // Created by mellw on 5/21/24.
 //
 
+
+
+
 #ifndef TOOLS_H
 #define TOOLS_H
+
+
 
 
 #include "globals.h"
 
 #include <xcb/xcb.h>
+#include <string>
 
 using namespace std;
+
 
 namespace NXlib
 {
     class tools
     {
     public:
-        static size_t slen(const char* s);
+        static size_t     slen(const char* s);
         static xcb_atom_t get_atom(const char* name);
+        static string     get_cur_user();
 
         class iAtomC
         {

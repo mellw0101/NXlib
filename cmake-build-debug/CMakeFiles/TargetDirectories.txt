@@ -1,4 +1,5 @@
-/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib.dir
+/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib_static.dir
+/home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/NXlib_shared.dir
 /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/mellw/CLionProjects/NXlib/cmake-build-debug/CMakeFiles/list_install_components.dir

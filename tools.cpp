@@ -66,17 +66,9 @@
 
 namespace NXlib
 {
-    /**
+    /// @class tools
 
-        @class tools
-
-    */
-
-    /**
-
-        @brief function that @return`s the length of a 'const char*'
-
-    */
+    /// @brief function that @return`s the length of a 'const char*'
     size_t tools::slen(const char* s)
     {
         size_t i(0);
@@ -113,18 +105,22 @@ namespace NXlib
         return atom;
     }
 
-    /**
+    string tools::get_cur_user()
+    {
+        const char* user = getenv("USER");
+        if (!user)
+        {
+            return {};
+        }
 
-        END @class tools
+        return string{user};
+    }
 
-    */
 
 
-    /**
 
-        @class tools::iAtomC
 
-    */
+    /// @class tools::iAtomC
 
     tools::iAtomC::iAtomC(const bool only_if_exists, const char* name)
     : _cookie
@@ -159,18 +155,10 @@ namespace NXlib
         return _cookie;
     }
 
-    /**
-
-        END @class tools::iAtomC
-
-    */
 
 
-    /**
 
-        @class tools::iAtomR
-
-    */
+    /// @class tools::iAtomR
 
     tools::iAtomR::iAtomR(const iAtomC &cookie)
     {

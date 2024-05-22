@@ -59,6 +59,9 @@
 // Created by mellw on 5/21/24.
 //
 
+
+
+
 #include "lout.h"
 
 #include <vector>
@@ -74,6 +77,7 @@
 #include "TIME.h"
 #include "sstream"
 #include <type_traits>
+#include "tools.h"
 
 using namespace std;
 
@@ -107,7 +111,7 @@ bool LogQueue::try_pop(LogMessage &message)
     return true;
 }
 
-/// END @class LogQueue
+
 
 
 /// @class Lout
@@ -197,7 +201,12 @@ void Lout::logMessage()
 {
     lock_guard<mutex> guard(log_mutex);
 
-    if (ofstream file("/home/mellw/nlog", ios::app); file)
+    if (cur_user.empty())
+    {
+        cur_user = NXlib::tools::get_cur_user();
+    }
+
+    if (ofstream file("/home/" + cur_user + "/nlog", ios::app); file)
     {
         file << TIME::mili() << ":" << getLogPrefix(currentLevel) << ":" << log_YELLOW << "[Line:" << current_line << "]" << log_RESET << ":" << log_MEGENTA << "[" << currentFunction << "]" << log_RESET << ": " << buffer.str() << "\n";
     }
@@ -239,7 +248,7 @@ string Lout::getLogPrefix(const LogLevel level)
     }
 }
 
-/// END @class Lout
+
 
 
 /**

@@ -7,3 +7,5 @@
 /usr/include/NXlib/tools.h
 /usr/include/NXlib/globals.h
 /usr/include/NXlib/color.h
+/usr/include/NXlib/NXlib.cpp
+/usr/include/NXlib/NXlib.h

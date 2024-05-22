@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-dd4e9391079999496734.json",
+					"jsonFile" : "directory-.-Debug-13bd7613cec9b31c86cb.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.28"
@@ -16,7 +16,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -31,7 +32,8 @@
 					"name" : "NXlib",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,9 +41,16 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "NXlib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-NXlib-Debug-6d20ab155701cb78de65.json",
-					"name" : "NXlib",
+					"id" : "NXlib_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NXlib_shared-Debug-c802caaad5a1790d033a.json",
+					"name" : "NXlib_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NXlib_static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NXlib_static-Debug-c0e17b1c50cf04da8d31.json",
+					"name" : "NXlib_static",
 					"projectIndex" : 0
 				}
 			]

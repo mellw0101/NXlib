@@ -153,6 +153,20 @@ CMakeFiles/NXlib_static.dir/color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/color.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/color.cpp -o CMakeFiles/NXlib_static.dir/color.cpp.s
 
+CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
+CMakeFiles/NXlib_static.dir/NXlib.cpp.o: /home/mellw/CLionProjects/NXlib/NXlib.cpp
+CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NXlib_static.dir/NXlib.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/NXlib.cpp.o -MF CMakeFiles/NXlib_static.dir/NXlib.cpp.o.d -o CMakeFiles/NXlib_static.dir/NXlib.cpp.o -c /home/mellw/CLionProjects/NXlib/NXlib.cpp
+
+CMakeFiles/NXlib_static.dir/NXlib.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/NXlib.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/NXlib.cpp > CMakeFiles/NXlib_static.dir/NXlib.cpp.i
+
+CMakeFiles/NXlib_static.dir/NXlib.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/NXlib.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/NXlib.cpp -o CMakeFiles/NXlib_static.dir/NXlib.cpp.s
+
 # Object files for target NXlib_static
 NXlib_static_OBJECTS = \
 "CMakeFiles/NXlib_static.dir/window.cpp.o" \
@@ -160,7 +174,8 @@ NXlib_static_OBJECTS = \
 "CMakeFiles/NXlib_static.dir/TIME.cpp.o" \
 "CMakeFiles/NXlib_static.dir/prof.cpp.o" \
 "CMakeFiles/NXlib_static.dir/tools.cpp.o" \
-"CMakeFiles/NXlib_static.dir/color.cpp.o"
+"CMakeFiles/NXlib_static.dir/color.cpp.o" \
+"CMakeFiles/NXlib_static.dir/NXlib.cpp.o"
 
 # External object files for target NXlib_static
 NXlib_static_EXTERNAL_OBJECTS =
@@ -171,9 +186,10 @@ libNXlib.a: CMakeFiles/NXlib_static.dir/TIME.cpp.o
 libNXlib.a: CMakeFiles/NXlib_static.dir/prof.cpp.o
 libNXlib.a: CMakeFiles/NXlib_static.dir/tools.cpp.o
 libNXlib.a: CMakeFiles/NXlib_static.dir/color.cpp.o
+libNXlib.a: CMakeFiles/NXlib_static.dir/NXlib.cpp.o
 libNXlib.a: CMakeFiles/NXlib_static.dir/build.make
 libNXlib.a: CMakeFiles/NXlib_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libNXlib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libNXlib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/NXlib_static.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NXlib_static.dir/link.txt --verbose=$(VERBOSE)
 

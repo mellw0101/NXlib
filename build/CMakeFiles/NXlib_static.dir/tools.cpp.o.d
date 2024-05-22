@@ -45,8 +45,7 @@ CMakeFiles/NXlib_static.dir/tools.cpp.o: \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/c++/14.1.1/bits/std_abs.h \
- /home/mellw/CLionProjects/NXlib/tools.h \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/string \
+ /home/mellw/CLionProjects/NXlib/tools.h /usr/include/c++/14.1.1/string \
  /usr/include/c++/14.1.1/bits/requires_hosted.h \
  /usr/include/c++/14.1.1/bits/stringfwd.h \
  /usr/include/c++/14.1.1/bits/memoryfwd.h \
@@ -123,9 +122,10 @@ CMakeFiles/NXlib_static.dir/tools.cpp.o: \
  /usr/include/c++/14.1.1/bits/uses_allocator.h \
  /usr/include/c++/14.1.1/bits/uses_allocator_args.h \
  /usr/include/c++/14.1.1/tuple /usr/include/c++/14.1.1/bits/ranges_util.h \
- /usr/include/c++/14.1.1/mutex /usr/include/c++/14.1.1/bits/chrono.h \
- /usr/include/c++/14.1.1/ratio /usr/include/c++/14.1.1/cstdint \
- /usr/include/c++/14.1.1/limits /usr/include/c++/14.1.1/ctime \
+ /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
+ /usr/include/c++/14.1.1/bits/chrono.h /usr/include/c++/14.1.1/ratio \
+ /usr/include/c++/14.1.1/cstdint /usr/include/c++/14.1.1/limits \
+ /usr/include/c++/14.1.1/ctime \
  /usr/include/c++/14.1.1/bits/parse_numbers.h \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/gthr.h \

@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles/NXlib_shared.dir/window.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}
