@@ -12757,7 +12757,8 @@ uint8_t xcb_ewmh_get_wm_cm_owner_reply(xcb_ewmh_connection_t *ewmh,
 # 71 "/home/mellw/CLionProjects/NXlib/globals.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/globals.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/globals.h"
 extern xcb_connection_t* conn;
 extern xcb_screen_t* screen;
 extern xcb_ewmh_connection_t* ewmh;
@@ -12778,10 +12779,12 @@ using i16 = int16_t;
 using i8 = int8_t;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
-# 64 "/home/mellw/CLionProjects/NXlib/window.cpp" 2
 
-# 1 "/home/mellw/CLionProjects/NXlib/window.h" 1
-# 68 "/home/mellw/CLionProjects/NXlib/window.h"
+# 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
+# 65 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 1 "/home/mellw/CLionProjects/NXlib/globals.h" 1
+# 66 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+
 # 1 "/usr/include/c++/14.1.1/string" 1 3
 # 36 "/usr/include/c++/14.1.1/string" 3
        
@@ -42761,9 +42764,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     }
 
 }
-# 69 "/home/mellw/CLionProjects/NXlib/window.h" 2
-# 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
-# 68 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 68 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 # 1 "/usr/include/c++/14.1.1/mutex" 1 3
 # 32 "/usr/include/c++/14.1.1/mutex" 3
        
@@ -67504,7 +67505,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 71 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/lout.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/lout.h"
 using namespace std;
 
 
@@ -67519,14 +67521,14 @@ constexpr auto log_BOLD = "\033[1m";
 constexpr auto log_UNDERLINE = "\033[4m";
 constexpr auto log_RESET = "\033[0m";
 
-enum LogLevel
+typedef enum LogLevel
 {
  INFO,
  INFO_PRIORITY,
  WARNING,
  ERROR,
  FUNCTION
-};
+} LogLevel;
 
 typedef struct event_type_obj_t {
  string value;
@@ -67574,10 +67576,8 @@ private:
 
 class Lout
 {
-# 165 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 166 "/home/mellw/CLionProjects/NXlib/lout.h"
 public:
-
- Lout();
 
  Lout& operator<<(LogLevel logLevel);
 
@@ -67602,13 +67602,12 @@ public:
 
  Lout& operator<<(const errno_msg_t &err);
 
-    template<typename T>
-    enable_if_t<is_arithmetic_v<T>, Lout&>
-    operator<<(T value);
-
-    template<typename T>
-    enable_if_t<!is_arithmetic_v<T>, Lout&>
-    operator<<(const T &message);
+ template<typename T>
+ Lout& operator<<(T message)
+ {
+  buffer << message;
+  return *this;
+ }
 
 private:
 
@@ -67621,9 +67620,7 @@ private:
 
  string cur_user{};
 
-
  void logMessage();
-
  static string getLogPrefix(LogLevel level);
 };
 static Lout lout;
@@ -67638,8 +67635,11 @@ line_obj_t line(int _line);
 window_obj_t window_id(uint32_t wid);
 
 errno_msg_t errno_msg(const char* str);
-# 70 "/home/mellw/CLionProjects/NXlib/window.h" 2
+# 95 "/home/mellw/CLionProjects/NXlib/globals.h" 2
+# 64 "/home/mellw/CLionProjects/NXlib/window.cpp" 2
 
+# 1 "/home/mellw/CLionProjects/NXlib/window.h" 1
+# 73 "/home/mellw/CLionProjects/NXlib/window.h"
 using namespace std;
 
 typedef struct window_size_t
@@ -67670,7 +67670,9 @@ namespace NXlib
     class window
     {
     public:
-        explicit operator u32() const;
+        window() = default;
+
+        operator u32() const;
         window& operator=(u32 new_window);
 
         void make_window(const window_size_t &window_size);
@@ -67711,6 +67713,7 @@ namespace NXlib
         u16 _height = 0;
 
         [[nodiscard]] u32 get_window_u32() const;
+        void create_font_gc(u8 text_color, u8 background_color, u32 font);
     };
 }
 # 66 "/home/mellw/CLionProjects/NXlib/window.cpp" 2
@@ -67768,12 +67771,45 @@ namespace NXlib
 # 68 "/home/mellw/CLionProjects/NXlib/color.h"
 using namespace std;
 
-using rgb_color_code = struct
+typedef struct rgb_color_code
 {
     uint8_t r;
     uint8_t g;
     uint8_t b;
-};
+} rgb_color_code;
+
+typedef enum COLOR : u8
+{
+    BLACK = 0,
+    WHITE = 1,
+    RED = 2,
+    GREEN = 3,
+    BLUE = 4,
+    BLUE_2 = 5,
+    BLUE_3 = 6,
+    BLUE_4 = 7,
+    BLUE_5 = 8,
+    BLUE_6 = 9,
+    BLUE_7 = 10,
+    BLUE_8 = 11,
+    BLUE_9 = 12,
+    BLUE_10 = 13,
+    YELLOW = 14,
+    MAGENTA = 15,
+    CYAN = 16,
+    GREY = 17,
+    DARK_GREY = 18,
+    DARK_GREY_2 = 19,
+    DARK_GREY_3 = 20,
+    DARK_GREY_4 = 21,
+    LIGHT_GREY = 22,
+    ORANGE = 23,
+    BROWN = 24,
+    PINK = 25,
+    PURPLE = 26,
+    NO_COLOR = 27,
+    DEFAULT_COLOR = DARK_GREY
+} COLOR;
 
 namespace NXlib
 {
@@ -67857,14 +67893,14 @@ namespace NXlib
 
     window::operator u32() const
     {
-        return _window;
+        return this->_window;
     }
 
 
-    window& window::operator=(const u32 new_window)
+    window& window::operator=(u32 const new_window)
     {
         _window = new_window;
-        return* this;
+        return *this;
     }
 
     void window::make_window(const window_size_t &window_size)
@@ -67916,7 +67952,7 @@ namespace NXlib
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
         if (!reply)
         {
-            lout << ERROR << func(__func__) << line(144) << window_id(_window) << "Unable to get window attributes" << '\n';
+
             return false;
         }
 
@@ -67959,7 +67995,7 @@ namespace NXlib
             }
             else
             {
-                lout << ERROR << func(__func__) << line(183) << window_id(_window) << "No _MOTIF_WM_HINTS property found." << '\n';
+
             }
 
             free(reply);
@@ -67998,7 +68034,7 @@ namespace NXlib
         if (uint8_t const error = xcb_ewmh_get_active_window_reply(ewmh,
             xcb_ewmh_get_active_window(ewmh, 0), &active_window, nullptr); !error)
         {
-            lout << ERROR << func(__func__) << line(222) << "xcb_ewmh_get_active_window_reply failed" << '\n';
+
         }
 
         return _window == active_window;
@@ -68217,7 +68253,7 @@ namespace NXlib
 
         if (_font_gc)
         {
-            _font_gc = create_font_gc(_window, text_color, background_color, _font);
+            create_font_gc(text_color, background_color, _font);
         }
 
         xcb_image_text_8
@@ -68229,6 +68265,23 @@ namespace NXlib
             x,
             y,
             str
+        );
+
+        xcb_flush(conn);
+    }
+
+    void window::create_font_gc(u8 const text_color, u8 const background_color, u32 const font)
+    {
+        _font_gc = xcb_generate_id(conn);
+        u32 const data[3] = {color->get(text_color), color->get(background_color), font};
+
+        xcb_create_gc
+        (
+            conn,
+            _font_gc,
+            _window,
+            GC_FONT_MASK,
+            data
         );
 
         xcb_flush(conn);

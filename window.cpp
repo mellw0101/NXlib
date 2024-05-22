@@ -85,7 +85,6 @@ namespace NXlib
         return this->_window;
     }
 
-
     // Overload the assignment operator for 'unsigned int'
     window& window::operator=(u32 const new_window)
     {
@@ -142,7 +141,7 @@ namespace NXlib
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
         if (!reply)
         {
-            loutEWin << "Unable to get window attributes" << loutEND;
+            // loutEWin << "Unable to get window attributes" << loutEND;
             return false;
         }
 
@@ -181,7 +180,7 @@ namespace NXlib
             }
             else
             {
-                loutEWin << "No _MOTIF_WM_HINTS property found." << loutEND;
+                // loutEWin << "No _MOTIF_WM_HINTS property found." << loutEND;
             }
 
             free(reply);
@@ -220,7 +219,7 @@ namespace NXlib
         if (uint8_t const error = xcb_ewmh_get_active_window_reply(ewmh,
             xcb_ewmh_get_active_window(ewmh, 0), &active_window, nullptr); !error)
         {
-            loutE << "xcb_ewmh_get_active_window_reply failed" << loutEND;
+            // loutE << "xcb_ewmh_get_active_window_reply failed" << loutEND;
         }
 
         return _window == active_window;

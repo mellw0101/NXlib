@@ -12759,7 +12759,8 @@ uint8_t xcb_ewmh_get_wm_cm_owner_reply(xcb_ewmh_connection_t *ewmh,
 # 71 "/home/mellw/CLionProjects/NXlib/globals.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/globals.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/globals.h"
 extern xcb_connection_t* conn;
 extern xcb_screen_t* screen;
 extern xcb_ewmh_connection_t* ewmh;
@@ -12780,6 +12781,9 @@ using i16 = int16_t;
 using i8 = int8_t;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
+
+# 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
+# 95 "/home/mellw/CLionProjects/NXlib/globals.h" 2
 # 66 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 # 1 "/usr/include/c++/14.1.1/string" 1 3
@@ -67502,7 +67506,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 71 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/lout.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/lout.h"
 using namespace std;
 
 
@@ -67517,14 +67522,14 @@ constexpr auto log_BOLD = "\033[1m";
 constexpr auto log_UNDERLINE = "\033[4m";
 constexpr auto log_RESET = "\033[0m";
 
-enum LogLevel
+typedef enum LogLevel
 {
  INFO,
  INFO_PRIORITY,
  WARNING,
  ERROR,
  FUNCTION
-};
+} LogLevel;
 
 typedef struct event_type_obj_t {
  string value;
@@ -67572,10 +67577,8 @@ private:
 
 class Lout
 {
-# 165 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 166 "/home/mellw/CLionProjects/NXlib/lout.h"
 public:
-
- Lout();
 
  Lout& operator<<(LogLevel logLevel);
 
@@ -67600,13 +67603,12 @@ public:
 
  Lout& operator<<(const errno_msg_t &err);
 
-    template<typename T>
-    enable_if_t<is_arithmetic_v<T>, Lout&>
-    operator<<(T value);
-
-    template<typename T>
-    enable_if_t<!is_arithmetic_v<T>, Lout&>
-    operator<<(const T &message);
+ template<typename T>
+ Lout& operator<<(T message)
+ {
+  buffer << message;
+  return *this;
+ }
 
 private:
 
@@ -67619,9 +67621,7 @@ private:
 
  string cur_user{};
 
-
  void logMessage();
-
  static string getLogPrefix(LogLevel level);
 };
 static Lout lout;
@@ -70956,18 +70956,10 @@ using namespace std;
 
 
 
-Lout::Lout() = default;
-
 void LogQueue::push(const LogMessage &message)
 {
     lock_guard<mutex> guard(mutex_);
     queue_.push(message);
-}
-
-Lout& Lout::operator<<(const event_type_obj_t &event_type)
-{
-    buffer << "event_type" << '(' << log_BLUE << event_type.value << log_RESET << ')';
-    return *this;
 }
 
 bool LogQueue::try_pop(LogMessage &message)
@@ -70987,6 +70979,12 @@ bool LogQueue::try_pop(LogMessage &message)
 
 
 
+
+Lout& Lout::operator<<(const event_type_obj_t &event_type)
+{
+    buffer << "event_type" << '(' << log_BLUE << event_type.value << log_RESET << ')';
+    return *this;
+}
 
 Lout& Lout::operator<<(const LogLevel logLevel)
 {
@@ -71053,22 +71051,6 @@ Lout& Lout::operator<<(const errno_msg_t &err)
     return* this;
 }
 
-template<typename T>
-enable_if_t<is_arithmetic_v<T>, Lout&>
-Lout::operator<<(T value)
-{
-    buffer << "(\033[33m" << value << "\033[0m)";
-    return* this;
-}
-
-template<typename T>
-enable_if_t<!is_arithmetic_v<T>, Lout&>
-Lout::operator<<(const T &message)
-{
-    buffer << message;
-    return* this;
-}
-
 void Lout::logMessage()
 {
     lock_guard<mutex> guard(log_mutex);
@@ -71119,7 +71101,7 @@ string Lout::getLogPrefix(const LogLevel level)
         }
     }
 }
-# 261 "/home/mellw/CLionProjects/NXlib/lout.cpp"
+# 243 "/home/mellw/CLionProjects/NXlib/lout.cpp"
 FuncNameWrapper func(const char* name)
 {
     return FuncNameWrapper{name};
@@ -71143,13 +71125,13 @@ window_obj_t window_id(const uint32_t wid)
 errno_msg_t errno_msg(const char* str)
 {
     const string s = string(str) + ": " + strerror(
-# 283 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
+# 265 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
                                                   (*__errno_location ())
-# 283 "/home/mellw/CLionProjects/NXlib/lout.cpp"
+# 265 "/home/mellw/CLionProjects/NXlib/lout.cpp"
                                                        ) + " (errno: " + to_string(
-# 283 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
+# 265 "/home/mellw/CLionProjects/NXlib/lout.cpp" 3 4
                                                                                    (*__errno_location ())
-# 283 "/home/mellw/CLionProjects/NXlib/lout.cpp"
+# 265 "/home/mellw/CLionProjects/NXlib/lout.cpp"
                                                                                         ) + ")";
     return {s};
 }

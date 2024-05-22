@@ -52908,7 +52908,8 @@ uint8_t xcb_ewmh_get_wm_cm_owner_reply(xcb_ewmh_connection_t *ewmh,
 # 71 "/home/mellw/CLionProjects/NXlib/globals.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/globals.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/globals.h"
 extern xcb_connection_t* conn;
 extern xcb_screen_t* screen;
 extern xcb_ewmh_connection_t* ewmh;
@@ -52929,21 +52930,13 @@ using i16 = int16_t;
 using i8 = int8_t;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
-# 66 "/home/mellw/CLionProjects/NXlib/NXlib.h" 2
-
-using namespace std;
-
-namespace NXlib
-{
-    u32 get_input_focus_window();
-    u32 open_font(const char* name);
-    u32 create_font_gc(u32 window, u8 text_color, u8 background_color, u32 font);
-}
-# 67 "/home/mellw/CLionProjects/NXlib/NXlib.cpp" 2
-
 
 # 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
-# 68 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 65 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 1 "/home/mellw/CLionProjects/NXlib/globals.h" 1
+# 66 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+
+
 # 1 "/usr/include/c++/14.1.1/mutex" 1 3
 # 32 "/usr/include/c++/14.1.1/mutex" 3
        
@@ -67526,7 +67519,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 71 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/lout.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/lout.h"
 using namespace std;
 
 
@@ -67541,14 +67535,14 @@ constexpr auto log_BOLD = "\033[1m";
 constexpr auto log_UNDERLINE = "\033[4m";
 constexpr auto log_RESET = "\033[0m";
 
-enum LogLevel
+typedef enum LogLevel
 {
  INFO,
  INFO_PRIORITY,
  WARNING,
  ERROR,
  FUNCTION
-};
+} LogLevel;
 
 typedef struct event_type_obj_t {
  string value;
@@ -67596,10 +67590,8 @@ private:
 
 class Lout
 {
-# 165 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 166 "/home/mellw/CLionProjects/NXlib/lout.h"
 public:
-
- Lout();
 
  Lout& operator<<(LogLevel logLevel);
 
@@ -67624,13 +67616,12 @@ public:
 
  Lout& operator<<(const errno_msg_t &err);
 
-    template<typename T>
-    enable_if_t<is_arithmetic_v<T>, Lout&>
-    operator<<(T value);
-
-    template<typename T>
-    enable_if_t<!is_arithmetic_v<T>, Lout&>
-    operator<<(const T &message);
+ template<typename T>
+ Lout& operator<<(T message)
+ {
+  buffer << message;
+  return *this;
+ }
 
 private:
 
@@ -67643,9 +67634,7 @@ private:
 
  string cur_user{};
 
-
  void logMessage();
-
  static string getLogPrefix(LogLevel level);
 };
 static Lout lout;
@@ -67660,7 +67649,21 @@ line_obj_t line(int _line);
 window_obj_t window_id(uint32_t wid);
 
 errno_msg_t errno_msg(const char* str);
-# 70 "/home/mellw/CLionProjects/NXlib/NXlib.cpp" 2
+# 95 "/home/mellw/CLionProjects/NXlib/globals.h" 2
+# 66 "/home/mellw/CLionProjects/NXlib/NXlib.h" 2
+
+using namespace std;
+
+namespace NXlib
+{
+    u32 get_input_focus_window();
+    u32 open_font(const char* name);
+    u32 create_font_gc(u32 window, u8 text_color, u8 background_color, u32 font);
+}
+# 67 "/home/mellw/CLionProjects/NXlib/NXlib.cpp" 2
+
+
+
 # 1 "/home/mellw/CLionProjects/NXlib/tools.h" 1
 # 74 "/home/mellw/CLionProjects/NXlib/tools.h"
 using namespace std;
@@ -67714,12 +67717,45 @@ namespace NXlib
 # 68 "/home/mellw/CLionProjects/NXlib/color.h"
 using namespace std;
 
-using rgb_color_code = struct
+typedef struct rgb_color_code
 {
     uint8_t r;
     uint8_t g;
     uint8_t b;
-};
+} rgb_color_code;
+
+typedef enum COLOR : u8
+{
+    BLACK = 0,
+    WHITE = 1,
+    RED = 2,
+    GREEN = 3,
+    BLUE = 4,
+    BLUE_2 = 5,
+    BLUE_3 = 6,
+    BLUE_4 = 7,
+    BLUE_5 = 8,
+    BLUE_6 = 9,
+    BLUE_7 = 10,
+    BLUE_8 = 11,
+    BLUE_9 = 12,
+    BLUE_10 = 13,
+    YELLOW = 14,
+    MAGENTA = 15,
+    CYAN = 16,
+    GREY = 17,
+    DARK_GREY = 18,
+    DARK_GREY_2 = 19,
+    DARK_GREY_3 = 20,
+    DARK_GREY_4 = 21,
+    LIGHT_GREY = 22,
+    ORANGE = 23,
+    BROWN = 24,
+    PINK = 25,
+    PURPLE = 26,
+    NO_COLOR = 27,
+    DEFAULT_COLOR = DARK_GREY
+} COLOR;
 
 namespace NXlib
 {

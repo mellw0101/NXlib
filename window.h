@@ -69,7 +69,6 @@
 #include "globals.h"
 
 #include <string>
-#include "lout.h"
 
 using namespace std;
 

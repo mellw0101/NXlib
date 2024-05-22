@@ -12757,7 +12757,8 @@ uint8_t xcb_ewmh_get_wm_cm_owner_reply(xcb_ewmh_connection_t *ewmh,
 # 71 "/home/mellw/CLionProjects/NXlib/globals.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/globals.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/globals.h"
 extern xcb_connection_t* conn;
 extern xcb_screen_t* screen;
 extern xcb_ewmh_connection_t* ewmh;
@@ -12778,10 +12779,12 @@ using i16 = int16_t;
 using i8 = int8_t;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
-# 63 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
 
-# 1 "/home/mellw/CLionProjects/NXlib/tools.h" 1
-# 72 "/home/mellw/CLionProjects/NXlib/tools.h"
+# 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
+# 65 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 1 "/home/mellw/CLionProjects/NXlib/globals.h" 1
+# 66 "/home/mellw/CLionProjects/NXlib/lout.h" 2
+
 # 1 "/usr/include/c++/14.1.1/string" 1 3
 # 36 "/usr/include/c++/14.1.1/string" 3
        
@@ -42761,59 +42764,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
     }
 
 }
-# 73 "/home/mellw/CLionProjects/NXlib/tools.h" 2
-
-
-# 74 "/home/mellw/CLionProjects/NXlib/tools.h"
-using namespace std;
-
-
-namespace NXlib
-{
-    class tools
-    {
-    public:
-        static size_t slen(const char* s);
-        static xcb_atom_t get_atom(const char* name);
-        static string get_cur_user();
-
-        class iAtomC
-        {
-        private:
-            xcb_intern_atom_cookie_t _cookie{};
-
-        public:
-            iAtomC(bool only_if_exists, const char* name);
-            explicit operator xcb_intern_atom_cookie_t() const;
-            explicit operator const xcb_intern_atom_cookie_t&() const;
-
-            explicit operator xcb_intern_atom_cookie_t();
-
-            [[nodiscard]] xcb_intern_atom_cookie_t cookie() const;
-        };
-
-        class iAtomR
-        {
-        private:
-            uint8_t response_type;
-            uint8_t pad0;
-            uint16_t sequence;
-            u32 length;
-            xcb_atom_t atom;
-
-        public:
-            explicit iAtomR(const iAtomC &cookie);
-            iAtomR(bool only_if_exists, const char* name);
-            explicit operator xcb_atom_t() const;
-            explicit operator xcb_atom_t &();
-            [[nodiscard]] bool is_not_valid() const;
-            [[nodiscard]] u32 Atom() const;
-        };
-    };
-}
-# 65 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
-# 1 "/home/mellw/CLionProjects/NXlib/lout.h" 1
-# 68 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 68 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 # 1 "/usr/include/c++/14.1.1/mutex" 1 3
 # 32 "/usr/include/c++/14.1.1/mutex" 3
        
@@ -42840,8 +42791,6 @@ namespace NXlib
 # 32 "/usr/include/c++/14.1.1/cstdint" 3
        
 # 33 "/usr/include/c++/14.1.1/cstdint" 3
-# 48 "/usr/include/c++/14.1.1/cstdint" 3
-
 # 48 "/usr/include/c++/14.1.1/cstdint" 3
 namespace std
 {
@@ -67556,7 +67505,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 71 "/home/mellw/CLionProjects/NXlib/lout.h" 2
 
 
-# 72 "/home/mellw/CLionProjects/NXlib/lout.h"
+
+# 73 "/home/mellw/CLionProjects/NXlib/lout.h"
 using namespace std;
 
 
@@ -67571,14 +67521,14 @@ constexpr auto log_BOLD = "\033[1m";
 constexpr auto log_UNDERLINE = "\033[4m";
 constexpr auto log_RESET = "\033[0m";
 
-enum LogLevel
+typedef enum LogLevel
 {
  INFO,
  INFO_PRIORITY,
  WARNING,
  ERROR,
  FUNCTION
-};
+} LogLevel;
 
 typedef struct event_type_obj_t {
  string value;
@@ -67626,10 +67576,8 @@ private:
 
 class Lout
 {
-# 165 "/home/mellw/CLionProjects/NXlib/lout.h"
+# 166 "/home/mellw/CLionProjects/NXlib/lout.h"
 public:
-
- Lout();
 
  Lout& operator<<(LogLevel logLevel);
 
@@ -67654,13 +67602,12 @@ public:
 
  Lout& operator<<(const errno_msg_t &err);
 
-    template<typename T>
-    enable_if_t<is_arithmetic_v<T>, Lout&>
-    operator<<(T value);
-
-    template<typename T>
-    enable_if_t<!is_arithmetic_v<T>, Lout&>
-    operator<<(const T &message);
+ template<typename T>
+ Lout& operator<<(T message)
+ {
+  buffer << message;
+  return *this;
+ }
 
 private:
 
@@ -67673,9 +67620,7 @@ private:
 
  string cur_user{};
 
-
  void logMessage();
-
  static string getLogPrefix(LogLevel level);
 };
 static Lout lout;
@@ -67690,7 +67635,59 @@ line_obj_t line(int _line);
 window_obj_t window_id(uint32_t wid);
 
 errno_msg_t errno_msg(const char* str);
-# 66 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
+# 95 "/home/mellw/CLionProjects/NXlib/globals.h" 2
+# 63 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
+
+# 1 "/home/mellw/CLionProjects/NXlib/tools.h" 1
+# 74 "/home/mellw/CLionProjects/NXlib/tools.h"
+using namespace std;
+
+
+namespace NXlib
+{
+    class tools
+    {
+    public:
+        static size_t slen(const char* s);
+        static xcb_atom_t get_atom(const char* name);
+        static string get_cur_user();
+
+        class iAtomC
+        {
+        private:
+            xcb_intern_atom_cookie_t _cookie{};
+
+        public:
+            iAtomC(bool only_if_exists, const char* name);
+            explicit operator xcb_intern_atom_cookie_t() const;
+            explicit operator const xcb_intern_atom_cookie_t&() const;
+
+            explicit operator xcb_intern_atom_cookie_t();
+
+            [[nodiscard]] xcb_intern_atom_cookie_t cookie() const;
+        };
+
+        class iAtomR
+        {
+        private:
+            uint8_t response_type;
+            uint8_t pad0;
+            uint16_t sequence;
+            u32 length;
+            xcb_atom_t atom;
+
+        public:
+            explicit iAtomR(const iAtomC &cookie);
+            iAtomR(bool only_if_exists, const char* name);
+            explicit operator xcb_atom_t() const;
+            explicit operator xcb_atom_t &();
+            [[nodiscard]] bool is_not_valid() const;
+            [[nodiscard]] u32 Atom() const;
+        };
+    };
+}
+# 65 "/home/mellw/CLionProjects/NXlib/tools.cpp" 2
+
 
 namespace NXlib
 {

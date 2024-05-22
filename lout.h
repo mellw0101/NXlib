@@ -84,14 +84,14 @@ constexpr auto log_BOLD      = "\033[1m";
 constexpr auto log_UNDERLINE = "\033[4m";
 constexpr auto log_RESET     = "\033[0m";
 
-enum LogLevel
+typedef enum LogLevel
 {
 	INFO,
 	INFO_PRIORITY,
 	WARNING,
 	ERROR,
 	FUNCTION
-};
+} LogLevel;
 
 typedef struct event_type_obj_t {
 	string value;
@@ -165,8 +165,6 @@ class Lout
 
 public:
 /* Methods 	 */
-	Lout() {};
-
 	Lout& operator<<(LogLevel logLevel);
 
 	Lout& operator<<(const event_type_obj_t &event_type);
@@ -190,13 +188,12 @@ public:
 
 	Lout& operator<<(const errno_msg_t &err);
 
-     template<typename T>
-     enable_if_t<is_arithmetic_v<T>, Lout&>
-     operator<<(T value);
-
-     template<typename T>
-     enable_if_t<!is_arithmetic_v<T>, Lout&>
-     operator<<(const T &message);
+	template<typename T>
+	Lout& operator<<(T message)
+	{
+		buffer << message;
+		return *this;
+	}
 
 private:
 /* Variabels */

@@ -179,22 +179,6 @@ Lout& Lout::operator<<(const errno_msg_t &err)
     return* this;
 }
 
-template<typename T>
-enable_if_t<is_arithmetic_v<T>, Lout&>
-Lout::operator<<(T value)
-{
-    buffer << loutNUM(value);
-    return* this;
-}
-
-template<typename T>
-enable_if_t<!is_arithmetic_v<T>, Lout&>
-Lout::operator<<(const T &message)
-{
-    buffer << message;
-    return* this;
-}
-
 void Lout::logMessage()
 {
     lock_guard<mutex> guard(log_mutex);
