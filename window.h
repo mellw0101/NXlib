@@ -98,9 +98,10 @@ namespace NXlib
     class window
     {
     public:
-        explicit             operator u32() const;
+        window() = default;
+        
+        operator             u32() const;
         window&              operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
-        bool                 operator==(uint32_t id) const;
 
         void                 make_window(const window_size_t &window_size);
         void                 map() const;

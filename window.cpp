@@ -82,19 +82,15 @@ namespace NXlib
 
     window::operator u32() const
     {
-        return _window;
+        return this->_window;
     }
+
 
     // Overload the assignment operator for 'unsigned int'
-    window& window::operator=(const u32 new_window)
+    window& window::operator=(u32 const new_window)
     {
         _window = new_window;
-        return* this;
-    }
-
-    bool window::operator==(uint32_t const id) const
-    {
-        return _window == id;
+        return *this;
     }
 
     void window::make_window(const window_size_t &window_size)
