@@ -144,6 +144,7 @@ namespace NXlib
         u16 _height  = 0;
 
         [[nodiscard]] u32 get_window_u32() const;
+        void              create_font_gc(u8 text_color, u8 background_color, u32 font);
     };
 }
 

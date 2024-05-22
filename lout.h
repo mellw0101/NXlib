@@ -68,6 +68,7 @@
 #include <mutex>
 #include <queue>
 #include <sstream>
+#include <type_traits>
 
 using namespace std;
 
@@ -164,7 +165,7 @@ class Lout
 
 public:
 /* Methods 	 */
-	Lout();
+	Lout() {};
 
 	Lout& operator<<(LogLevel logLevel);
 
@@ -189,13 +190,13 @@ public:
 
 	Lout& operator<<(const errno_msg_t &err);
 
-    template<typename T>
-    enable_if_t<is_arithmetic_v<T>, Lout&>
-    operator<<(T value);
+     template<typename T>
+     enable_if_t<is_arithmetic_v<T>, Lout&>
+     operator<<(T value);
 
-    template<typename T>
-    enable_if_t<!is_arithmetic_v<T>, Lout&>
-    operator<<(const T &message);
+     template<typename T>
+     enable_if_t<!is_arithmetic_v<T>, Lout&>
+     operator<<(const T &message);
 
 private:
 /* Variabels */
@@ -208,9 +209,7 @@ private:
 
 	string cur_user{};
 
-/* Methods 	 */
 	void logMessage();
-
 	static string getLogPrefix(LogLevel level);
 };
 static Lout lout;

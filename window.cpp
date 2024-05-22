@@ -63,7 +63,7 @@
 #include "globals.h"
 
 #include "window.h"
-// #include "lout.h"
+#include "lout.h"
 #include "tools.h"
 #include "color.h"
 #include "NXlib.h"
@@ -446,7 +446,7 @@ namespace NXlib
 
         if (_font_gc)
         {
-            _font_gc = create_font_gc(_window, text_color, background_color, _font);
+            create_font_gc(text_color, background_color, _font);
         }
 
         xcb_image_text_8
@@ -462,27 +462,21 @@ namespace NXlib
 
         xcb_flush(conn);
     }
+
+    void window::create_font_gc(u8 const text_color, u8 const background_color, u32 const font)
+    {
+        _font_gc = xcb_generate_id(conn);
+        u32 const data[3] = {color->get(text_color), color->get(background_color), font};
+
+        xcb_create_gc
+        (
+            conn,
+            _font_gc,
+            _window,
+            GC_FONT_MASK,
+            data
+        );
+
+        xcb_flush(conn);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -97,6 +97,7 @@
 #        DESTINATION include/NXlib
 #)
 
+#[[
 cmake_minimum_required(VERSION 3.28)
 project(NXlib)
 
@@ -126,18 +127,6 @@ set(NXLIB_HEADERS
         NXlib.h
 )
 
-# Create the static library
-add_library(NXlib_static STATIC ${NXLIB_SOURCES} ${NXLIB_HEADERS}
-        NXlib.cpp
-        NXlib.h
-)
-
-# Create the shared library
-add_library(NXlib_shared SHARED ${NXLIB_SOURCES} ${NXLIB_HEADERS}
-        NXlib.cpp
-        NXlib.h
-)
-
 # Specify the include directories for the libraries
 target_include_directories(NXlib_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(NXlib_shared PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
@@ -163,3 +152,53 @@ install(TARGETS NXlib_shared
 install(FILES ${NXLIB_HEADERS}
         DESTINATION include/NXlib
 )
+]]
+
+cmake_minimum_required(VERSION 3.28)
+project(NXlib)
+
+set(CMAKE_CXX_STANDARD 20)
+
+# Define the sources and headers for the library
+set(NXLIB_SOURCES
+        window.cpp
+        lout.cpp
+        TIME.cpp
+        prof.cpp
+        tools.cpp
+        color.cpp
+        NXlib.cpp
+)
+
+set(NXLIB_HEADERS
+        window.h
+        lout.h
+        TIME.h
+        prof.h
+        tools.h
+        globals.h
+        color.h
+        NXlib.h
+)
+
+# Create the static library
+add_library(NXlib_static STATIC ${NXLIB_SOURCES} ${NXLIB_HEADERS})
+
+# Create the shared library
+add_library(NXlib_shared SHARED ${NXLIB_SOURCES} ${NXLIB_HEADERS})
+
+# Specify the include directories for the libraries
+target_include_directories(NXlib_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(NXlib_shared PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Set the properties for the shared library
+set_target_properties(NXlib_shared PROPERTIES OUTPUT_NAME "NXlib")
+
+# Set the properties for the static library
+set_target_properties(NXlib_static PROPERTIES OUTPUT_NAME "NXlib")
+
+# Install the static library
+install(TARGETS NXlib_static
+        ARCHIVE DESTINATION lib
+)
+

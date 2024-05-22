@@ -1,11 +1,1 @@
 /usr/lib/libNXlib.a
-/usr/lib/libNXlib.so
-/usr/include/NXlib/window.h
-/usr/include/NXlib/lout.h
-/usr/include/NXlib/TIME.h
-/usr/include/NXlib/prof.h
-/usr/include/NXlib/tools.h
-/usr/include/NXlib/globals.h
-/usr/include/NXlib/color.h
-/usr/include/NXlib/NXlib.cpp
-/usr/include/NXlib/NXlib.h
