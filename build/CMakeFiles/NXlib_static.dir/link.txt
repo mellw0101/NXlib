@@ -1,2 +1,2 @@
-/usr/bin/ar qc libNXlib.a CMakeFiles/NXlib_static.dir/window.cpp.o CMakeFiles/NXlib_static.dir/lout.cpp.o CMakeFiles/NXlib_static.dir/TIME.cpp.o CMakeFiles/NXlib_static.dir/prof.cpp.o CMakeFiles/NXlib_static.dir/tools.cpp.o CMakeFiles/NXlib_static.dir/color.cpp.o CMakeFiles/NXlib_static.dir/NXlib.cpp.o
+/usr/bin/ar qc libNXlib.a CMakeFiles/NXlib_static.dir/window.cpp.o CMakeFiles/NXlib_static.dir/lout.cpp.o CMakeFiles/NXlib_static.dir/TIME.cpp.o CMakeFiles/NXlib_static.dir/prof.cpp.o CMakeFiles/NXlib_static.dir/tools.cpp.o CMakeFiles/NXlib_static.dir/color.cpp.o CMakeFiles/NXlib_static.dir/NXlib.cpp.o CMakeFiles/NXlib_static.dir/Desktop.cpp.o
 /usr/bin/ranlib libNXlib.a

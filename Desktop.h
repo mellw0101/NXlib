@@ -17,7 +17,7 @@
     (the "Software") was created by Melwin Svensson, and that the modifications were made
     by a different author. The notice must explicitly state that Melwin Svensson created
     the precursor to the current work, and that (the "Software") has been modified since its
-    original creation. Additionally, a link to the original source code (https://github.com/mellw0101)
+    original creation. Additionally, a link to the original source code (https://github.com/mellw0101/mm_wm)
     must be included in a format similar to the following:
 
     "Melwin Svensson CREATED THE PRECURSOR TO 'the current file' AND IS THE SOLE OWNER AND AUTHOR OF THE PRECURSOR WORK."
@@ -56,42 +56,41 @@
 */
 
 //
-// Created by mellw on 5/21/24.
+// Created by mellw on 5/23/24.
 //
 
 
 
 
-#ifndef GLOBALS_H
-#define GLOBALS_H
+#ifndef DESKTOP_H
+#define DESKTOP_H
 
 
+#include <iostream>
+#include "globals.h"
+
+#include <vector>
 #include <xcb/xcb.h>
-#include <xcb/xcb_ewmh.h>
-#include <xcb/xcb_keysyms.h>
-#include <cstdint>
 
-extern xcb_connection_t*      conn;
-extern xcb_screen_t*          screen;
-extern xcb_ewmh_connection_t* ewmh;
+using namespace std;
 
-using u64 = uint64_t;
-using u32 = uint32_t;
-using u16 = uint16_t;
-using u8  = uint8_t;
+class client;
 
-static constexpr u64 u64MAX = 0xFFFFFFFFFFFFFFFF;
-static constexpr u32 u32MAX = 0xFFFFFFFF;
-static constexpr u16 u16MAX = 0xFFFF;
-static constexpr u8  u8MAX  = 0xFF;
+namespace NXlib
+{
 
-using i64 = int64_t;
-using i32 = int32_t;
-using i16 = int16_t;
-using i8  = int8_t;
+    class Desktop
+    {
+    public:
+        vector<client*> current_clients;
+        client*         focused_client = nullptr;
+        u16             desktop;
+        i16 const       x = 0;
+        i16 const       y = 0;
+        u16             width;
+        u16             height;
+    };
+} // NXlib
 
-static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
 
-static auto constexpr DEFAULT_FONT = "7x14";
-
-#endif //GLOBALS_H
+#endif //DESKTOP_H

@@ -96,8 +96,63 @@ typedef struct motif_wm_hints_t
     u32 status;
 } motif_wm_hints_t;
 
+
 namespace NXlib
 {
+    class KEY_CODES { public: enum
+    {
+        NXlib_KEY_A          = 0x61,
+        NXlib_KEY_B          = 0x62,
+        NXlib_KEY_C          = 0x63,
+        NXlib_KEY_D          = 0x64,
+        NXlib_KEY_E          = 0x65,
+        NXlib_KEY_F          = 0x66,
+        NXlib_KEY_G          = 0x67,
+        NXlib_KEY_H          = 0x68,
+        NXlib_KEY_I          = 0x69,
+        NXlib_KEY_J          = 0x6a,
+        NXlib_KEY_K          = 0x6b,
+        NXlib_KEY_L          = 0x6c,
+        NXlib_KEY_M          = 0x6d,
+        NXlib_KEY_N          = 0x6e,
+        NXlib_KEY_O          = 0x6f,
+        NXlib_KEY_P          = 0x70,
+        NXlib_KEY_Q          = 0x71,
+        NXlib_KEY_R          = 0x72,
+        NXlib_KEY_S          = 0x73,
+        NXlib_KEY_T          = 0x74,
+        NXlib_KEY_U          = 0x75,
+        NXlib_KEY_V          = 0x76,
+        NXlib_KEY_W          = 0x77,
+        NXlib_KEY_X          = 0x78,
+        NXlib_KEY_Y          = 0x79,
+        NXlib_KEY_Z          = 0x7a,
+        NXlib_KEY_SPACE_BAR  = 0x20,
+        NXlib_KEY_ENTER      = 0xff0d,
+        NXlib_KEY_DELETE     = 0xff08,
+        NXlib_KEY_F11        = 0xffc8,
+        NXlib_KEY_F12        = 0xffc9,
+        NXlib_KEY_N_1        = 0x31,
+        NXlib_KEY_N_2        = 0x32,
+        NXlib_KEY_N_3        = 0x33,
+        NXlib_KEY_N_4        = 0x34,
+        NXlib_KEY_N_5        = 0x35,
+        NXlib_KEY_L_ARROW    = 0xff51,
+        NXlib_KEY_U_ARROW    = 0xff52,
+        NXlib_KEY_R_ARROW    = 0xff53,
+        NXlib_KEY_D_ARROW    = 0xff54,
+        NXlib_KEY_TAB        = 0xff09,
+        NXlib_KEY_SEMI       = 0x3b,
+        NXlib_KEY_QUOTE      = 0x22,
+        NXlib_KEY_COMMA      = 0x2c,
+        NXlib_KEY_DOT        = 0x2e,
+        NXlib_KEY_SLASH      = 0x2f,
+        NXlib_KEY_ESC        = 0xff1b,
+        NXlib_KEY_SUPER_L    = 0xffeb,
+        NXlib_KEY_MINUS      = 0x2d,
+        NXlib_KEY_UNDERSCORE = 0x5f,
+    };};
+
     class window
     {
     public:
@@ -143,6 +198,7 @@ namespace NXlib
         [[nodiscard]] u32                      check_event_mask_sum() const;
         [[nodiscard]] vector<xcb_event_mask_t> check_event_mask_codes() const;
         [[nodiscard]] bool                     is_mask_active(u32 event_mask) const;
+        void                                   grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const;
 
     private:
         u32 _window  = 0;

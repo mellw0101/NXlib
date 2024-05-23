@@ -187,6 +187,33 @@ NXlib_shared/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/build
 .PHONY : NXlib_shared/fast
 
+Desktop.o: Desktop.cpp.o
+.PHONY : Desktop.o
+
+# target to build an object file
+Desktop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Desktop.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Desktop.cpp.o
+.PHONY : Desktop.cpp.o
+
+Desktop.i: Desktop.cpp.i
+.PHONY : Desktop.i
+
+# target to preprocess a source file
+Desktop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Desktop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Desktop.cpp.i
+.PHONY : Desktop.cpp.i
+
+Desktop.s: Desktop.cpp.s
+.PHONY : Desktop.s
+
+# target to generate assembly for a file
+Desktop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Desktop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Desktop.cpp.s
+.PHONY : Desktop.cpp.s
+
 NXlib.o: NXlib.cpp.o
 .PHONY : NXlib.o
 
@@ -390,6 +417,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... NXlib_shared"
 	@echo "... NXlib_static"
+	@echo "... Desktop.o"
+	@echo "... Desktop.i"
+	@echo "... Desktop.s"
 	@echo "... NXlib.o"
 	@echo "... NXlib.i"
 	@echo "... NXlib.s"

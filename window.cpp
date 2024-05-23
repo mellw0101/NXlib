@@ -93,18 +93,9 @@ namespace NXlib
         return *this;
     }
 
-    void window::create_window
-    (
-        u32 const   parent,
-        i16 const   x,
-        i16 const   y,
-        u16 const   width,
-        u16 const   height,
-        u8  const   color,
-        u32         event_mask,
-        i32         flags,
-        const void* border_data
-    )
+    void window::create_window(u32 const parent, i16 const x, i16 const y, u16 const width,
+        u16 const height, u8 const color, u32 event_mask, i32 flags, const void* border_data)
+
     {
         _parent = parent;
         _x      = x;
@@ -114,9 +105,9 @@ namespace NXlib
 
         make_window();
         set_backround_color(color);
-        /*if (__flags & DEFAULT_KEYS   ) grab_default_keys();
-        if (__flags & KEYS_FOR_TYPING) grab_keys_for_typing();
-        if (__flags & FOCUS_INPUT    ) focus_input();
+
+        /*if (flags & KEYS_FOR_TYPING) grab_keys_for_typing();*/
+        /*if (__flags & FOCUS_INPUT    ) focus_input();
         if (__flags & MAP)
         {
             map();
@@ -604,5 +595,42 @@ namespace NXlib
         }
 
         return false;
+    }
+
+    void window::grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const
+    {
+        xcb_key_symbols_t* keysyms = xcb_key_symbols_alloc(conn);
+        if (!keysyms)
+        {
+            loutE << "keysyms could not get initialized" << loutEND;
+            return;
+        }
+
+        for (auto const & [key, modier] : bindings)
+        {
+            if (xcb_keycode_t* keycodes = xcb_key_symbols_get_keycode(keysyms, key))
+            {
+                for (auto const* kc = keycodes; * kc; kc++)
+                {
+                    xcb_grab_key
+                    (
+                        conn,
+                        0,
+                        _window,
+                        modier,
+                        *kc,
+                        XCB_GRAB_MODE_ASYNC,
+                        XCB_GRAB_MODE_ASYNC
+                    );
+
+                    xcb_flush(conn);
+                }
+
+                free(keycodes);
+            }
+        }
+
+        xcb_key_symbols_free(keysyms);
+        xcb_flush(conn);
     }
 }

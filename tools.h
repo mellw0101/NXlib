@@ -64,8 +64,6 @@
 #define TOOLS_H
 
 
-
-
 #include "globals.h"
 
 #include <xcb/xcb.h>
@@ -85,28 +83,20 @@ namespace NXlib
 
         class iAtomC
         {
-        private:
-            xcb_intern_atom_cookie_t _cookie{};
-
         public:
             iAtomC(bool only_if_exists, const char* name);
-            explicit operator xcb_intern_atom_cookie_t() const;
-            explicit operator const xcb_intern_atom_cookie_t&() const;
 
-            explicit operator xcb_intern_atom_cookie_t();
-
+            explicit                               operator xcb_intern_atom_cookie_t() const;
+            explicit                               operator const xcb_intern_atom_cookie_t&() const;
+            explicit                               operator xcb_intern_atom_cookie_t();
             [[nodiscard]] xcb_intern_atom_cookie_t cookie() const;
+
+        private:
+            xcb_intern_atom_cookie_t _cookie{};
         };
 
         class iAtomR
         {
-        private:
-            uint8_t    response_type;
-            uint8_t    pad0;
-            uint16_t   sequence;
-            u32        length;
-            xcb_atom_t atom;
-
         public:
             explicit iAtomR(const iAtomC &cookie);
             iAtomR(bool only_if_exists, const char* name);
@@ -114,6 +104,12 @@ namespace NXlib
             explicit operator xcb_atom_t &();
             [[nodiscard]] bool is_not_valid() const;
             [[nodiscard]] u32 Atom() const;
+        private:
+            uint8_t    response_type;
+            uint8_t    pad0;
+            uint16_t   sequence;
+            u32        length;
+            xcb_atom_t atom;
         };
     };
 }

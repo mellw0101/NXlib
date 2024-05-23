@@ -54,6 +54,8 @@ set(NXLIB_SOURCES
         tools.cpp
         color.cpp
         NXlib.cpp
+        Desktop.cpp
+        Desktop.h
 )
 
 set(NXLIB_HEADERS
@@ -65,13 +67,17 @@ set(NXLIB_HEADERS
         globals.h
         color.h
         NXlib.h
+        Desktop.cpp
+        Desktop.h
 )
 
 # Create the static library
-add_library(NXlib_static STATIC ${NXLIB_SOURCES} ${NXLIB_HEADERS})
+add_library(NXlib_static STATIC ${NXLIB_SOURCES} ${NXLIB_HEADERS}
+        Desktop.h)
 
 # Create the shared library
-add_library(NXlib_shared SHARED ${NXLIB_SOURCES} ${NXLIB_HEADERS})
+add_library(NXlib_shared SHARED ${NXLIB_SOURCES} ${NXLIB_HEADERS}
+        Desktop.h)
 
 # Specify the include directories for the libraries
 target_include_directories(NXlib_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

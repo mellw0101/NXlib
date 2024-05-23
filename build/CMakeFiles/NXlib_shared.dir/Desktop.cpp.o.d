@@ -1,6 +1,7 @@
-CMakeFiles/NXlib_shared.dir/NXlib.cpp.o: \
- /home/mellw/CLionProjects/NXlib/NXlib.cpp /usr/include/stdc-predef.h \
- /home/mellw/CLionProjects/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream \
+CMakeFiles/NXlib_shared.dir/Desktop.cpp.o: \
+ /home/mellw/CLionProjects/NXlib/Desktop.cpp /usr/include/stdc-predef.h \
+ /home/mellw/CLionProjects/NXlib/Desktop.h \
+ /usr/include/c++/14.1.1/iostream \
  /usr/include/c++/14.1.1/bits/requires_hosted.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -151,22 +152,8 @@ CMakeFiles/NXlib_shared.dir/NXlib.cpp.o: \
  /usr/include/bits/uio-ext.h /usr/include/xcb/xproto.h \
  /usr/include/xcb/xcb.h /usr/include/xcb/xcb_ewmh.h \
  /usr/include/c++/14.1.1/stdlib.h /usr/include/xcb/xcb_keysyms.h \
- /usr/include/c++/14.1.1/cstdint /home/mellw/CLionProjects/NXlib/lout.h \
- /usr/include/c++/14.1.1/mutex /usr/include/c++/14.1.1/bits/chrono.h \
- /usr/include/c++/14.1.1/ratio /usr/include/c++/14.1.1/limits \
- /usr/include/c++/14.1.1/ctime \
- /usr/include/c++/14.1.1/bits/parse_numbers.h \
- /usr/include/c++/14.1.1/bits/std_mutex.h \
- /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
- /usr/include/c++/14.1.1/deque \
+ /usr/include/c++/14.1.1/cstdint /usr/include/c++/14.1.1/vector \
  /usr/include/c++/14.1.1/bits/stl_uninitialized.h \
- /usr/include/c++/14.1.1/bits/stl_deque.h \
- /usr/include/c++/14.1.1/bits/deque.tcc /usr/include/c++/14.1.1/vector \
  /usr/include/c++/14.1.1/bits/stl_vector.h \
  /usr/include/c++/14.1.1/bits/stl_bvector.h \
- /usr/include/c++/14.1.1/bits/vector.tcc \
- /usr/include/c++/14.1.1/bits/stl_heap.h \
- /usr/include/c++/14.1.1/bits/stl_queue.h /usr/include/c++/14.1.1/sstream \
- /usr/include/c++/14.1.1/bits/sstream.tcc \
- /home/mellw/CLionProjects/NXlib/tools.h \
- /home/mellw/CLionProjects/NXlib/color.h
+ /usr/include/c++/14.1.1/bits/vector.tcc

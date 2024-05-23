@@ -45,8 +45,8 @@ CMakeFiles/NXlib_shared.dir/lout.cpp.o: \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/c++/14.1.1/bits/std_abs.h /usr/include/c++/14.1.1/cstdint \
- /usr/include/c++/14.1.1/string \
+ /usr/include/c++/14.1.1/bits/std_abs.h /usr/include/xcb/xcb_keysyms.h \
+ /usr/include/c++/14.1.1/cstdint /usr/include/c++/14.1.1/string \
  /usr/include/c++/14.1.1/bits/requires_hosted.h \
  /usr/include/c++/14.1.1/bits/stringfwd.h \
  /usr/include/c++/14.1.1/bits/memoryfwd.h \
