@@ -85,8 +85,6 @@ namespace NXlib
         return _window;
     }
 
-    // Overload the assignment operator for 'unsigned int'
-
     window& window::operator=(u32 const new_window)
     {
         _window = new_window;
@@ -94,8 +92,7 @@ namespace NXlib
     }
 
     void window::create_window(u32 const parent, i16 const x, i16 const y, u16 const width,
-        u16 const height, u8 const color, u32 event_mask, i32 flags, const void* border_data)
-
+        u16 const height, u8 const color, u32 const event_mask, i32 const flags, const void* border_data)
     {
         _parent = parent;
         _x      = x;
@@ -106,6 +103,16 @@ namespace NXlib
         make_window();
         set_backround_color(color);
 
+        if (flags & MAP_WINDOW)
+        {
+            map();
+            raise();
+        }
+
+        if (event_mask > 0)
+        {
+            apply_event_mask(event_mask);
+        }
         /*if (flags & KEYS_FOR_TYPING) grab_keys_for_typing();*/
         /*if (__flags & FOCUS_INPUT    ) focus_input();
         if (__flags & MAP)
@@ -132,37 +139,6 @@ namespace NXlib
             raise();
         }*/
     }
-
-    /*void window::make_window(const window_size_t &window_size)
-    {
-        _window = xcb_generate_id(conn);
-        if (_window == u32MAX) return;
-
-        xcb_create_window
-        (
-            conn,
-            0L,
-            _window,
-            window_size.parent,
-            window_size.x,
-            window_size.y,
-            window_size.width,
-            window_size.height,
-            0,
-            XCB_WINDOW_CLASS_INPUT_OUTPUT,
-            0L,
-            0,
-            nullptr
-        );
-
-        _parent = window_size.parent;
-        _x      = window_size.x;
-        _y      = window_size.y;
-        _width  = window_size.width;
-        _height = window_size.height;
-
-        xcb_flush(conn);
-    }*/
 
     void window::map() const
     {
@@ -423,7 +399,7 @@ namespace NXlib
     void window::set_backround_color(u8 const input_color)
     {
         _color = input_color;
-        change_back_pixel(Color::get_color(input_color));
+        change_back_pixel(get_color(input_color));
     }
 
     void window::change_background_color(u8 const input_color)
@@ -482,8 +458,32 @@ namespace NXlib
         return false;
     }
 
-    void window::draw_text_8(const char* str, u8 const text_color, u8 const background_color, const char* font_name, i16 const x, i16 const y)
+    void window::draw_text_8(char const* str, i16 x, i16 y, u8 text_color, u8 background_color, const char *font_name)
     {
+        if (_color == u8MAX)
+        {
+            loutE << "window has no color, use window.set_background_color(NXlib::'the color you want')" << loutEND;
+            return;
+        }
+
+        if (background_color == u8MAX)
+        {
+            background_color = _color;
+        }
+
+        if (text_color == u8MAX)
+        {
+            if (background_color == WHITE)
+            {
+                text_color = BLACK;
+            }
+            else
+            {
+                text_color = WHITE;
+            }
+        }
+
+
         if (!_font)
         {
             _font = open_font(font_name);
@@ -511,7 +511,7 @@ namespace NXlib
     void window::create_font_gc(u8 const text_color, u8 const background_color, u32 const font)
     {
         _font_gc = xcb_generate_id(conn);
-        u32 const data[3] = {Color::get_color(text_color), Color::get_color(background_color), font};
+        u32 const data[3] = {get_color(text_color), get_color(background_color), font};
 
         xcb_create_gc
         (
@@ -555,10 +555,10 @@ namespace NXlib
 
     u32 window::check_event_mask_sum() const
     {
-        xcb_get_window_attributes_cookie_t cookie = xcb_get_window_attributes(conn, _window);
+        xcb_get_window_attributes_cookie_t const cookie = xcb_get_window_attributes(conn, _window);
         xcb_get_window_attributes_reply_t *reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
 
-        uint32_t mask = (reply == nullptr) ? 0 : reply->all_event_masks;
+        u32 const mask = (reply == nullptr) ? 0 : reply->all_event_masks;
         if (!mask)
         {
             loutE << "Error retriving window attributes" << loutEND;
@@ -633,4 +633,84 @@ namespace NXlib
         xcb_key_symbols_free(keysyms);
         xcb_flush(conn);
     }
+
+    void window::grab_button(initializer_list<pair<u8, u16>> bindings, bool const owner_events) const
+    {
+        for (auto const & [button, modifiers] : bindings)
+        {
+            xcb_grab_button
+            (
+                conn,
+                owner_events,
+                _window,
+                XCB_EVENT_MASK_BUTTON_PRESS,
+                XCB_GRAB_MODE_ASYNC,
+                XCB_GRAB_MODE_ASYNC,
+                XCB_NONE,
+                XCB_NONE,
+                button,
+                modifiers
+            );
+
+            xcb_flush(conn);
+        }
+    }
+
+    void window::update_geo_from_req()
+    {
+        xcb_get_geometry_cookie_t const cookie = xcb_get_geometry_unchecked(conn, _window);
+        xcb_get_geometry_reply_t* reply = xcb_get_geometry_reply(conn, cookie, nullptr);
+        if (!reply)
+        {
+            loutEWin << "('xcb_get_geometry_reply') returned a nullptr" << loutEND;
+            return;
+        }
+
+        _x      = reply->x;
+        _y      = reply->y;
+        _width  = reply->width;
+        _height = reply->height;
+
+        free(reply);
+    }
+
+    void window::update_geo_from_input(i16 const x, i16 const y, u16 const width, u16 const height)
+    {
+        _x      = x;
+        _y      = y;
+        _width  = width;
+        _height = height;
+    }
+
+    u32 window::get_parent() const
+    {
+        return _parent;
+    }
+
+    u32 window::get_x() const
+    {
+        return _x;
+    };
+
+    u32 window::get_y() const
+    {
+        return _y;
+    }
+
+    u32 window::get_width() const
+    {
+        return _width;
+    }
+
+    u32 window::get_height() const
+    {
+        return _height;
+    }
+
+    void window::destroy() const
+    {
+        xcb_destroy_window(conn, _window);
+        xcb_flush(conn);
+    }
+
 }

@@ -69,7 +69,7 @@
 #include "globals.h"
 
 #include <string>
-#include "color.h"
+#include "NXlib.h"
 
 using namespace std;
 
@@ -99,59 +99,13 @@ typedef struct motif_wm_hints_t
 
 namespace NXlib
 {
-    class KEY_CODES { public: enum
+    enum
     {
-        NXlib_KEY_A          = 0x61,
-        NXlib_KEY_B          = 0x62,
-        NXlib_KEY_C          = 0x63,
-        NXlib_KEY_D          = 0x64,
-        NXlib_KEY_E          = 0x65,
-        NXlib_KEY_F          = 0x66,
-        NXlib_KEY_G          = 0x67,
-        NXlib_KEY_H          = 0x68,
-        NXlib_KEY_I          = 0x69,
-        NXlib_KEY_J          = 0x6a,
-        NXlib_KEY_K          = 0x6b,
-        NXlib_KEY_L          = 0x6c,
-        NXlib_KEY_M          = 0x6d,
-        NXlib_KEY_N          = 0x6e,
-        NXlib_KEY_O          = 0x6f,
-        NXlib_KEY_P          = 0x70,
-        NXlib_KEY_Q          = 0x71,
-        NXlib_KEY_R          = 0x72,
-        NXlib_KEY_S          = 0x73,
-        NXlib_KEY_T          = 0x74,
-        NXlib_KEY_U          = 0x75,
-        NXlib_KEY_V          = 0x76,
-        NXlib_KEY_W          = 0x77,
-        NXlib_KEY_X          = 0x78,
-        NXlib_KEY_Y          = 0x79,
-        NXlib_KEY_Z          = 0x7a,
-        NXlib_KEY_SPACE_BAR  = 0x20,
-        NXlib_KEY_ENTER      = 0xff0d,
-        NXlib_KEY_DELETE     = 0xff08,
-        NXlib_KEY_F11        = 0xffc8,
-        NXlib_KEY_F12        = 0xffc9,
-        NXlib_KEY_N_1        = 0x31,
-        NXlib_KEY_N_2        = 0x32,
-        NXlib_KEY_N_3        = 0x33,
-        NXlib_KEY_N_4        = 0x34,
-        NXlib_KEY_N_5        = 0x35,
-        NXlib_KEY_L_ARROW    = 0xff51,
-        NXlib_KEY_U_ARROW    = 0xff52,
-        NXlib_KEY_R_ARROW    = 0xff53,
-        NXlib_KEY_D_ARROW    = 0xff54,
-        NXlib_KEY_TAB        = 0xff09,
-        NXlib_KEY_SEMI       = 0x3b,
-        NXlib_KEY_QUOTE      = 0x22,
-        NXlib_KEY_COMMA      = 0x2c,
-        NXlib_KEY_DOT        = 0x2e,
-        NXlib_KEY_SLASH      = 0x2f,
-        NXlib_KEY_ESC        = 0xff1b,
-        NXlib_KEY_SUPER_L    = 0xffeb,
-        NXlib_KEY_MINUS      = 0x2d,
-        NXlib_KEY_UNDERSCORE = 0x5f,
-    };};
+        MAP_WINDOW,
+        RAISE_WINDOW,
+        FOCUS_WINDOW,
+        KILL_WINDOW
+    };
 
     class window
     {
@@ -161,18 +115,9 @@ namespace NXlib
         operator             u32() const;
         window& operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
 
-        // void                 make_window(const window_size_t &window_size);
-        void create_window(
-            u32         parent,
-            i16         x,
-            i16         y,
-            u16         width,
-            u16         height,
-            u8          color = DEFAULT_COLOR,
-            uint32_t    event_mask = 0,
-            i32         flags = 0,
-            const void* border_data = nullptr
-        );
+        void create_window(u32 parent, i16 x, i16 y, u16 width, u16 height,
+            u8 color = DEFAULT_COLOR, uint32_t event_mask = 0, i32 flags = 0, const void* border_data = nullptr);
+
         void                                   map() const;
         void                                   unmap() const;
         void                                   focus() const;
@@ -194,24 +139,36 @@ namespace NXlib
         void                                   change_background_color(u8 input_color);
         void                                   reparent(u32 new_parent, i16 x, i16 y) const;
         [[nodiscard]] bool                     is_active_input_focus() const;
-        void                                   draw_text_8(const char* str, u8 text_color, u8 background_color, const char *font_name, i16 x, i16 y);
+        void                                   draw_text_8(char const* str, i16 x, i16 y, u8 text_color = u8MAX, u8 background_color = u8MAX, const char *font_name = DEFAULT_FONT);
         [[nodiscard]] u32                      check_event_mask_sum() const;
         [[nodiscard]] vector<xcb_event_mask_t> check_event_mask_codes() const;
         [[nodiscard]] bool                     is_mask_active(u32 event_mask) const;
         void                                   grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const;
+        void                                   grab_button(initializer_list<pair<u8, u16>> bindings, bool owner_events = false) const;
+        void                                   update_geo_from_req();
+        void                                   update_geo_from_input(i16 x, i16 y, u16 width, u16 height);
+        void                                   destroy() const;
+
+        [[nodiscard]] u32 get_parent() const;
+        [[nodiscard]] u32 get_x() const;
+        [[nodiscard]] u32 get_y() const;
+        [[nodiscard]] u32 get_width() const;
+        [[nodiscard]] u32 get_height() const;
+
 
     private:
         u32 _window  = 0;
         u32 _parent  = 0;
 
-        u8  _color   = 0;
-        u32 _font    = 0;
-        u32 _font_gc = 0;
-
         i16 _x       = 0;
         i16 _y       = 0;
         u16 _width   = 0;
         u16 _height  = 0;
+
+        u8  _color   = u8MAX;
+        u32 _font    = 0;
+        u32 _font_gc = 0;
+
 
         [[nodiscard]] u32 get_window_u32() const;
         void              create_font_gc(u8 text_color, u8 background_color, u32 font);

@@ -218,8 +218,17 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Value Computed by CMake
 NXlib_BINARY_DIR:STATIC=/home/mellw/CLionProjects/NXlib/build
 
+//The directory containing a CMake configuration file for NXlib.
+NXlib_DIR:PATH=NXlib_DIR-NOTFOUND
+
+//Path to a file.
+NXlib_INCLUDE_DIR:PATH=NXlib_INCLUDE_DIR-NOTFOUND
+
 //Value Computed by CMake
 NXlib_IS_TOP_LEVEL:STATIC=ON
+
+//Path to a library.
+NXlib_LIBRARY:FILEPATH=/usr/lib/libNXlib.so
 
 //Value Computed by CMake
 NXlib_SOURCE_DIR:STATIC=/home/mellw/CLionProjects/NXlib

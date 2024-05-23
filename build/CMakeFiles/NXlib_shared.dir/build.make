@@ -167,19 +167,33 @@ CMakeFiles/NXlib_shared.dir/NXlib.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_shared.dir/NXlib.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/NXlib.cpp -o CMakeFiles/NXlib_shared.dir/NXlib.cpp.s
 
-CMakeFiles/NXlib_shared.dir/Desktop.cpp.o: CMakeFiles/NXlib_shared.dir/flags.make
-CMakeFiles/NXlib_shared.dir/Desktop.cpp.o: /home/mellw/CLionProjects/NXlib/Desktop.cpp
-CMakeFiles/NXlib_shared.dir/Desktop.cpp.o: CMakeFiles/NXlib_shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NXlib_shared.dir/Desktop.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_shared.dir/Desktop.cpp.o -MF CMakeFiles/NXlib_shared.dir/Desktop.cpp.o.d -o CMakeFiles/NXlib_shared.dir/Desktop.cpp.o -c /home/mellw/CLionProjects/NXlib/Desktop.cpp
+CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o: CMakeFiles/NXlib_shared.dir/flags.make
+CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o: /home/mellw/CLionProjects/NXlib/Key_Codes.cpp
+CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o: CMakeFiles/NXlib_shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o -MF CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.d -o CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o -c /home/mellw/CLionProjects/NXlib/Key_Codes.cpp
 
-CMakeFiles/NXlib_shared.dir/Desktop.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_shared.dir/Desktop.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/Desktop.cpp > CMakeFiles/NXlib_shared.dir/Desktop.cpp.i
+CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/Key_Codes.cpp > CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.i
 
-CMakeFiles/NXlib_shared.dir/Desktop.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_shared.dir/Desktop.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/Desktop.cpp -o CMakeFiles/NXlib_shared.dir/Desktop.cpp.s
+CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/Key_Codes.cpp -o CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.s
+
+CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o: CMakeFiles/NXlib_shared.dir/flags.make
+CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o: /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp
+CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o: CMakeFiles/NXlib_shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o -MF CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.d -o CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o -c /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp
+
+CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp > CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.i
+
+CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp -o CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.s
 
 # Object files for target NXlib_shared
 NXlib_shared_OBJECTS = \
@@ -190,7 +204,8 @@ NXlib_shared_OBJECTS = \
 "CMakeFiles/NXlib_shared.dir/tools.cpp.o" \
 "CMakeFiles/NXlib_shared.dir/color.cpp.o" \
 "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o" \
-"CMakeFiles/NXlib_shared.dir/Desktop.cpp.o"
+"CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o" \
+"CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o"
 
 # External object files for target NXlib_shared
 NXlib_shared_EXTERNAL_OBJECTS =
@@ -202,10 +217,11 @@ libNXlib.so: CMakeFiles/NXlib_shared.dir/prof.cpp.o
 libNXlib.so: CMakeFiles/NXlib_shared.dir/tools.cpp.o
 libNXlib.so: CMakeFiles/NXlib_shared.dir/color.cpp.o
 libNXlib.so: CMakeFiles/NXlib_shared.dir/NXlib.cpp.o
-libNXlib.so: CMakeFiles/NXlib_shared.dir/Desktop.cpp.o
+libNXlib.so: CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o
+libNXlib.so: CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o
 libNXlib.so: CMakeFiles/NXlib_shared.dir/build.make
 libNXlib.so: CMakeFiles/NXlib_shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libNXlib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library libNXlib.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NXlib_shared.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

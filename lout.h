@@ -139,35 +139,35 @@ private:
 
 class Lout
 {
-/* Defines 	 */
+/* Defines   */
     #define loutNUM(__variable) \
         "(\033[33m" << __variable << "\033[0m)"
 
-	#define loutCFUNC(__calling_function) \
-		"calling_function(\033[35m" << __calling_function << "\033[0m)"
+    #define loutCFUNC(__calling_function) \
+        "calling_function(\033[35m" << __calling_function << "\033[0m)"
 
-	#define lout_error_code(__error_code) \
-		"\033[31merror_code\033[0m" << __error_code
+    #define lout_error_code(__error_code) \
+        "\033[31merror_code\033[0m" << __error_code
 
-	#define loutCEcode(__error_code) \
-		lout_error_code(__error_code) << " " << loutCFUNC(__calling_function)
+    #define loutCEcode(__error_code) \
+        lout_error_code(__error_code) << " " << loutCFUNC(__calling_function)
 
-	#define loutPath(__path) \
-		"(\033[32m" << __path << "\033[0m)"
+    #define loutPath(__path) \
+        "(\033[32m" << __path << "\033[0m)"
 
-	#define loutUser(__user) \
-		"(" << log_BLUE << __user << log_RESET << ")"
+    #define loutUser(__user) \
+        "(" << log_BLUE << __user << log_RESET << ")"
 
-	#define loutEND \
-		'\n'
+    #define loutEND \
+        '\n'
 
-	#define Var_(_Var) #_Var << ' ' << _Var
+    #define Var_(_Var) #_Var << ' ' << _Var
 
 public:
 /* Methods 	 */
-	Lout& operator<<(LogLevel logLevel);
+    Lout& operator<<(LogLevel logLevel);
 
-	Lout& operator<<(const event_type_obj_t &event_type);
+    Lout& operator<<(const event_type_obj_t &event_type);
 
 	Lout& operator<<(const FuncNameWrapper &funcName);
 
@@ -189,7 +189,16 @@ public:
 	Lout& operator<<(const errno_msg_t &err);
 
 	template<typename T>
-	Lout& operator<<(T message)
+	enable_if_t<is_arithmetic_v<T>, Lout&>
+	operator<<(T value)
+	{
+		buffer << loutNUM(value);
+		return *this;
+	}
+
+	template<typename T>
+	enable_if_t<!is_arithmetic_v<T>, Lout&>
+	operator<<(const T& message)
 	{
 		buffer << message;
 		return *this;

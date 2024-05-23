@@ -59,9 +59,45 @@
 // Created by mellw on 5/23/24.
 //
 
-#include "Desktop.h"
+#ifndef KEY_CODES_H
+#define KEY_CODES_H
+
+
+#include <iostream>
+#include <xcb/xcb_keysyms.h>
+
+using namespace std;
+
 
 namespace NXlib
 {
+    class Key_Codes
+    {
+    public:
+        Key_Codes();
 
-} // NXlib
+        ~Key_Codes();
+
+        // methods.
+        void init();
+
+        // variabels.
+        xcb_keycode_t
+            a{}, b{}, c{}, d{}, e{}, f{}, g{}, h{}, i{}, j{}, k{}, l{}, m{},
+            n{}, o{}, p{}, q{}, r{}, s{}, t{}, u{}, v{}, w{}, x{}, y{}, z{},
+
+            space_bar{}, enter{},
+
+            f11{}, f12{},
+
+            n_1{}, n_2{}, n_3{}, n_4{}, n_5{}, r_arrow{},
+            l_arrow{}, u_arrow{}, d_arrow{}, tab{}, _delete{},
+            super_l{}, minus{}, underscore{};
+
+    private:
+        xcb_key_symbols_t* keysyms;
+};
+}
+
+
+#endif //KEY_CODES_H

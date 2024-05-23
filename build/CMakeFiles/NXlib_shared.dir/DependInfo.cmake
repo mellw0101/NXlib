@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mellw/CLionProjects/NXlib/Desktop.cpp" "CMakeFiles/NXlib_shared.dir/Desktop.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Desktop.cpp.o.d"
+  "/home/mellw/CLionProjects/NXlib/Key_Codes.cpp" "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.d"
   "/home/mellw/CLionProjects/NXlib/NXlib.cpp" "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.d"
+  "/home/mellw/CLionProjects/NXlib/Pid_Manager.cpp" "CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.d"
   "/home/mellw/CLionProjects/NXlib/TIME.cpp" "CMakeFiles/NXlib_shared.dir/TIME.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/TIME.cpp.o.d"
   "/home/mellw/CLionProjects/NXlib/color.cpp" "CMakeFiles/NXlib_shared.dir/color.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/color.cpp.o.d"
   "/home/mellw/CLionProjects/NXlib/lout.cpp" "CMakeFiles/NXlib_shared.dir/lout.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/lout.cpp.o.d"

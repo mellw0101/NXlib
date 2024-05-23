@@ -62,35 +62,51 @@
 
 
 
-#ifndef DESKTOP_H
-#define DESKTOP_H
+#ifndef PID_MANAGER_H
+#define PID_MANAGER_H
 
 
-#include <iostream>
 #include "globals.h"
 
-#include <vector>
-#include <xcb/xcb.h>
+
+#include <fstream>
+
 
 using namespace std;
 
-class client;
+typedef struct pid_data_t
+{
+    pid_t  pid;
+    string name;
+} pid_data_t;
 
 namespace NXlib
 {
-
-    class Desktop
+    class Pid_Manager
     {
+    private:
+        vector<pid_data_t> _pid_vec;
+
+        static string pid_status(pid_t pid);
+        static string get_process_name_by_pid(pid_t pid);
+        static string pid_cmd_line(pid_t pid);
+        static string get_correct_process_name(string const &launchName);
+        static bool   is_process_running(pid_t pid);
+        static bool   send_signal(pid_t pid, i32 signal);
+        static bool   send_sigterm(pid_t pid, const string& name);
+        static void   send_sigkill(pid_t pid, string const & name);
+        static void   kill_pid(pid_t pid, string const &name);
+        void          check_vec();
+
     public:
-        vector<client*> current_clients;
-        client*         focused_client = nullptr;
-        u16             desktop;
-        i16 const       x = 0;
-        i16 const       y = 0;
-        u16             width;
-        u16             height;
+        void remove_pid(pid_t pid);
+        void add_pid(pid_t pid);
+        void kill_all_pids();
+        void check_pid(pid_t pid);
+        void list_pids();
     };
-} // NXlib
+}
 
 
-#endif //DESKTOP_H
+
+#endif //PID_MANAGER_H

@@ -8,5 +8,5 @@
 /usr/include/NXlib/globals.h
 /usr/include/NXlib/color.h
 /usr/include/NXlib/NXlib.h
-/usr/include/NXlib/Desktop.cpp
-/usr/include/NXlib/Desktop.h
+/usr/include/NXlib/Key_Codes.h
+/usr/include/NXlib/Pid_Manager.h

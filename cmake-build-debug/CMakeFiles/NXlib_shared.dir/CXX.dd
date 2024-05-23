@@ -13,3 +13,7 @@ build CMakeFiles/NXlib_shared.dir/color.cpp.o: dyndep
 
 build CMakeFiles/NXlib_shared.dir/NXlib.cpp.o: dyndep
 
+build CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o: dyndep
+
+build CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o: dyndep
+

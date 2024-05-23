@@ -67,63 +67,21 @@
 
 using namespace std;
 
-typedef struct rgb_color_code_t
-{
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-} rgb_color_code_t;
-
-
 namespace NXlib
 {
-    typedef enum COLOR : uint8_t
-    {
-        BLACK   = 0,
-        WHITE   = 1,
-        RED     = 2,
-        GREEN   = 3,
-        BLUE    = 4,
-        BLUE_2  = 5,
-        BLUE_3  = 6,
-        BLUE_4  = 7,
-        BLUE_5  = 8,
-        BLUE_6  = 9,
-        BLUE_7  = 10,
-        BLUE_8  = 11,
-        BLUE_9  = 12,
-        BLUE_10 = 13,
-        YELLOW  = 14,
-        MAGENTA = 15,
-        CYAN = 16,
-        GREY = 17,
-        DARK_GREY = 18,
-        DARK_GREY_2 = 19,
-        DARK_GREY_3 = 20,
-        DARK_GREY_4 = 21,
-        LIGHT_GREY = 22,
-        ORANGE = 23,
-        BROWN = 24,
-        PINK = 25,
-        PURPLE = 26,
-        NO_COLOR = 27,
-        DEFAULT_COLOR = DARK_GREY
-    } COLOR;
-
-    class Color
-    {
-    public:
-        Color() = default;
-        u32                                 get(u8 input_color);
-        u32 static                          get_color(u8 input_color);
-
-    private:
-        vector<pair<u8, u32>>               colorVec;
-
-        [[nodiscard]] rgb_color_code_t static rgb_code(u8 input_color);
-        void                                init_colors(const vector<u8> &vec);
-    };
-    static Color* col = nullptr;
+    // class Color
+    // {
+    // public:
+    //     Color() = default;
+    //     u32        get(u8 input_color);
+    //     u32 static get_color(u8 input_color);
+    //     void       init_colors();
+    //
+    // private:
+    //     vector<pair<u8, u32>> colorVec;
+    //
+    //     [[nodiscard]] rgb_color_code_t static rgb_code(u8 input_color);
+    // };
 }
 
 

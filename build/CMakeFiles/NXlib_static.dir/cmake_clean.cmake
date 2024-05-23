@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/NXlib_static.dir/Desktop.cpp.o"
-  "CMakeFiles/NXlib_static.dir/Desktop.cpp.o.d"
+  "CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o"
+  "CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.d"
   "CMakeFiles/NXlib_static.dir/NXlib.cpp.o"
   "CMakeFiles/NXlib_static.dir/NXlib.cpp.o.d"
+  "CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o"
+  "CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.d"
   "CMakeFiles/NXlib_static.dir/TIME.cpp.o"
   "CMakeFiles/NXlib_static.dir/TIME.cpp.o.d"
   "CMakeFiles/NXlib_static.dir/color.cpp.o"

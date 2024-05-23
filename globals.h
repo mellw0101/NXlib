@@ -70,6 +70,7 @@
 #include <xcb/xcb_ewmh.h>
 #include <xcb/xcb_keysyms.h>
 #include <cstdint>
+#include <vector>
 
 extern xcb_connection_t*      conn;
 extern xcb_screen_t*          screen;
@@ -89,6 +90,8 @@ using i64 = int64_t;
 using i32 = int32_t;
 using i16 = int16_t;
 using i8  = int8_t;
+
+using std_size_t = long unsigned int;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
 

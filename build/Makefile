@@ -187,32 +187,32 @@ NXlib_shared/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/build
 .PHONY : NXlib_shared/fast
 
-Desktop.o: Desktop.cpp.o
-.PHONY : Desktop.o
+Key_Codes.o: Key_Codes.cpp.o
+.PHONY : Key_Codes.o
 
 # target to build an object file
-Desktop.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Desktop.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Desktop.cpp.o
-.PHONY : Desktop.cpp.o
+Key_Codes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o
+.PHONY : Key_Codes.cpp.o
 
-Desktop.i: Desktop.cpp.i
-.PHONY : Desktop.i
+Key_Codes.i: Key_Codes.cpp.i
+.PHONY : Key_Codes.i
 
 # target to preprocess a source file
-Desktop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Desktop.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Desktop.cpp.i
-.PHONY : Desktop.cpp.i
+Key_Codes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Key_Codes.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.i
+.PHONY : Key_Codes.cpp.i
 
-Desktop.s: Desktop.cpp.s
-.PHONY : Desktop.s
+Key_Codes.s: Key_Codes.cpp.s
+.PHONY : Key_Codes.s
 
 # target to generate assembly for a file
-Desktop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Desktop.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Desktop.cpp.s
-.PHONY : Desktop.cpp.s
+Key_Codes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Key_Codes.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.s
+.PHONY : Key_Codes.cpp.s
 
 NXlib.o: NXlib.cpp.o
 .PHONY : NXlib.o
@@ -240,6 +240,33 @@ NXlib.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/NXlib.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/NXlib.cpp.s
 .PHONY : NXlib.cpp.s
+
+Pid_Manager.o: Pid_Manager.cpp.o
+.PHONY : Pid_Manager.o
+
+# target to build an object file
+Pid_Manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o
+.PHONY : Pid_Manager.cpp.o
+
+Pid_Manager.i: Pid_Manager.cpp.i
+.PHONY : Pid_Manager.i
+
+# target to preprocess a source file
+Pid_Manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.i
+.PHONY : Pid_Manager.cpp.i
+
+Pid_Manager.s: Pid_Manager.cpp.s
+.PHONY : Pid_Manager.s
+
+# target to generate assembly for a file
+Pid_Manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.s
+.PHONY : Pid_Manager.cpp.s
 
 TIME.o: TIME.cpp.o
 .PHONY : TIME.o
@@ -417,12 +444,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... NXlib_shared"
 	@echo "... NXlib_static"
-	@echo "... Desktop.o"
-	@echo "... Desktop.i"
-	@echo "... Desktop.s"
+	@echo "... Key_Codes.o"
+	@echo "... Key_Codes.i"
+	@echo "... Key_Codes.s"
 	@echo "... NXlib.o"
 	@echo "... NXlib.i"
 	@echo "... NXlib.s"
+	@echo "... Pid_Manager.o"
+	@echo "... Pid_Manager.i"
+	@echo "... Pid_Manager.s"
 	@echo "... TIME.o"
 	@echo "... TIME.i"
 	@echo "... TIME.s"

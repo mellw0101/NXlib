@@ -66,8 +66,12 @@
 
 #include "globals.h"
 
+#include "tools.h"
 #include <xcb/xcb.h>
 #include <string>
+#include <vector>
+
+#include "lout.h"
 
 using namespace std;
 
@@ -80,6 +84,18 @@ namespace NXlib
         static size_t     slen(const char* s);
         static xcb_atom_t get_atom(const char* name);
         static string     get_cur_user();
+        template<typename Type>
+        static bool remove_element_from_vec(vector<Type> &vec, size_t index)
+        {
+            if (index < vec.size())
+            {
+                vec.erase(vec.begin() + index);
+                return true;
+            }
+
+            loutE << "index out of bounds" << '\n';
+            return false;
+        }
 
         class iAtomC
         {

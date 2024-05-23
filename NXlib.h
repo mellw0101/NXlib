@@ -57,6 +57,9 @@
 // Created by mellw on 5/22/24.
 //
 
+
+
+
 #ifndef NXLIB_H
 #define NXLIB_H
 
@@ -66,11 +69,80 @@
 
 using namespace std;
 
+
 namespace NXlib
 {
-    u32 get_input_focus_window();
-    u32 open_font(const char* name);
-    u32 create_font_gc(u32 window, u8 text_color, u8 background_color, u32 font);
+    typedef struct rgb_color_code_t
+    {
+        uint8_t r;
+        uint8_t g;
+        uint8_t b;
+    } rgb_color_code_t;
+
+    enum color_t : u8
+    {
+        BLACK   = 0,
+        WHITE   = 1,
+        RED     = 2,
+        GREEN   = 3,
+        BLUE    = 4,
+        BLUE_2  = 5,
+        BLUE_3  = 6,
+        BLUE_4  = 7,
+        BLUE_5  = 8,
+        BLUE_6  = 9,
+        BLUE_7  = 10,
+        BLUE_8  = 11,
+        BLUE_9  = 12,
+        BLUE_10 = 13,
+        YELLOW  = 14,
+        MAGENTA = 15,
+        CYAN = 16,
+        GREY = 17,
+        DARK_GREY = 18,
+        DARK_GREY_2 = 19,
+        DARK_GREY_3 = 20,
+        DARK_GREY_4 = 21,
+        LIGHT_GREY = 22,
+        ORANGE = 23,
+        BROWN = 24,
+        PINK = 25,
+        PURPLE = 26,
+        NO_COLOR = 27,
+        DEFAULT_COLOR = DARK_GREY
+    };
+
+    u32           get_input_focus_window();
+    u32           open_font(char const* name);
+    u32           create_font_gc(u32 window, u8 text_color, u8 background_color, u32 font);
+    xcb_char2b_t* to_char2b(char const* input, i32* len);
+    std_size_t    calculate_utf8_size(char const* input);         /**
+
+        @brief Calculates the total number of Unicode characters in a UTF-8 string.
+            This function helps in determining the exact number of xcb_char2b_t
+            structures required to represent the string.
+
+        @param input Pointer to the UTF-8 encoded string.
+        @return The total number of Unicode characters in the input string.
+
+    */
+    u32           decode_utf8_char(char const** input);           /**
+
+        @brief Decodes a single UTF-8 encoded character from the input string
+            and returns the Unicode code point.
+            Also advances the input string by the number of bytes used for
+            the decoded character.
+
+    */
+    xcb_char2b_t* convert_to_char2b(char const* input, i32* len); /*
+
+        Converts a UTF-8 string to an array
+        of xcb_char2b_t for xcb_image_text_16
+
+    */
+    void          get_window_geo(int16_t* x = nullptr, int16_t* y = nullptr, uint16_t* width = nullptr, uint16_t* height = nullptr);
+    u32           get_color(u8 input_color);
+    constexpr rgb_color_code_t rgb_code(u8 input_color);
 }
 
 #endif //NXLIB_H
