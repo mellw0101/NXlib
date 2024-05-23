@@ -71,7 +71,9 @@
 #include <string>
 #include "NXlib.h"
 
+
 using namespace std;
+
 
 typedef struct window_size_t
 {
@@ -101,10 +103,55 @@ namespace NXlib
 {
     enum
     {
-        MAP_WINDOW,
-        RAISE_WINDOW,
-        FOCUS_WINDOW,
-        KILL_WINDOW
+        MAP_WINDOW   = 1 << 0,
+        RAISE_WINDOW = 1 << 1,
+        FOCUS_WINDOW = 1 << 2,
+        KILL_WINDOW  = 1 << 3,
+    };
+
+    enum class Cursor_t
+    {
+        arrow,
+        hand1,
+        hand2,
+        watch,
+        xterm,
+        cross,
+        left_ptr,
+        right_ptr,
+        center_ptr,
+        sb_v_double_arrow,
+        sb_h_double_arrow,
+        fleur,
+        question_arrow,
+        pirate,
+        coffee_mug,
+        umbrella,
+        circle,
+        xsb_left_arrow,
+        xsb_right_arrow,
+        xsb_up_arrow,
+        xsb_down_arrow,
+        top_left_corner,
+        top_right_corner,
+        bottom_left_corner,
+        bottom_right_corner,
+        sb_left_arrow,
+        sb_right_arrow,
+        sb_up_arrow,
+        sb_down_arrow,
+        top_side,
+        bottom_side,
+        left_side,
+        right_side,
+        top_tee,
+        bottom_tee,
+        left_tee,
+        right_tee,
+        top_left_arrow,
+        top_right_arrow,
+        bottom_left_arrow,
+        bottom_right_arrow
     };
 
     class window
@@ -116,7 +163,7 @@ namespace NXlib
         window& operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
 
         void create_window(u32 parent, i16 x, i16 y, u16 width, u16 height,
-            u8 color = DEFAULT_COLOR, uint32_t event_mask = 0, i32 flags = 0, const void* border_data = nullptr);
+            u8 color = DEFAULT_COLOR, uint32_t event_mask = 0, i32 flags = 0, const void* border_data = nullptr, Cursor_t cursor = Cursor_t::arrow);
 
         void                                   map() const;
         void                                   unmap() const;
@@ -146,15 +193,40 @@ namespace NXlib
         void                                   grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const;
         void                                   grab_button(initializer_list<pair<u8, u16>> bindings, bool owner_events = false) const;
         void                                   update_geo_from_req();
-        void                                   update_geo_from_input(i16 x, i16 y, u16 width, u16 height);
+        void                                   update(i16 x, i16 y, u16 width, u16 height);
         void                                   destroy() const;
+        void                                   set_pointer(Cursor_t cursor_type) const;
+        void                                   change_attributes(u32 mask, void const* data) const;
+        void                                   conf_unchecked(u32 mask, void const* data) const;
+        void                                   configure(u32 mask, void const* data) const;
+        [[nodiscard]] min_size_hints_t         get_min_window_size_hints() const;
+        void                                   kill() const;
+        void                                   send_event(u32 event_mask, void const* value_list = nullptr) const;
+        vector<u32>                            get_best_quality_window_icon(u32* width = nullptr, u32* height = nullptr) const;
 
         [[nodiscard]] u32 get_parent() const;
-        [[nodiscard]] u32 get_x() const;
-        [[nodiscard]] u32 get_y() const;
-        [[nodiscard]] u32 get_width() const;
-        [[nodiscard]] u32 get_height() const;
+        [[nodiscard]] i16 x() const;
+        [[nodiscard]] i16 y() const;
+        [[nodiscard]] u16 width() const;
+        [[nodiscard]] u16 height() const;
 
+        void x(u32 x);
+
+        void y(u32 y);
+
+        void width(u32 width);
+        void height(u32 height);
+        void x_y(u32 x, u32 y);
+        void width_height(u32 width, u32 height);
+        void x_y_width_height(u32 x, u32 y, u32 width, u32 height);
+        void x_width_height(u32 x, u32 width, u32 height);
+        void y_width_height(u32 y, u32 width, u32 height);
+        void x_width(u32 x, u32 width);
+        void x_height(u32 x, u32 height);
+        void y_width(u32 y, u32 width);
+        void y_height(u32 y, u32 height);
+        void x_y_width(u32 x, u32 y, u32 width);
+        void x_y_height(u32 x, u32 y, u32 height);
 
     private:
         u32 _window  = 0;

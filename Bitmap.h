@@ -1,4 +1,5 @@
 /*
+
     MIT Open Source License
 
     Copyright (c) 2024 Melwin Svensson
@@ -51,103 +52,56 @@
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH (the "Software") OR THE USE OR OTHER DEALINGS IN (the "Software").
+
 */
 
 //
-// Created by mellw on 5/22/24.
+// Created by mellw on 5/23/24.
 //
 
+#ifndef BITMAP_H
+#define BITMAP_H
 
-
-
-#ifndef NXLIB_H
-#define NXLIB_H
-
-
-#include <iostream>
 #include "globals.h"
+#include "lout.h"
+#include <png.h>
 
 using namespace std;
 
-
 namespace NXlib
 {
-    typedef struct rgb_color_code_t
+    class Bitmap
     {
-        uint8_t r;
-        uint8_t g;
-        uint8_t b;
-    } rgb_color_code_t;
+    public:
+        void modify(i16 row, i16 startCol, i16 endCol, u8 value);
+        void exportToPng(const char * file_name) const;
 
-    typedef struct min_size_hints_t
-    {
-        i32 min_width, min_height;
-    } size_hints_t;
+        Bitmap(u16 width, u16 height);
 
-    enum color_t : u8
-    {
-        BLACK   = 0,
-        WHITE   = 1,
-        RED     = 2,
-        GREEN   = 3,
-        BLUE    = 4,
-        BLUE_2  = 5,
-        BLUE_3  = 6,
-        BLUE_4  = 7,
-        BLUE_5  = 8,
-        BLUE_6  = 9,
-        BLUE_7  = 10,
-        BLUE_8  = 11,
-        BLUE_9  = 12,
-        BLUE_10 = 13,
-        YELLOW  = 14,
-        MAGENTA = 15,
-        CYAN = 16,
-        GREY = 17,
-        DARK_GREY = 18,
-        DARK_GREY_2 = 19,
-        DARK_GREY_3 = 20,
-        DARK_GREY_4 = 21,
-        LIGHT_GREY = 22,
-        ORANGE = 23,
-        BROWN = 24,
-        PINK = 25,
-        PURPLE = 26,
-        NO_COLOR = 27,
-        DEFAULT_COLOR = DARK_GREY
+    private:
+        u16 width  = 0;
+        u16 height = 0;
+
+        vector<vector<bool>> bitmap;
     };
 
-    u32           get_input_focus_window();
-    u32           open_font(char const* name);
-    u32           create_font_gc(u32 window, u8 text_color, u8 background_color, u32 font);
-    xcb_char2b_t* to_char2b(char const* input, i32* len);
-    std_size_t    calculate_utf8_size(char const* input);         /**
+    class Color_Bitmap
+    {
+    public:
+        Color_Bitmap(u16 width, u16 height, const vector<uint32_t>& pixels);
 
-        @brief Calculates the total number of Unicode characters in a UTF-8 string.
-            This function helps in determining the exact number of xcb_char2b_t
-            structures required to represent the string.
+        void exportToPng(char const* fileName) const;
 
-        @param input Pointer to the UTF-8 encoded string.
-        @return The total number of Unicode characters in the input string.
+    private:
+        u16 width  = 0;
+        u16 height = 0;
 
-    */
-    u32           decode_utf8_char(char const** input);           /**
+        // Pixel data in ARGB format
+        vector<u32> pixels;
+    };
+} // NXlib
 
-        @brief Decodes a single UTF-8 encoded character from the input string
-            and returns the Unicode code point.
-            Also advances the input string by the number of bytes used for
-            the decoded character.
 
-    */
-    xcb_char2b_t* convert_to_char2b(char const* input, i32* len); /*
 
-        Converts a UTF-8 string to an array
-        of xcb_char2b_t for xcb_image_text_16
 
-    */
-    void          get_window_geo(int16_t* x = nullptr, int16_t* y = nullptr, uint16_t* width = nullptr, uint16_t* height = nullptr);
-    u32           get_color(u8 input_color);
-    constexpr rgb_color_code_t rgb_code(u8 input_color);
-}
-
-#endif //NXLIB_H
+#endif //BITMAP_H

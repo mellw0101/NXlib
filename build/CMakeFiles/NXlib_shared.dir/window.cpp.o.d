@@ -96,19 +96,33 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/tuple /usr/include/c++/14.1.1/bits/ranges_util.h \
  /usr/include/c++/14.1.1/bits/ranges_base.h \
  /usr/include/c++/14.1.1/bits/max_size_type.h \
- /usr/include/c++/14.1.1/numbers /home/mellw/CLionProjects/NXlib/window.h \
- /usr/include/c++/14.1.1/string /usr/include/c++/14.1.1/bits/stringfwd.h \
- /usr/include/c++/14.1.1/bits/char_traits.h \
+ /usr/include/c++/14.1.1/numbers /home/mellw/CLionProjects/NXlib/NXlib.h \
+ /usr/include/c++/14.1.1/iostream /usr/include/c++/14.1.1/ostream \
+ /usr/include/c++/14.1.1/ios /usr/include/c++/14.1.1/iosfwd \
+ /usr/include/c++/14.1.1/bits/stringfwd.h \
  /usr/include/c++/14.1.1/bits/postypes.h /usr/include/c++/14.1.1/cwchar \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/c++/14.1.1/bits/localefwd.h \
+ /usr/include/bits/types/FILE.h /usr/include/c++/14.1.1/exception \
+ /usr/include/c++/14.1.1/bits/exception_ptr.h \
+ /usr/include/c++/14.1.1/bits/cxxabi_init_exception.h \
+ /usr/include/c++/14.1.1/typeinfo \
+ /usr/include/c++/14.1.1/bits/nested_exception.h \
+ /usr/include/c++/14.1.1/bits/char_traits.h \
+ /usr/include/c++/14.1.1/bits/localefwd.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++locale.h \
  /usr/include/c++/14.1.1/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/14.1.1/iosfwd \
- /usr/include/c++/14.1.1/cctype /usr/include/ctype.h \
+ /usr/include/bits/locale.h /usr/include/c++/14.1.1/cctype \
+ /usr/include/ctype.h /usr/include/c++/14.1.1/bits/ios_base.h \
+ /usr/include/c++/14.1.1/ext/atomicity.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h \
+ /usr/include/c++/14.1.1/bits/locale_classes.h \
+ /usr/include/c++/14.1.1/string \
  /usr/include/c++/14.1.1/bits/ostream_insert.h \
  /usr/include/c++/14.1.1/bits/cxxabi_forced.h \
  /usr/include/c++/14.1.1/bits/basic_string.h \
@@ -126,20 +140,6 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/bits/types/error_t.h \
  /usr/include/c++/14.1.1/bits/charconv.h \
  /usr/include/c++/14.1.1/bits/basic_string.tcc \
- /home/mellw/CLionProjects/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream \
- /usr/include/c++/14.1.1/ostream /usr/include/c++/14.1.1/ios \
- /usr/include/c++/14.1.1/exception \
- /usr/include/c++/14.1.1/bits/exception_ptr.h \
- /usr/include/c++/14.1.1/bits/cxxabi_init_exception.h \
- /usr/include/c++/14.1.1/typeinfo \
- /usr/include/c++/14.1.1/bits/nested_exception.h \
- /usr/include/c++/14.1.1/bits/ios_base.h \
- /usr/include/c++/14.1.1/ext/atomicity.h \
- /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
- /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
- /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h \
- /usr/include/c++/14.1.1/bits/locale_classes.h \
  /usr/include/c++/14.1.1/bits/locale_classes.tcc \
  /usr/include/c++/14.1.1/system_error \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/error_constants.h \
@@ -156,9 +156,26 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/bits/basic_ios.tcc \
  /usr/include/c++/14.1.1/bits/ostream.tcc /usr/include/c++/14.1.1/istream \
  /usr/include/c++/14.1.1/bits/istream.tcc \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
- /usr/include/c++/14.1.1/bits/chrono.h /usr/include/c++/14.1.1/ratio \
- /usr/include/c++/14.1.1/limits /usr/include/c++/14.1.1/ctime \
+ /home/mellw/CLionProjects/NXlib/window.h /usr/include/c++/14.1.1/csignal \
+ /usr/include/signal.h /usr/include/bits/signum-generic.h \
+ /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
+ /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
+ /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
+ /usr/include/bits/siginfo-consts-arch.h \
+ /usr/include/bits/types/sigval_t.h /usr/include/bits/types/sigevent_t.h \
+ /usr/include/bits/sigevent-consts.h /usr/include/bits/sigaction.h \
+ /usr/include/bits/sigcontext.h /usr/include/bits/types/stack_t.h \
+ /usr/include/sys/ucontext.h /usr/include/bits/sigstack.h \
+ /usr/include/bits/sigstksz.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
+ /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
+ /usr/include/bits/signal_ext.h /home/mellw/CLionProjects/NXlib/lout.h \
+ /usr/include/c++/14.1.1/mutex /usr/include/c++/14.1.1/bits/chrono.h \
+ /usr/include/c++/14.1.1/ratio /usr/include/c++/14.1.1/limits \
+ /usr/include/c++/14.1.1/ctime \
  /usr/include/c++/14.1.1/bits/parse_numbers.h \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
@@ -167,5 +184,5 @@ CMakeFiles/NXlib_shared.dir/window.cpp.o: \
  /usr/include/c++/14.1.1/bits/stl_heap.h \
  /usr/include/c++/14.1.1/bits/stl_queue.h /usr/include/c++/14.1.1/sstream \
  /usr/include/c++/14.1.1/bits/sstream.tcc \
- /home/mellw/CLionProjects/NXlib/tools.h \
- /home/mellw/CLionProjects/NXlib/color.h
+ /home/mellw/CLionProjects/NXlib/tools.h /usr/include/xcb/xcb_cursor.h \
+ /usr/include/xcb/xcb_icccm.h

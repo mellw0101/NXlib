@@ -77,6 +77,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/mellw/CLionProjects/NXlib/NXlib.h"
     "/home/mellw/CLionProjects/NXlib/Key_Codes.h"
     "/home/mellw/CLionProjects/NXlib/Pid_Manager.h"
+    "/home/mellw/CLionProjects/NXlib/Bitmap.cpp"
+    "/home/mellw/CLionProjects/NXlib/Bitmap.h"
+    "/home/mellw/CLionProjects/NXlib/Bitmap.h"
     )
 endif()
 

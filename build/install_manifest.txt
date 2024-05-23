@@ -10,3 +10,4 @@
 /usr/include/NXlib/NXlib.h
 /usr/include/NXlib/Key_Codes.h
 /usr/include/NXlib/Pid_Manager.h
+/usr/include/NXlib/Bitmap.h

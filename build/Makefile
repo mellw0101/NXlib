@@ -187,6 +187,33 @@ NXlib_shared/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/build
 .PHONY : NXlib_shared/fast
 
+Bitmap.o: Bitmap.cpp.o
+.PHONY : Bitmap.o
+
+# target to build an object file
+Bitmap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Bitmap.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o
+.PHONY : Bitmap.cpp.o
+
+Bitmap.i: Bitmap.cpp.i
+.PHONY : Bitmap.i
+
+# target to preprocess a source file
+Bitmap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Bitmap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Bitmap.cpp.i
+.PHONY : Bitmap.cpp.i
+
+Bitmap.s: Bitmap.cpp.s
+.PHONY : Bitmap.s
+
+# target to generate assembly for a file
+Bitmap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_static.dir/build.make CMakeFiles/NXlib_static.dir/Bitmap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NXlib_shared.dir/build.make CMakeFiles/NXlib_shared.dir/Bitmap.cpp.s
+.PHONY : Bitmap.cpp.s
+
 Key_Codes.o: Key_Codes.cpp.o
 .PHONY : Key_Codes.o
 
@@ -444,6 +471,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... NXlib_shared"
 	@echo "... NXlib_static"
+	@echo "... Bitmap.o"
+	@echo "... Bitmap.i"
+	@echo "... Bitmap.s"
 	@echo "... Key_Codes.o"
 	@echo "... Key_Codes.i"
 	@echo "... Key_Codes.s"

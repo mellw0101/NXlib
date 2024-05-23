@@ -60,15 +60,241 @@
 //
 
 
-#include "globals.h"
 
-#include "window.h"
-#include "lout.h"
-#include "tools.h"
-#include "color.h"
+
+#include "globals.h"
 #include "NXlib.h"
 
+#include "window.h"
+
+#include <csignal>
+
+#include "lout.h"
+#include "tools.h"
+#include <xcb/xcb_cursor.h>
+#include <xcb/xcb_icccm.h>
+
+
+constexpr const char *pointer_from_enum(NXlib::Cursor_t const CURSOR)
+{
+    switch (CURSOR)
+    {
+        case NXlib::Cursor_t::arrow:
+        {
+            return "arrow";
+        }
+
+        case NXlib::Cursor_t::hand1:
+        {
+            return "hand1";
+        }
+
+        case NXlib::Cursor_t::hand2:
+        {
+            return "hand2";
+        }
+
+        case NXlib::Cursor_t::watch:
+        {
+            return "watch";
+        }
+
+        case NXlib::Cursor_t::xterm:
+        {
+            return "xterm";
+        }
+
+        case NXlib::Cursor_t::cross:
+        {
+            return "cross";
+        }
+
+        case NXlib::Cursor_t::left_ptr:
+        {
+            return "left_ptr";
+        }
+
+        case NXlib::Cursor_t::right_ptr:
+        {
+            return "right_ptr";
+        }
+
+        case NXlib::Cursor_t::center_ptr:
+        {
+            return "center_ptr";
+        }
+
+        case NXlib::Cursor_t::sb_v_double_arrow:
+        {
+            return "sb_v_double_arrow";
+        }
+
+        case NXlib::Cursor_t::sb_h_double_arrow:
+        {
+            return "sb_h_double_arrow";
+        }
+
+        case NXlib::Cursor_t::fleur:
+        {
+            return "fleur";
+        }
+
+        case NXlib::Cursor_t::question_arrow:
+        {
+            return "question_arrow";
+        }
+
+        case NXlib::Cursor_t::pirate:
+        {
+            return "pirate";
+        }
+
+        case NXlib::Cursor_t::coffee_mug:
+        {
+            return "coffee_mug";
+        }
+
+        case NXlib::Cursor_t::umbrella:
+        {
+            return "umbrella";
+        }
+
+        case NXlib::Cursor_t::circle:
+        {
+            return "circle";
+        }
+
+        case NXlib::Cursor_t::xsb_left_arrow:
+        {
+            return "xsb_left_arrow";
+        }
+
+        case NXlib::Cursor_t::xsb_right_arrow:
+        {
+            return "xsb_right_arrow";
+        }
+
+        case NXlib::Cursor_t::xsb_up_arrow:
+        {
+            return "xsb_up_arrow";
+        }
+
+        case NXlib::Cursor_t::xsb_down_arrow:
+        {
+            return "xsb_down_arrow";
+        }
+
+        case NXlib::Cursor_t::top_left_corner:
+        {
+            return "top_left_corner";
+        }
+
+        case NXlib::Cursor_t::top_right_corner:
+        {
+            return "top_right_corner";
+        }
+
+        case NXlib::Cursor_t::bottom_left_corner:
+        {
+            return "bottom_left_corner";
+        }
+
+        case NXlib::Cursor_t::bottom_right_corner:
+        {
+            return "bottom_right_corner";
+        }
+
+        case NXlib::Cursor_t::sb_left_arrow:
+        {
+            return "sb_left_arrow";
+        }
+
+        case NXlib::Cursor_t::sb_right_arrow:
+        {
+            return "sb_right_arrow";
+        }
+
+        case NXlib::Cursor_t::sb_up_arrow:
+        {
+            return "sb_up_arrow";
+        }
+
+        case NXlib::Cursor_t::sb_down_arrow:
+        {
+            return "sb_down_arrow";
+        }
+
+        case NXlib::Cursor_t::top_side:
+        {
+            return "top_side";
+        }
+
+        case NXlib::Cursor_t::bottom_side:
+        {
+            return "bottom_side";
+        }
+
+        case NXlib::Cursor_t::left_side:
+        {
+            return "left_side";
+        }
+
+        case NXlib::Cursor_t::right_side:
+        {
+            return "right_side";
+        }
+
+        case NXlib::Cursor_t::top_tee:
+        {
+            return "top_tee";
+        }
+
+        case NXlib::Cursor_t::bottom_tee:
+        {
+            return "bottom_tee";
+        }
+
+        case NXlib::Cursor_t::left_tee:
+        {
+            return "left_tee";
+        }
+
+        case NXlib::Cursor_t::right_tee:
+        {
+            return "right_tee";
+        }
+
+        case NXlib::Cursor_t::top_left_arrow:
+        {
+            return "top_left_arrow";
+        }
+
+        case NXlib::Cursor_t::top_right_arrow:
+        {
+            return "top_right_arrow";
+        }
+
+        case NXlib::Cursor_t::bottom_left_arrow:
+        {
+            return "bottom_left_arrow";
+        }
+
+        case NXlib::Cursor_t::bottom_right_arrow:
+        {
+            return "bottom_right_arrow";
+        }
+
+        default:
+        {
+            return "left_ptr";
+        }
+    }
+}
+
+
 using namespace std;
+
+
 namespace NXlib
 {
     /// @class window
@@ -92,7 +318,7 @@ namespace NXlib
     }
 
     void window::create_window(u32 const parent, i16 const x, i16 const y, u16 const width,
-        u16 const height, u8 const color, u32 const event_mask, i32 const flags, const void* border_data)
+        u16 const height, u8 const color, u32 const event_mask, i32 const flags, const void* border_data, Cursor_t cursor)
     {
         _parent = parent;
         _x      = x;
@@ -109,10 +335,25 @@ namespace NXlib
             raise();
         }
 
+        if (flags & RAISE_WINDOW)
+        {
+            raise();
+        }
+
+        if (flags & FOCUS_WINDOW)
+        {
+            focus();
+        }
+
         if (event_mask > 0)
         {
             apply_event_mask(event_mask);
         }
+        if (cursor != Cursor_t::arrow)
+        {
+            set_pointer(cursor);
+        }
+
         /*if (flags & KEYS_FOR_TYPING) grab_keys_for_typing();*/
         /*if (__flags & FOCUS_INPUT    ) focus_input();
         if (__flags & MAP)
@@ -129,10 +370,6 @@ namespace NXlib
             make_borders(border_data[0], border_data[1], border_data[2]);
         }
 
-        if (__cursor != CURSOR::arrow)
-        {
-            set_pointer(__cursor);
-        }
 
         if (__flags & RAISE)
         {
@@ -448,9 +685,8 @@ namespace NXlib
 
     bool window::is_active_input_focus() const
     {
-        u32 const focused_window = NXlib::get_input_focus_window();
-
-        if (focused_window == _window)
+        if (u32 const focused_window = NXlib::get_input_focus_window();
+            focused_window == _window)
         {
             return true;
         }
@@ -674,7 +910,7 @@ namespace NXlib
         free(reply);
     }
 
-    void window::update_geo_from_input(i16 const x, i16 const y, u16 const width, u16 const height)
+    void window::update(i16 const x, i16 const y, u16 const width, u16 const height)
     {
         _x      = x;
         _y      = y;
@@ -687,22 +923,22 @@ namespace NXlib
         return _parent;
     }
 
-    u32 window::get_x() const
+    i16 window::x() const
     {
         return _x;
     };
 
-    u32 window::get_y() const
+    i16 window::y() const
     {
         return _y;
     }
 
-    u32 window::get_width() const
+    u16 window::width() const
     {
         return _width;
     }
 
-    u32 window::get_height() const
+    u16 window::height() const
     {
         return _height;
     }
@@ -713,4 +949,408 @@ namespace NXlib
         xcb_flush(conn);
     }
 
+    void window::set_pointer(Cursor_t const cursor_type) const
+    {
+        xcb_cursor_context_t* ctx;
+        if (xcb_cursor_context_new(conn, screen, &ctx) < 0)
+        {
+            loutEWin << "Unable to create cursor context" << '\n';
+            return;
+        }
+
+        xcb_cursor_t const cursor = xcb_cursor_load_cursor(ctx, pointer_from_enum(cursor_type));
+        if (!cursor)
+        {
+            loutEWin << "Unable to load cursor" << '\n';
+            xcb_cursor_context_free(ctx);
+            xcb_free_cursor(conn, cursor);
+            return;
+        }
+
+        u32 const data[1] = {cursor};
+        change_attributes(XCB_CW_CURSOR, data);
+
+        xcb_cursor_context_free(ctx);
+        xcb_free_cursor(conn, cursor);
+
+        xcb_flush(conn);
+    }
+
+    void window::change_attributes(u32 const mask, void const* data) const
+    {
+        xcb_change_window_attributes
+        (
+            conn,
+            _window,
+            mask,
+            data
+        );
+
+        xcb_flush(conn);
+    }
+
+    void window::conf_unchecked(u32 const mask, void const* data) const
+    {
+        xcb_configure_window
+        (
+            conn,
+            _window,
+            mask,
+            data
+        );
+
+        xcb_flush(conn);
+    }
+
+    void window::configure(u32 const mask, void const* data) const
+    {
+        xcb_configure_window
+        (
+            conn,
+            _window,
+            mask,
+            data
+        );
+
+        xcb_flush(conn);
+    }
+
+    min_size_hints_t window::get_min_window_size_hints() const
+    {
+        xcb_size_hints_t hints;
+        xcb_icccm_get_wm_normal_hints_reply(conn, xcb_icccm_get_wm_normal_hints(conn, _window), &hints, nullptr);
+
+        if (hints.flags & XCB_ICCCM_SIZE_HINT_P_MIN_SIZE)
+        {
+            min_size_hints_t min_size_hints{hints.min_width, hints.min_width};
+            return min_size_hints;
+        }
+
+        return {0, 0};
+    }
+
+    void window::kill() const
+    {
+        tools::iAtomR const p_reply(true, "WM_PROTOCOLS");
+        tools::iAtomR const d_reply(false, "WM_DELETE_WINDOW");
+
+        if (p_reply.is_not_valid())
+        {
+            loutE << "protocols reply is not valid" << loutEND;
+            return;
+        }
+
+        if (d_reply.is_not_valid())
+        {
+            loutE << "delete reply is not valid" << loutEND;
+            return;
+        }
+
+        const uint32_t values[3] = {32, p_reply.Atom(), d_reply.Atom()};
+        send_event(KILL_WINDOW, values);
+
+        xcb_flush(conn);
+    }
+
+    void window::send_event(u32 const event_mask, void const* value_list) const
+    {
+        if (event_mask & XCB_EVENT_MASK_EXPOSURE)
+        {
+            xcb_expose_event_t expose_event =
+            {
+                .response_type = XCB_EXPOSE,
+                .window = _window,
+                .x      = 0,       /* <- Top-left x coordinate of the area to be redrawn                 */
+                .y      = 0,       /* <- Top-left y coordinate of the area to be redrawn                 */
+                .width  = _width,  /* <- Width of the area to be redrawn                                 */
+                .height = _height, /* <- Height of the area to be redrawn                                */
+                .count  = 0        /* <- Number of expose events to follow if this is part of a sequence */
+            };
+
+            xcb_send_event
+            (
+                conn,
+                false,
+                _window,
+                XCB_EVENT_MASK_EXPOSURE,
+                reinterpret_cast<char*>(&expose_event)
+            );
+            xcb_flush(conn);
+        }
+
+        if (event_mask & XCB_EVENT_MASK_STRUCTURE_NOTIFY)
+        {
+            auto const* intern_value_list =  static_cast<const u32*>(value_list);
+
+            xcb_configure_notify_event_t event;
+            event.response_type     = XCB_CONFIGURE_NOTIFY;
+            event.event             = _window;
+            event.window            = _window;
+            event.above_sibling     = XCB_NONE;
+            event.x                 = static_cast<i16>(intern_value_list[0]);
+            event.y                 = static_cast<i16>(intern_value_list[1]);
+            event.width             = static_cast<u16>(intern_value_list[2]);
+            event.height            = static_cast<u16>(intern_value_list[3]);
+            event.border_width      = 0;
+            event.override_redirect = false;
+            event.pad0              = 0;
+            event.sequence          = 0;
+
+            xcb_send_event
+            (
+                conn,
+                false,
+                _window,
+                XCB_EVENT_MASK_STRUCTURE_NOTIFY,
+                reinterpret_cast<char*>(&event)
+            );
+
+            xcb_flush(conn);
+        }
+
+        if (event_mask & KILL_WINDOW)
+        {
+            auto const* intern_value_list = static_cast<const uint32_t*>(value_list);
+
+            xcb_client_message_event_t ev;
+            ev.response_type  = XCB_CLIENT_MESSAGE;
+            ev.format         = intern_value_list[0];
+            ev.sequence       = 0;
+            ev.window         = _window;
+            ev.type           = intern_value_list[1];
+            ev.data.data32[0] = intern_value_list[2];
+            ev.data.data32[1] = XCB_CURRENT_TIME;
+
+            xcb_send_event
+            (
+                conn,
+                true,
+                _window,
+                XCB_EVENT_MASK_NO_EVENT,
+                reinterpret_cast<char*>(&ev)
+            );
+            xcb_flush(conn);
+        }
+    }
+
+    void window::x(u32 const x)
+    {
+        u32 const data[1] = {x};
+        configure(XCB_CONFIG_WINDOW_X, data);
+
+        _x = static_cast<i16>(x);
+
+        xcb_flush(conn);
+    }
+
+    void window::y(u32 const y)
+    {
+        u32 const data[1] = {y};
+        configure(XCB_CONFIG_WINDOW_Y, data);
+
+        _y = static_cast<i16>(y);
+
+        xcb_flush(conn);
+    }
+
+    void window::width(u32 const width)
+    {
+        u32 const data[1] = {width};
+        configure(XCB_CONFIG_WINDOW_WIDTH, data);
+
+        _width = static_cast<u16>(width);
+
+        xcb_flush(conn);
+    }
+
+    void window::height(u32 const height)
+    {
+        u32 const data[1] = {height};
+        configure(XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _height = static_cast<u16>(height);
+        xcb_flush(conn);
+    }
+
+    void window::x_y(u32 const x, u32 const y)
+    {
+        u32 const data[2] = {x, y};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y, data);
+
+        _x = static_cast<i16>(x);
+        _y = static_cast<i16>(y);
+
+        xcb_flush(conn);
+    }
+
+    void window::width_height(u32 const width, u32 const height)
+    {
+        u32 const data[2] = {width, height};
+        configure(XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _width  = static_cast<u16>(width);
+        _height = static_cast<u16>(height);
+
+        xcb_flush(conn);
+    }
+
+    void window::x_y_width_height(u32 const x, u32 const y, u32 const width, u32 const height)
+    {
+        u32 const data[4] = {x, y, width, height};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _x      = static_cast<i16>(x);
+        _y      = static_cast<i16>(y);
+        _width  = static_cast<u16>(width);
+        _height = static_cast<u16>(height);
+
+        xcb_flush(conn);
+    }
+
+    void window::x_width_height(u32 const x, u32 const width, u32 const height)
+    {
+        u32 const data[3] = {x, width, height};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _x      = static_cast<i16>(x);
+        _width  = static_cast<u16>(width);
+        _height = static_cast<u16>(height);
+        xcb_flush(conn);
+    }
+
+    void window::y_width_height(u32 const y, u32 const width, u32 const height)
+    {
+        u32 const data[3] = {y, width, height};
+        configure(XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _y      = static_cast<i16>(y);
+        _width  = static_cast<u16>(width);
+        _height = static_cast<u16>(height);
+
+        xcb_flush(conn);
+    }
+
+    void window::x_width(u32 const x, u32 const width)
+    {
+        u32 const data[2] = {x, width};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_WIDTH, data);
+
+        _x      = static_cast<i16>(x);
+        _width  = static_cast<u16>(width);
+
+        xcb_flush(conn);
+    }
+
+    void window::x_height(u32 const x, u32 const height)
+    {
+        u32 const data[2] = {x, height};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _x      = static_cast<i16>(x);
+        _height = static_cast<u16>(height);
+
+        xcb_flush(conn);
+    }
+
+    void window::y_width(u32 const y, u32 const width)
+    {
+        u32 const data[2] = {y, _width};
+        configure(XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH, data);
+
+        _y      = static_cast<i16>(y);
+        _width  = static_cast<u16>(width);
+
+        xcb_flush(conn);
+    }
+
+    void window::y_height(u32 const y, u32 const height)
+    {
+        u32 const data[2] = {y, height};
+        configure(XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _y      = static_cast<i16>(y);
+        _height = static_cast<u16>(height);
+        xcb_flush(conn);
+    }
+
+    void window::x_y_width(u32 const x, uint32_t y, u32 const width)
+    {
+        u32 const data[3] = {x, y, width};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH, data);
+
+        _x      = static_cast<i16>(x);
+        _y      = static_cast<i16>(y);
+        _width  = static_cast<u16>(width);
+
+        xcb_flush(conn);
+    }
+
+    void window::x_y_height(u32 const x, u32 const y, u32 const height)
+    {
+        u32 const data[3] = {x, y, height};
+        configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_HEIGHT, data);
+
+        _x      = static_cast<i16>(x);
+        _y      = static_cast<i16>(y);
+        _height = static_cast<u16>(height);
+
+        xcb_flush(conn);
+    }
+
+    vector<u32> window::get_best_quality_window_icon(u32* width, u32* height) const
+    {
+        if (auto const &ewmh_cookie = xcb_ewmh_init_atoms(conn, ewmh);
+            !xcb_ewmh_init_atoms_replies(ewmh, ewmh_cookie, nullptr))
+        {
+            loutE << "Failed to initialize EWMH atoms" << '\n';
+            free(ewmh_cookie);
+            return {};
+        }
+
+        xcb_get_property_cookie_t const cookie = xcb_get_property(conn, 0, _window,
+            ewmh->_NET_WM_ICON,XCB_ATOM_CARDINAL, 0, UINT32_MAX);
+
+        xcb_get_property_reply_t*       reply  = xcb_get_property_reply(conn, cookie, nullptr);
+
+        vector<u32> best_icon_data;
+        u32         best_width  = 0;
+        u32         best_height = 0;
+
+        if (reply && reply->value_len > 0)
+        {
+            u32         best_size = 0;
+            auto const* data      = static_cast<u32*>(xcb_get_property_value(reply));
+            u32 const   len       = xcb_get_property_value_length(reply) / sizeof(u32);
+
+            for (uint32_t i = 0; i < len; )
+            {
+                u32 const intern_width  = data[i++];
+                u32 const intern_height = data[i++];
+                u32 const size          = intern_width * intern_height;
+
+                if (size > best_size)
+                {
+                    best_size = size;
+                    best_width = intern_width;
+                    best_height = intern_height;
+                    best_icon_data.assign(data + i, data + i + size);
+                }
+
+                i += size; // Move to the next icon in the data
+            }
+        }
+
+        if (width  != nullptr)
+        {
+            *width  = best_width;
+        }
+
+        if (height != nullptr)
+        {
+            *height = best_height;
+        }
+
+        free(reply);
+        return best_icon_data;
+    }
 }

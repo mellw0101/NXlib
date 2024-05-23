@@ -56,6 +56,7 @@ set(NXLIB_SOURCES
         NXlib.cpp
         Key_Codes.cpp
         Pid_Manager.cpp
+        Bitmap.cpp
 )
 
 set(NXLIB_HEADERS
@@ -69,6 +70,7 @@ set(NXLIB_HEADERS
         NXlib.h
         Key_Codes.h
         Pid_Manager.h
+        Bitmap.h
 )
 
 # Create the static library

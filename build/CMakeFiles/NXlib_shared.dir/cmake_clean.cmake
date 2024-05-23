@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o"
+  "CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.d"
   "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o"
   "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.d"
   "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o"
