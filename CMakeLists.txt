@@ -89,6 +89,10 @@ set_target_properties(NXlib_shared PROPERTIES OUTPUT_NAME "NXlib")
 # Set the properties for the static library
 set_target_properties(NXlib_static PROPERTIES OUTPUT_NAME "NXlib")
 
+# Add optimization flags
+target_compile_options(NXlib_static PRIVATE -O3 -march=native)
+target_compile_options(NXlib_shared PRIVATE -O3 -march=native)
+
 # Install the static library
 install(TARGETS NXlib_static
         ARCHIVE DESTINATION lib

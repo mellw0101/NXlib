@@ -6,5 +6,5 @@ CXX_DEFINES = -DNXlib_shared_EXPORTS
 
 CXX_INCLUDES = -I/home/mellw/CLionProjects/NXlib
 
-CXX_FLAGS = -std=gnu++20 -fPIC
+CXX_FLAGS = -std=gnu++20 -fPIC -O3 -march=native
 

@@ -3379,7 +3379,6 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
   /home/mellw/CLionProjects/NXlib/NXlib.h \
   /home/mellw/CLionProjects/NXlib/globals.h \
   /home/mellw/CLionProjects/NXlib/lout.h \
-  /home/mellw/CLionProjects/NXlib/prof.h \
   /home/mellw/CLionProjects/NXlib/tools.h \
   /home/mellw/CLionProjects/NXlib/window.h \
   /usr/include/Imlib2.h \
