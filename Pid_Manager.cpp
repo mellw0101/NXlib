@@ -59,17 +59,11 @@
 // Created by mellw on 5/23/24.
 //
 
+
+
+
 #include "Pid_Manager.h"
-#include <tools.h>
 #include "lout.h"
-
-#include <string>
-
-#include <sys/wait.h>
-#include <sys/stat.h>
-
-#include <fcntl.h>
-#include <dirent.h>
 
 
 namespace NXlib

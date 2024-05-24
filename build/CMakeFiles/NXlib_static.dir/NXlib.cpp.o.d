@@ -142,30 +142,130 @@ CMakeFiles/NXlib_static.dir/NXlib.cpp.o: \
  /usr/include/c++/14.1.1/bits/locale_facets.tcc \
  /usr/include/c++/14.1.1/bits/basic_ios.tcc \
  /usr/include/c++/14.1.1/bits/ostream.tcc /usr/include/c++/14.1.1/istream \
- /usr/include/c++/14.1.1/bits/istream.tcc \
- /home/mellw/CLionProjects/NXlib/globals.h /usr/include/xcb/xcb.h \
+ /usr/include/c++/14.1.1/bits/istream.tcc /usr/include/c++/14.1.1/sstream \
+ /usr/include/c++/14.1.1/bits/sstream.tcc \
+ /usr/include/c++/14.1.1/filesystem /usr/include/c++/14.1.1/bits/fs_fwd.h \
+ /usr/include/c++/14.1.1/cstdint \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/sys/uio.h \
- /usr/include/bits/types/struct_iovec.h /usr/include/bits/uio_lim.h \
- /usr/include/bits/uio-ext.h /usr/include/xcb/xproto.h \
- /usr/include/xcb/xcb.h /usr/include/xcb/xcb_ewmh.h \
- /usr/include/c++/14.1.1/stdlib.h /usr/include/xcb/xcb_keysyms.h \
- /usr/include/c++/14.1.1/cstdint /usr/include/c++/14.1.1/vector \
+ /usr/include/bits/stdint-least.h /usr/include/c++/14.1.1/bits/chrono.h \
+ /usr/include/c++/14.1.1/ratio /usr/include/c++/14.1.1/limits \
+ /usr/include/c++/14.1.1/ctime \
+ /usr/include/c++/14.1.1/bits/parse_numbers.h \
+ /usr/include/c++/14.1.1/bits/fs_path.h /usr/include/c++/14.1.1/locale \
+ /usr/include/c++/14.1.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14.1.1/bits/codecvt.h \
+ /usr/include/c++/14.1.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.1.1/bits/locale_conv.h \
+ /usr/include/c++/14.1.1/iomanip \
+ /usr/include/c++/14.1.1/bits/quoted_string.h \
+ /usr/include/c++/14.1.1/codecvt \
+ /usr/include/c++/14.1.1/ext/concurrence.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr_base.h \
+ /usr/include/c++/14.1.1/bits/allocated_ptr.h \
+ /usr/include/c++/14.1.1/bits/unique_ptr.h \
+ /usr/include/c++/14.1.1/ext/aligned_buffer.h \
+ /usr/include/c++/14.1.1/bits/align.h \
  /usr/include/c++/14.1.1/bits/stl_uninitialized.h \
+ /usr/include/c++/14.1.1/bits/fs_dir.h \
+ /usr/include/c++/14.1.1/bits/fs_ops.h \
+ /home/mellw/CLionProjects/NXlib/globals.h \
+ /usr/include/c++/14.1.1/algorithm \
+ /usr/include/c++/14.1.1/bits/stl_algo.h \
+ /usr/include/c++/14.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/14.1.1/bits/stl_heap.h \
+ /usr/include/c++/14.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/14.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/14.1.1/bits/ranges_algo.h \
+ /usr/include/c++/14.1.1/bits/ranges_algobase.h \
+ /usr/include/c++/14.1.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14.1.1/pstl/execution_defs.h \
+ /usr/include/c++/14.1.1/chrono /usr/include/c++/14.1.1/vector \
  /usr/include/c++/14.1.1/bits/stl_vector.h \
  /usr/include/c++/14.1.1/bits/stl_bvector.h \
  /usr/include/c++/14.1.1/bits/vector.tcc \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
- /usr/include/c++/14.1.1/bits/chrono.h /usr/include/c++/14.1.1/ratio \
- /usr/include/c++/14.1.1/limits /usr/include/c++/14.1.1/ctime \
- /usr/include/c++/14.1.1/bits/parse_numbers.h \
- /usr/include/c++/14.1.1/bits/std_mutex.h \
+ /usr/include/c++/14.1.1/bits/chrono_io.h /usr/include/c++/14.1.1/format \
+ /usr/include/c++/14.1.1/array /usr/include/c++/14.1.1/charconv \
+ /usr/include/c++/14.1.1/optional \
+ /usr/include/c++/14.1.1/bits/enable_special_members.h \
+ /usr/include/c++/14.1.1/span /usr/include/c++/14.1.1/variant \
+ /usr/include/c++/14.1.1/bits/unicode.h \
+ /usr/include/c++/14.1.1/bits/unicode-data.h \
+ /usr/include/c++/14.1.1/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/14.1.1/bits/specfun.h \
+ /usr/include/c++/14.1.1/tr1/gamma.tcc \
+ /usr/include/c++/14.1.1/tr1/special_function_util.h \
+ /usr/include/c++/14.1.1/tr1/bessel_function.tcc \
+ /usr/include/c++/14.1.1/tr1/beta_function.tcc \
+ /usr/include/c++/14.1.1/tr1/ell_integral.tcc \
+ /usr/include/c++/14.1.1/tr1/exp_integral.tcc \
+ /usr/include/c++/14.1.1/tr1/hypergeometric.tcc \
+ /usr/include/c++/14.1.1/tr1/legendre_function.tcc \
+ /usr/include/c++/14.1.1/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/14.1.1/tr1/poly_hermite.tcc \
+ /usr/include/c++/14.1.1/tr1/poly_laguerre.tcc \
+ /usr/include/c++/14.1.1/tr1/riemann_zeta.tcc /usr/include/dirent.h \
+ /usr/include/bits/dirent.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/dirent_ext.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/linux/falloc.h \
+ /usr/include/bits/stat.h /usr/include/bits/struct_stat.h \
+ /usr/include/c++/14.1.1/fstream \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/14.1.1/bits/fstream.tcc /usr/include/c++/14.1.1/map \
+ /usr/include/c++/14.1.1/bits/stl_tree.h \
+ /usr/include/c++/14.1.1/bits/node_handle.h \
+ /usr/include/c++/14.1.1/bits/stl_map.h \
+ /usr/include/c++/14.1.1/bits/stl_multimap.h \
+ /usr/include/c++/14.1.1/bits/erase_if.h /usr/include/c++/14.1.1/numeric \
+ /usr/include/c++/14.1.1/bits/stl_numeric.h \
+ /usr/include/c++/14.1.1/pstl/glue_numeric_defs.h /usr/include/sys/stat.h \
+ /usr/include/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/bits/statx-generic.h \
+ /usr/include/bits/types/struct_statx_timestamp.h \
+ /usr/include/bits/types/struct_statx.h /usr/include/sys/wait.h \
+ /usr/include/signal.h /usr/include/bits/signum-generic.h \
+ /usr/include/bits/signum-arch.h /usr/include/bits/types/sig_atomic_t.h \
+ /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
+ /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
+ /usr/include/bits/siginfo-consts-arch.h \
+ /usr/include/bits/types/sigval_t.h /usr/include/bits/types/sigevent_t.h \
+ /usr/include/bits/sigevent-consts.h /usr/include/bits/sigaction.h \
+ /usr/include/bits/sigcontext.h /usr/include/bits/types/stack_t.h \
+ /usr/include/sys/ucontext.h /usr/include/bits/sigstack.h \
+ /usr/include/bits/sigstksz.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/bits/ss_flags.h \
+ /usr/include/bits/types/struct_sigstack.h /usr/include/bits/sigthread.h \
+ /usr/include/bits/signal_ext.h /usr/include/bits/types/idtype_t.h \
+ /usr/include/xcb/xcb.h /usr/include/sys/uio.h \
+ /usr/include/bits/uio_lim.h /usr/include/bits/uio-ext.h \
+ /usr/include/xcb/xproto.h /usr/include/xcb/xcb.h \
+ /usr/include/xcb/xcb_ewmh.h /usr/include/c++/14.1.1/stdlib.h \
+ /usr/include/xcb/xcb_keysyms.h /usr/include/xcb/xcb_image.h \
+ /usr/include/xcb/shm.h /usr/include/Imlib2.h /usr/include/X11/Xlib.h \
+ /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
+ /usr/include/X11/Xosdefs.h /home/mellw/CLionProjects/NXlib/lout.h \
+ /usr/include/c++/14.1.1/mutex /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
  /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \
  /usr/include/c++/14.1.1/bits/deque.tcc \
- /usr/include/c++/14.1.1/bits/stl_heap.h \
- /usr/include/c++/14.1.1/bits/stl_queue.h /usr/include/c++/14.1.1/sstream \
- /usr/include/c++/14.1.1/bits/sstream.tcc \
- /home/mellw/CLionProjects/NXlib/tools.h \
- /home/mellw/CLionProjects/NXlib/color.h
+ /usr/include/c++/14.1.1/bits/stl_queue.h \
+ /home/mellw/CLionProjects/NXlib/tools.h

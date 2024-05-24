@@ -65,7 +65,11 @@
 
 
 #include <iostream>
+#include <sstream>
+#include <filesystem>
+
 #include "globals.h"
+
 
 using namespace std;
 
@@ -148,6 +152,108 @@ namespace NXlib
     void          get_window_geo(int16_t* x = nullptr, int16_t* y = nullptr, uint16_t* width = nullptr, uint16_t* height = nullptr);
     u32           get_color(u8 input_color);
     constexpr rgb_color_code_t rgb_code(u8 input_color);
+
+    class Crypto
+    {
+        #define HASH(__input) \
+            crypro->str_hash_32(__input)
+
+    public:
+        /* Methods */
+        static vector<u32> hash_str_32_bit_fixed(const string& input)
+        {
+            hash<string> const hasher;
+            auto const         hashedValue = hasher(input);
+            vector<u32>        hashSequence(32);
+            for (size_t i = 0; i < hashSequence.size(); ++i)
+            {
+                hashSequence[i] = hashedValue ^ (hashedValue >> (i % (sizeof(size_t) * 8)));
+            }
+
+            return hashSequence;
+        }
+
+        static string hash_vec_to_str(vector<u32> const &hash_vec)
+        {
+            stringstream ss;
+            for (size_t i = 0; i < hash_vec.size(); ++i)
+            {
+                // Convert each number to a string and concatenate them
+                // You might want to use a delimiter if you need to parse this string back into numbers
+                ss << hash_vec[i];
+                if (i < hash_vec.size() - 1)
+                {
+                    ss << ", "; // Add a delimiter (comma) between the numbers
+                }
+            }
+            return ss.str();
+        }
+
+        static string str_hash_32(const string &input)
+        {
+            // Hash the input
+            hash<string> constexpr hashFn;
+            auto const   hash = hashFn(input);
+
+            // Convert hash to a hexadecimal string
+            stringstream hexStream;
+            hexStream << hex << hash;
+
+            // Get the hexadecimal string
+            string const hexString = hexStream.str();
+
+            /*
+                Ensure the hexadecimal string is 32 characters long
+                Note: This involves padding and possibly trimming,
+                assuming size_t is less than or equal to 64 bits.
+            */
+            string paddedHexString = string(32 - std::min(32, static_cast<int>(hexString.length())), '0') + hexString;
+            if (paddedHexString.length() > 32)
+            {
+                paddedHexString = paddedHexString.substr(0, 32);
+            }
+
+            // Optionally, convert hex to a purely numeric string if needed
+            // For simplicity, we'll assume the hex string suffices for demonstration
+
+            return paddedHexString;
+        }
+    };
+
+    namespace fs = std::filesystem;
+
+    class File_System
+    {
+        #define FS_ACC(_folder, _sub_path) file_system->accessor(_folder, _sub_path)
+        #define ICONFOLDER File_System::ICON_FOLDER
+        #define ICON_FOLDER_HASH(__class) FS_ACC(ICONFOLDER, HASH(__class))
+        #define ICON_FOLDER(_class) FS_ACC(ICONFOLDER, _class)
+
+        #define PNG_PATH(_class) FS_ACC(ICONFOLDER, _class + "/" + "icon.png")
+
+        #define PNG_HASH(__class) FS_ACC(ICONFOLDER, HASH(__class) + "/" + HASH("png"))
+
+        typedef enum : uint8_t {
+            FOLDER
+        } create_type_t;
+
+    public:
+        string config_folder = USER_PATH_PREFIX("/.config/mwm"), icon_folder = config_folder + "/icons";
+        bool   status;
+
+        typedef enum : uint8_t {
+            CONFIG_FOLDER,
+            ICON_FOLDER
+        } accessor_t;
+
+        void                 create(const string& path, create_type_t type = FOLDER);
+        void                 init_check();
+        [[nodiscard]] bool   check_status() const;
+        [[nodiscard]] string accessor(accessor_t folder, const string &sub_path) const;
+    };
+
+    static File_System* file_system = nullptr;
+
 }
 
 #endif //NXLIB_H

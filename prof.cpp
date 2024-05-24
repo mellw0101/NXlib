@@ -59,18 +59,14 @@
 // Created by mellw on 5/21/24.
 //
 
+
+
+
 #include "prof.h"
 
-#include <cmath>
-#include <sstream>
-#include <fstream>
-#include <algorithm>
-#include <numeric>
-#include <sstream>
-#include <cmath>
-#include <iomanip>
 
 using namespace std;
+
 
 namespace NXlib
 {
@@ -85,14 +81,22 @@ namespace NXlib
 
     double ProfilerStats::mean() const
     {
-        if (values.empty()) return 0.0;
+        if (values.empty())
+        {
+            return 0.0;
+        }
+
         const double sum = accumulate(values.begin(), values.end(), 0.0);
         return sum / static_cast<double>(values.size());
     }
 
     double ProfilerStats::stddev() const
     {
-        if (values.size() < 2) return 0.0;
+        if (values.size() < 2)
+        {
+            return 0.0;
+        }
+
         double mean_val = mean();
         const double sq_sum = std::accumulate(values.begin(), values.end(), 0.0, [mean_val](double a, double b) { return a + (b - mean_val) * (b - mean_val); });
         return std::sqrt(sq_sum / static_cast<double>(values.size()));
@@ -117,7 +121,7 @@ namespace NXlib
     *****************<<        GlobalProfiler         >>******************
     *********************************************************************/
 
-    void GlobalProfiler::record(const string &name, const double duration)
+    void GlobalProfiler::record(string const &name, double const duration)
     {
         stats[name].record(duration);
     }
@@ -159,7 +163,7 @@ namespace NXlib
         return ss.str();
     }
 
-    void GlobalProfiler::report(const string &filename) const
+    void GlobalProfiler::report(string const &filename) const
     {
         ofstream file(filename, ios::app);
         file << "\n\nProfiling report: " << mili() << '\n';

@@ -66,13 +66,6 @@
 
 #include "globals.h"
 
-#include "tools.h"
-#include <xcb/xcb.h>
-#include <string>
-#include <vector>
-
-#include "lout.h"
-
 using namespace std;
 
 
@@ -93,7 +86,6 @@ namespace NXlib
                 return true;
             }
 
-            loutE << "index out of bounds" << '\n';
             return false;
         }
 

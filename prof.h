@@ -57,21 +57,18 @@
 // Created by mellw on 5/21/24.
 //
 
+
+
+
 #ifndef PROF_H
 #define PROF_H
 
 
-#include <chrono>
-#include <map>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <chrono>
-#include <map>
-#include <string>
-#include <vector>
+#include "globals.h"
+
 
 using namespace std;
+
 
 namespace NXlib
 {
@@ -83,7 +80,7 @@ namespace NXlib
         [[nodiscard]] double stddev() const;
         [[nodiscard]] double min() const;
         [[nodiscard]] double max() const;
-        [[nodiscard]] size_t count() const;
+        [[nodiscard]] std_size_t count() const;
 
     private:
         vector<double> values;
@@ -92,8 +89,8 @@ namespace NXlib
     class GlobalProfiler
     {
     public:
-        void record(const string &name, double duration);
-        void report(const string &filename) const;
+        void record(string const &name, double duration);
+        void report(string const &filename) const;
         static GlobalProfiler* createNewGprof();
 
     private:

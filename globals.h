@@ -66,15 +66,41 @@
 #define GLOBALS_H
 
 
+#include <algorithm>
+#include <chrono>
+#include <cmath>
+#include <cstdint>
+#include <dirent.h>
+#include <fcntl.h>
+#include <fstream>
+#include <iomanip>
+#include <map>
+#include <numeric>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <sys/stat.h>
+#include <sys/wait.h>
+
 #include <xcb/xcb.h>
 #include <xcb/xcb_ewmh.h>
 #include <xcb/xcb_keysyms.h>
-#include <cstdint>
-#include <vector>
+#include <xcb/xcb_image.h>
+
+#include <Imlib2.h>
 
 extern xcb_connection_t*      conn;
 extern xcb_screen_t*          screen;
 extern xcb_ewmh_connection_t* ewmh;
+
+using namespace std;
+static string user;
+#define USER \
+    user
+#define USER_PATH_PREFIX(__address) \
+    "/home/" + user + __address
+#define USER_PATH_PREFIX_C_STR(__address) \
+    string("/home/" + user + __address).c_str()
 
 using u64 = uint64_t;
 using u32 = uint32_t;
@@ -94,6 +120,7 @@ using i8  = int8_t;
 using std_size_t = long unsigned int;
 
 static constexpr u32 GC_FONT_MASK = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_FONT;
+static constexpr u32 GC_MASK      = XCB_GC_FOREGROUND | XCB_GC_BACKGROUND | XCB_GC_GRAPHICS_EXPOSURES;
 
 static auto constexpr DEFAULT_FONT = "7x14";
 

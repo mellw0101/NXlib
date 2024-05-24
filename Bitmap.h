@@ -63,7 +63,6 @@
 #define BITMAP_H
 
 #include "globals.h"
-#include "lout.h"
 #include <png.h>
 
 using namespace std;

@@ -60,6 +60,7 @@
 //
 
 #include "Bitmap.h"
+#include "lout.h"
 
 namespace NXlib
 {

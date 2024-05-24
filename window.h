@@ -69,6 +69,8 @@
 #include "globals.h"
 
 #include <string>
+
+#include "Bitmap.h"
 #include "NXlib.h"
 
 
@@ -160,73 +162,83 @@ namespace NXlib
         window() = default;
 
         operator             u32() const;
-        window& operator=(u32 new_window); /// Overload the assignment operator with a 'u32'
 
-        void create_window(u32 parent, i16 x, i16 y, u16 width, u16 height,
-            u8 color = DEFAULT_COLOR, uint32_t event_mask = 0, i32 flags = 0, const void* border_data = nullptr, Cursor_t cursor = Cursor_t::arrow);
+        /// Overload the assignment operator with a 'u32'
+        auto operator=(u32 new_window) -> window&;
 
-        void                                   map() const;
-        void                                   unmap() const;
-        void                                   focus() const;
-        void                                   clear() const;
-        void                                   raise() const;
-        [[nodiscard]] bool                     is_mapped() const;
-        [[nodiscard]] bool                     check_frameless_window_hint() const;
-        [[nodiscard]] bool                     is_EWMH_fullscreen() const;
-        [[nodiscard]] bool                     is_active_EWMH_window() const;
-        void                                   set_active_EWMH_window() const;
-        void                                   set_EWMH_fullscreen_state() const;
-        void                                   unset_EWMH_fullscreen_state() const;
-        [[nodiscard]] u32                      get_transient() const;
-        [[nodiscard]] u32                      get_pid() const;
-        [[nodiscard]] string                   get_net_wm_name_by_req() const;
-        void                                   change_back_pixel(u32 pixel) const;
-        void                                   apply_event_mask(u32 mask) const;
-        void                                   set_backround_color(u8 input_color);
-        void                                   change_background_color(u8 input_color);
-        void                                   reparent(u32 new_parent, i16 x, i16 y) const;
-        [[nodiscard]] bool                     is_active_input_focus() const;
-        void                                   draw_text_8(char const* str, i16 x, i16 y, u8 text_color = u8MAX, u8 background_color = u8MAX, const char *font_name = DEFAULT_FONT);
-        [[nodiscard]] u32                      check_event_mask_sum() const;
-        [[nodiscard]] vector<xcb_event_mask_t> check_event_mask_codes() const;
-        [[nodiscard]] bool                     is_mask_active(u32 event_mask) const;
-        void                                   grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const;
-        void                                   grab_button(initializer_list<pair<u8, u16>> bindings, bool owner_events = false) const;
-        void                                   update_geo_from_req();
-        void                                   update(i16 x, i16 y, u16 width, u16 height);
-        void                                   destroy() const;
-        void                                   set_pointer(Cursor_t cursor_type) const;
-        void                                   change_attributes(u32 mask, void const* data) const;
-        void                                   conf_unchecked(u32 mask, void const* data) const;
-        void                                   configure(u32 mask, void const* data) const;
-        [[nodiscard]] min_size_hints_t         get_min_window_size_hints() const;
-        void                                   kill() const;
-        void                                   send_event(u32 event_mask, void const* value_list = nullptr) const;
-        vector<u32>                            get_best_quality_window_icon(u32* width = nullptr, u32* height = nullptr) const;
+        auto create_window(u32      parent, i16 x, i16 y, u16 width, u16 height, u8 color = DEFAULT_COLOR,
+                           u32      event_mask = 0, i32 flags = 0, void const* border_data = nullptr,
+                           Cursor_t cursor = Cursor_t::arrow) -> void;
 
-        [[nodiscard]] u32 get_parent() const;
-        [[nodiscard]] i16 x() const;
-        [[nodiscard]] i16 y() const;
-        [[nodiscard]] u16 width() const;
-        [[nodiscard]] u16 height() const;
+        auto draw_text_8(char const* str, i16 x, i16 y, u8 text_color = u8MAX,
+                         u8          background_color = u8MAX, char const* font_name = DEFAULT_FONT) -> void;
 
-        void x(u32 x);
+        auto unmap() const -> void;
+        auto map()   const -> void;
+        auto focus() const -> void;
+        auto clear() const -> void;
+        auto raise() const -> void;
+        auto set_active_EWMH_window() const -> void;
+        auto set_EWMH_fullscreen_state() const -> void;
+        auto unset_EWMH_fullscreen_state() const -> void;
+        auto change_back_pixel(u32 pixel) const -> void;
+        auto apply_event_mask(u32 mask) const -> void;
+        auto set_backround_color(u8 input_color) -> void;
+        auto change_background_color(u8 input_color) -> void;
+        auto reparent(u32 new_parent, i16 x, i16 y) const -> void;
+        auto grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const -> void;
 
-        void y(u32 y);
+        auto grab_button(initializer_list<pair<u8, u16>> bindings, bool owner_events = false) const -> void;
+        auto update_geo_from_req() -> void;
+        auto update(i16 x, i16 y, u16 width, u16 height) -> void;
+        auto destroy() const -> void;
+        auto set_pointer(Cursor_t cursor_type) const -> void;
+        auto change_attributes(u32 mask, void const* data) const -> void;
+        auto conf_unchecked(u32 mask, void const* data) const -> void;
+        auto configure(u32 mask, void const* data) const -> void;
+        auto kill() const -> void;
+        auto send_event(u32 event_mask, void const* value_list = nullptr) const -> void;
+        auto get_best_quality_window_icon(u32* width = nullptr, u32* height = nullptr) const -> vector<u32>;
+        auto make_png_from_icon() const -> void;
+        auto set_backround_png(char const* imagePath) const -> void;
 
-        void width(u32 width);
-        void height(u32 height);
-        void x_y(u32 x, u32 y);
-        void width_height(u32 width, u32 height);
-        void x_y_width_height(u32 x, u32 y, u32 width, u32 height);
-        void x_width_height(u32 x, u32 width, u32 height);
-        void y_width_height(u32 y, u32 width, u32 height);
-        void x_width(u32 x, u32 width);
-        void x_height(u32 x, u32 height);
-        void y_width(u32 y, u32 width);
-        void y_height(u32 y, u32 height);
-        void x_y_width(u32 x, u32 y, u32 width);
-        void x_y_height(u32 x, u32 y, u32 height);
+
+        [[nodiscard]] auto is_mapped() const -> bool;
+        [[nodiscard]] auto check_frameless_window_hint() const -> bool;
+        [[nodiscard]] auto is_EWMH_fullscreen() const -> bool;
+        [[nodiscard]] auto is_active_EWMH_window() const -> bool;
+        [[nodiscard]] auto get_transient() const -> u32;
+        [[nodiscard]] auto get_pid() const -> u32;
+        [[nodiscard]] auto get_net_wm_name_by_req() const -> string;
+        [[nodiscard]] bool is_active_input_focus() const;
+        [[nodiscard]] auto check_event_mask_sum() const -> u32;
+        [[nodiscard]] auto check_event_mask_codes() const -> vector<xcb_event_mask_t>;
+        [[nodiscard]] auto is_mask_active(u32 event_mask) const -> bool;
+        [[nodiscard]] auto get_min_window_size_hints() const -> min_size_hints_t;
+        [[nodiscard]] auto get_icccm_class() const -> string;
+        [[nodiscard]] auto create_pixmap() const -> u32;
+        [[nodiscard]] auto create_graphics_exposure_gc() const -> u32;
+        [[nodiscard]] auto get_parent() const -> u32;
+        [[nodiscard]] auto x() const -> i16;
+        [[nodiscard]] auto y() const -> i16;
+        [[nodiscard]] auto width() const -> u16;
+        [[nodiscard]] auto height() const -> u16;
+
+        auto x(u32 x) -> void;
+        auto y(u32 y) -> void;
+        auto width(u32 width) -> void;
+        auto height(u32 height) -> void;
+        auto x_y(u32 x, u32 y) -> void;
+        auto width_height(u32 width, u32 height) -> void;
+        auto x_y_width_height(u32 x, u32 y, u32 width, u32 height) -> void;
+        auto x_width_height(u32 x, u32 width, u32 height) -> void;
+        auto y_width_height(u32 y, u32 width, u32 height) -> void;
+        auto x_width(u32 x, u32 width) -> void;
+        auto x_height(u32 x, u32 height) -> void;
+        auto y_width(u32 y, u32 width) -> void;
+        auto y_height(u32 y, u32 height) -> void;
+        auto x_y_width(u32 x, u32 y, u32 width) -> void;
+        auto x_y_height(u32 x, u32 y, u32 height) -> void;
 
     private:
         u32 _window  = 0;
@@ -241,10 +253,10 @@ namespace NXlib
         u32 _font    = 0;
         u32 _font_gc = 0;
 
+        auto make_window() -> void;
+        auto create_font_gc(u8 text_color, u8 background_color, u32 font) -> void;
 
-        [[nodiscard]] u32 get_window_u32() const;
-        void              create_font_gc(u8 text_color, u8 background_color, u32 font);
-        void              make_window();
+        [[nodiscard]] auto get_window_u32() const -> u32;
     };
 }
 

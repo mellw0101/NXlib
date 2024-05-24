@@ -68,7 +68,6 @@
 #include "globals.h"
 #include "lout.h"
 #include "tools.h"
-#include "color.h"
 
 
 namespace NXlib
@@ -302,6 +301,95 @@ namespace NXlib
         free(r);
 
         return pi;
+    }
+
+    void File_System::create(const string& path, create_type_t const type)
+    {
+        if (type == FOLDER)
+        {
+            bool create_bool = false;
+
+            if (!fs::exists(path))
+            {
+                loutI << "dir:" << loutPath(path) << " does not exist creating dir" << loutEND;
+                try
+                {
+                    create_bool = fs::create_directory(path);
+                }
+                catch (exception& e)
+                {
+                    loutE << "Failed to create dir:" << loutPath(path) << " error: " << e.what() << loutEND;
+                    status = false;
+                }
+
+                if (create_bool == true)
+                {
+                    loutI << "Successfully created dir:" << loutPath(path) << '\n';
+                    status = true;
+                }
+            }
+
+            if (!fs::is_directory(path))
+            {
+                bool remove_bool = false;
+                loutI << "dir:" << loutPath(path) << " exists but is not a dir deleting and remaking as dir" << loutEND;
+
+                try
+                {
+                    remove_bool = fs::remove(path);
+                }
+                catch (exception& e)
+                {
+                    loutE << "Failed to remove non-dir:" << loutPath(path) << " error: " << e.what() << loutEND;
+                    status = false;
+                }
+
+                if (remove_bool == true)
+                {
+                    try
+                    {
+                        create_bool = fs::create_directory(path);
+                    }
+                    catch (exception& e)
+                    {
+                        loutE << "Failed to create dir:" << loutPath(path) << " error: " << e.what() << loutEND;
+                        status = false;
+                    }
+
+                    if (create_bool == true)
+                    {
+                        loutI << "Successfully created dir:" << loutPath(path) << loutEND;
+                        status = false;
+                    }
+                }
+            }
+        }
+    }
+
+    void File_System::init_check()
+    {
+        create(config_folder);
+        create(icon_folder);
+    }
+
+    bool File_System::check_status() const
+    {
+        return status;
+    }
+
+    string File_System::accessor(accessor_t const folder, const string& sub_path) const
+    {
+        if (folder == CONFIG_FOLDER)
+        {
+            return (config_folder + "/" + sub_path);
+        }
+
+        if (folder == ICON_FOLDER)
+        {
+            return (icon_folder + "/" + sub_path);
+        }
+
+        return string{};
     }
 
     constexpr rgb_color_code_t rgb_code(u8 const input_color)

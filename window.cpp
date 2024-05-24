@@ -301,7 +301,7 @@ namespace NXlib
 
     /// PUBLIC:
 
-    u32 window::get_window_u32() const
+    auto window::get_window_u32() const -> u32
     {
         return _window;
     }
@@ -311,14 +311,15 @@ namespace NXlib
         return _window;
     }
 
-    window& window::operator=(u32 const new_window)
+    auto window::operator=(u32 const new_window) -> window&
     {
         _window = new_window;
         return *this;
     }
 
-    void window::create_window(u32 const parent, i16 const x, i16 const y, u16 const width,
-        u16 const height, u8 const color, u32 const event_mask, i32 const flags, const void* border_data, Cursor_t cursor)
+    auto window::create_window(u32 const      parent, i16 const x, i16 const y, u16 const width, u16 const height,
+                               u8 const       color, u32 const  event_mask, i32 const flags, void const* border_data,
+                               Cursor_t const cursor) -> void
     {
         _parent = parent;
         _x      = x;
@@ -377,19 +378,19 @@ namespace NXlib
         }*/
     }
 
-    void window::map() const
+    auto window::map() const -> void
     {
         xcb_map_window(conn, _window);
         xcb_flush(conn);
     }
 
-    void window::unmap() const
+    auto window::unmap() const -> void
     {
         xcb_unmap_window(conn, _window);
         xcb_flush(conn);
     }
 
-    bool window::is_mapped() const
+    auto window::is_mapped() const -> bool
     {
         xcb_get_window_attributes_cookie_t const cookie = xcb_get_window_attributes(conn, _window);
         xcb_get_window_attributes_reply_t* reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
@@ -406,7 +407,7 @@ namespace NXlib
     }
 
     // Function to fetch and check the _MOTIF_WM_HINTS property
-    bool window::check_frameless_window_hint() const
+    auto window::check_frameless_window_hint() const -> bool
     {
         bool is_frameless = false;
         xcb_atom_t const property = tools::get_atom("_MOTIF_WM_HINTS");
@@ -443,7 +444,7 @@ namespace NXlib
         return is_frameless;
     }
 
-    bool window::is_EWMH_fullscreen() const
+    auto window::is_EWMH_fullscreen() const -> bool
     {
         xcb_get_property_cookie_t const cookie = xcb_ewmh_get_wm_state(ewmh, _window);
         xcb_ewmh_get_atoms_reply_t wm_state;
@@ -465,7 +466,7 @@ namespace NXlib
         return false;
     }
 
-    bool window::is_active_EWMH_window() const
+    auto window::is_active_EWMH_window() const -> bool
     {
         uint32_t active_window = 0;
 
@@ -479,7 +480,7 @@ namespace NXlib
         return _window == active_window;
     }
 
-    void window::set_active_EWMH_window() const
+    auto window::set_active_EWMH_window() const -> void
     {
         if (xcb_generic_error_t* error =
             xcb_request_check(conn, xcb_ewmh_set_active_window_checked(ewmh, 0, _window)))
@@ -493,7 +494,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::set_EWMH_fullscreen_state() const
+    auto window::set_EWMH_fullscreen_state() const -> void
     {
         xcb_change_property
         (
@@ -510,7 +511,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::unset_EWMH_fullscreen_state() const
+    auto window::unset_EWMH_fullscreen_state() const -> void
     {
         xcb_change_property
         (
@@ -527,7 +528,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    u32 window::get_transient() const
+    auto window::get_transient() const -> u32
     {
         // Default to 0 (no parent)
         u32 t_for = 0;
@@ -554,7 +555,7 @@ namespace NXlib
         return t_for;
     }
 
-    u32 window::get_pid() const
+    auto window::get_pid() const -> u32
     {
         xcb_atom_t property = XCB_ATOM_NONE;
         xcb_atom_t constexpr type = XCB_ATOM_CARDINAL;
@@ -592,7 +593,7 @@ namespace NXlib
         return pid;
     }
 
-    string window::get_net_wm_name_by_req() const
+    auto window::get_net_wm_name_by_req() const -> string
     {
         xcb_ewmh_get_utf8_strings_reply_t wm_name;
         string windowName;
@@ -606,14 +607,14 @@ namespace NXlib
         return windowName;
     }
 
-    void window::change_back_pixel(u32 const pixel) const
+    auto window::change_back_pixel(u32 const pixel) const -> void
     {
         u32 const values[1] = {pixel};
         xcb_change_window_attributes(conn, _window, XCB_CW_BACK_PIXEL, values);
         xcb_flush(conn);
     }
 
-    void window::apply_event_mask(u32 const mask) const
+    auto window::apply_event_mask(u32 const mask) const -> void
     {
         u32 const data[1] = {mask};
         xcb_change_window_attributes
@@ -627,19 +628,19 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::clear() const
+    auto window::clear() const -> void
     {
         xcb_clear_area(conn, 0, _window, 0, 0, _width, _height);
         xcb_flush(conn);
     }
 
-    void window::set_backround_color(u8 const input_color)
+    auto window::set_backround_color(u8 const input_color) -> void
     {
         _color = input_color;
         change_back_pixel(get_color(input_color));
     }
 
-    void window::change_background_color(u8 const input_color)
+    auto window::change_background_color(u8 const input_color) -> void
     {
         set_backround_color(input_color);
         clear();
@@ -657,7 +658,7 @@ namespace NXlib
         @p XCB_INPUT_FOCUS_FOLLOW_KEYBOARD NOTE: This is experemental
 
     */
-    void window::focus() const
+    auto window::focus() const -> void
     {
         xcb_set_input_focus(conn, XCB_INPUT_FOCUS_POINTER_ROOT, _window, XCB_CURRENT_TIME);
         xcb_flush(conn);
@@ -670,20 +671,20 @@ namespace NXlib
         }
     }
 
-    void window::raise() const
+    auto window::raise() const -> void
     {
         u32 constexpr data[1] = {XCB_STACK_MODE_ABOVE};
         xcb_configure_window(conn, _window, XCB_CONFIG_WINDOW_STACK_MODE, data);
         xcb_flush(conn);
     }
 
-    void window::reparent(u32 const new_parent, i16 const x, i16 const y) const
+    auto window::reparent(u32 const new_parent, i16 const x, i16 const y) const -> void
     {
         xcb_reparent_window(conn, _window, new_parent, x, y);
         xcb_flush(conn);
     }
 
-    bool window::is_active_input_focus() const
+    auto window::is_active_input_focus() const -> bool
     {
         if (u32 const focused_window = NXlib::get_input_focus_window();
             focused_window == _window)
@@ -694,7 +695,8 @@ namespace NXlib
         return false;
     }
 
-    void window::draw_text_8(char const* str, i16 x, i16 y, u8 text_color, u8 background_color, const char *font_name)
+    auto window::draw_text_8(char const* str, i16 x, i16 y, u8 text_color, u8 background_color,
+                             const char* font_name) -> void
     {
         if (_color == u8MAX)
         {
@@ -744,7 +746,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::create_font_gc(u8 const text_color, u8 const background_color, u32 const font)
+    auto window::create_font_gc(u8 const text_color, u8 const background_color, u32 const font) -> void
     {
         _font_gc = xcb_generate_id(conn);
         u32 const data[3] = {get_color(text_color), get_color(background_color), font};
@@ -761,7 +763,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::make_window()
+    auto window::make_window() -> void
     {
         if ((_window = xcb_generate_id(conn)) == u32MAX)
         {
@@ -789,7 +791,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    u32 window::check_event_mask_sum() const
+    auto window::check_event_mask_sum() const -> u32
     {
         xcb_get_window_attributes_cookie_t const cookie = xcb_get_window_attributes(conn, _window);
         xcb_get_window_attributes_reply_t *reply = xcb_get_window_attributes_reply(conn, cookie, nullptr);
@@ -804,7 +806,7 @@ namespace NXlib
         return mask;
     }
 
-    vector<xcb_event_mask_t> window::check_event_mask_codes() const
+    auto window::check_event_mask_codes() const -> vector<xcb_event_mask_t>
     {
         uint32_t const maskSum = check_event_mask_sum();
         vector<xcb_event_mask_t> setMasks;
@@ -819,7 +821,7 @@ namespace NXlib
         return setMasks;
     }
 
-    bool window::is_mask_active(u32 const event_mask) const
+    auto window::is_mask_active(u32 const event_mask) const -> bool
     {
         vector<xcb_event_mask_t> const masks = check_event_mask_codes();
         for (const auto &ev_mask : masks)
@@ -833,7 +835,7 @@ namespace NXlib
         return false;
     }
 
-    void window::grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const
+    auto window::grab_keys(initializer_list<pair<u32 const, u16 const>> bindings) const -> void
     {
         xcb_key_symbols_t* keysyms = xcb_key_symbols_alloc(conn);
         if (!keysyms)
@@ -870,7 +872,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::grab_button(initializer_list<pair<u8, u16>> bindings, bool const owner_events) const
+    auto window::grab_button(initializer_list<pair<u8, u16>> bindings, bool const owner_events) const -> void
     {
         for (auto const & [button, modifiers] : bindings)
         {
@@ -892,7 +894,7 @@ namespace NXlib
         }
     }
 
-    void window::update_geo_from_req()
+    auto window::update_geo_from_req() -> void
     {
         xcb_get_geometry_cookie_t const cookie = xcb_get_geometry_unchecked(conn, _window);
         xcb_get_geometry_reply_t* reply = xcb_get_geometry_reply(conn, cookie, nullptr);
@@ -910,7 +912,7 @@ namespace NXlib
         free(reply);
     }
 
-    void window::update(i16 const x, i16 const y, u16 const width, u16 const height)
+    auto window::update(i16 const x, i16 const y, u16 const width, u16 const height) -> void
     {
         _x      = x;
         _y      = y;
@@ -918,38 +920,55 @@ namespace NXlib
         _height = height;
     }
 
-    u32 window::get_parent() const
+    auto window::create_graphics_exposure_gc() const -> u32
+    {
+        u32 const data[3] = {screen->black_pixel, screen->white_pixel, 0};
+        u32 const gc      = xcb_generate_id(conn);
+        xcb_create_gc
+        (
+            conn,
+            gc,
+            _window,
+            GC_MASK,
+            data
+        );
+
+        xcb_flush(conn);
+        return gc;
+    }
+
+    auto window::get_parent() const -> u32
     {
         return _parent;
     }
 
-    i16 window::x() const
+    auto window::x() const -> i16
     {
         return _x;
     };
 
-    i16 window::y() const
+    auto window::y() const -> i16
     {
         return _y;
     }
 
-    u16 window::width() const
+    auto window::width() const -> u16
     {
         return _width;
     }
 
-    u16 window::height() const
+    auto window::height() const -> u16
     {
         return _height;
     }
 
-    void window::destroy() const
+    auto window::destroy() const -> void
     {
         xcb_destroy_window(conn, _window);
         xcb_flush(conn);
     }
 
-    void window::set_pointer(Cursor_t const cursor_type) const
+    auto window::set_pointer(Cursor_t const cursor_type) const -> void
     {
         xcb_cursor_context_t* ctx;
         if (xcb_cursor_context_new(conn, screen, &ctx) < 0)
@@ -976,7 +995,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::change_attributes(u32 const mask, void const* data) const
+    auto window::change_attributes(u32 const mask, void const* data) const -> void
     {
         xcb_change_window_attributes
         (
@@ -989,7 +1008,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::conf_unchecked(u32 const mask, void const* data) const
+    auto window::conf_unchecked(u32 const mask, void const* data) const -> void
     {
         xcb_configure_window
         (
@@ -1002,7 +1021,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::configure(u32 const mask, void const* data) const
+    auto window::configure(u32 const mask, void const* data) const -> void
     {
         xcb_configure_window
         (
@@ -1015,7 +1034,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    min_size_hints_t window::get_min_window_size_hints() const
+    auto window::get_min_window_size_hints() const -> min_size_hints_t
     {
         xcb_size_hints_t hints;
         xcb_icccm_get_wm_normal_hints_reply(conn, xcb_icccm_get_wm_normal_hints(conn, _window), &hints, nullptr);
@@ -1029,7 +1048,7 @@ namespace NXlib
         return {0, 0};
     }
 
-    void window::kill() const
+    auto window::kill() const -> void
     {
         tools::iAtomR const p_reply(true, "WM_PROTOCOLS");
         tools::iAtomR const d_reply(false, "WM_DELETE_WINDOW");
@@ -1052,7 +1071,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::send_event(u32 const event_mask, void const* value_list) const
+    auto window::send_event(u32 const event_mask, void const* value_list) const -> void
     {
         if (event_mask & XCB_EVENT_MASK_EXPOSURE)
         {
@@ -1133,7 +1152,7 @@ namespace NXlib
         }
     }
 
-    void window::x(u32 const x)
+    auto window::x(u32 const x) -> void
     {
         u32 const data[1] = {x};
         configure(XCB_CONFIG_WINDOW_X, data);
@@ -1143,7 +1162,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::y(u32 const y)
+    auto window::y(u32 const y) -> void
     {
         u32 const data[1] = {y};
         configure(XCB_CONFIG_WINDOW_Y, data);
@@ -1153,7 +1172,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::width(u32 const width)
+    auto window::width(u32 const width) -> void
     {
         u32 const data[1] = {width};
         configure(XCB_CONFIG_WINDOW_WIDTH, data);
@@ -1163,7 +1182,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::height(u32 const height)
+    auto window::height(u32 const height) -> void
     {
         u32 const data[1] = {height};
         configure(XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1172,7 +1191,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_y(u32 const x, u32 const y)
+    auto window::x_y(u32 const x, u32 const y) -> void
     {
         u32 const data[2] = {x, y};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y, data);
@@ -1183,7 +1202,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::width_height(u32 const width, u32 const height)
+    auto window::width_height(u32 const width, u32 const height) -> void
     {
         u32 const data[2] = {width, height};
         configure(XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1194,7 +1213,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_y_width_height(u32 const x, u32 const y, u32 const width, u32 const height)
+    auto window::x_y_width_height(u32 const x, u32 const y, u32 const width, u32 const height) -> void
     {
         u32 const data[4] = {x, y, width, height};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1207,7 +1226,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_width_height(u32 const x, u32 const width, u32 const height)
+    auto window::x_width_height(u32 const x, u32 const width, u32 const height) -> void
     {
         u32 const data[3] = {x, width, height};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1218,7 +1237,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::y_width_height(u32 const y, u32 const width, u32 const height)
+    auto window::y_width_height(u32 const y, u32 const width, u32 const height) -> void
     {
         u32 const data[3] = {y, width, height};
         configure(XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1230,7 +1249,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_width(u32 const x, u32 const width)
+    auto window::x_width(u32 const x, u32 const width) -> void
     {
         u32 const data[2] = {x, width};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_WIDTH, data);
@@ -1241,7 +1260,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_height(u32 const x, u32 const height)
+    auto window::x_height(u32 const x, u32 const height) -> void
     {
         u32 const data[2] = {x, height};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1252,7 +1271,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::y_width(u32 const y, u32 const width)
+    auto window::y_width(u32 const y, u32 const width) -> void
     {
         u32 const data[2] = {y, _width};
         configure(XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH, data);
@@ -1263,7 +1282,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::y_height(u32 const y, u32 const height)
+    auto window::y_height(u32 const y, u32 const height) -> void
     {
         u32 const data[2] = {y, height};
         configure(XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1273,7 +1292,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_y_width(u32 const x, uint32_t y, u32 const width)
+    auto window::x_y_width(u32 const x, uint32_t y, u32 const width) -> void
     {
         u32 const data[3] = {x, y, width};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH, data);
@@ -1285,7 +1304,7 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    void window::x_y_height(u32 const x, u32 const y, u32 const height)
+    auto window::x_y_height(u32 const x, u32 const y, u32 const height) -> void
     {
         u32 const data[3] = {x, y, height};
         configure(XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_HEIGHT, data);
@@ -1297,12 +1316,12 @@ namespace NXlib
         xcb_flush(conn);
     }
 
-    vector<u32> window::get_best_quality_window_icon(u32* width, u32* height) const
+    auto window::get_best_quality_window_icon(u32* width, u32* height) const -> vector<u32>
     {
-        if (auto const &ewmh_cookie = xcb_ewmh_init_atoms(conn, ewmh);
+        if (auto const ewmh_cookie = xcb_ewmh_init_atoms(conn, ewmh);
             !xcb_ewmh_init_atoms_replies(ewmh, ewmh_cookie, nullptr))
         {
-            loutE << "Failed to initialize EWMH atoms" << '\n';
+            loutE << "Failed to initialize EWMH atoms" << loutEND;
             free(ewmh_cookie);
             return {};
         }
@@ -1310,11 +1329,11 @@ namespace NXlib
         xcb_get_property_cookie_t const cookie = xcb_get_property(conn, 0, _window,
             ewmh->_NET_WM_ICON,XCB_ATOM_CARDINAL, 0, UINT32_MAX);
 
-        xcb_get_property_reply_t*       reply  = xcb_get_property_reply(conn, cookie, nullptr);
+        xcb_get_property_reply_t* reply = xcb_get_property_reply(conn, cookie, nullptr);
 
-        vector<u32> best_icon_data;
-        u32         best_width  = 0;
-        u32         best_height = 0;
+        vector<u32>               best_icon_data;
+        u32                       best_width  = 0;
+        u32                       best_height = 0;
 
         if (reply && reply->value_len > 0)
         {
@@ -1352,5 +1371,176 @@ namespace NXlib
 
         free(reply);
         return best_icon_data;
+    }
+
+    auto window::get_icccm_class() const -> string
+    {
+        xcb_get_property_cookie_t const cookie = xcb_icccm_get_wm_class(conn, _window);
+        xcb_icccm_get_wm_class_reply_t  wm_class_reply;
+
+        string result;
+
+        /* Retrieve the WM_CLASS property */
+        if (xcb_icccm_get_wm_class_reply(conn, cookie, &wm_class_reply, nullptr))
+        {
+            result = string(wm_class_reply.class_name);
+            xcb_icccm_get_wm_class_reply_wipe(&wm_class_reply);
+        }
+        else
+        {
+            loutEWin << "Failed to retrieve WM_CLASS for window" << '\n';
+        }
+
+        return result;
+    }
+
+    auto window::make_png_from_icon() const -> void
+    {
+        if (fs::exists(FS_ACC(ICONFOLDER, (get_icccm_class()))))
+        {
+            return;
+        }
+
+        u32 width;
+        u32 height;
+
+        vector<u32> const vec = get_best_quality_window_icon(&width, &height);
+
+        Color_Bitmap const color_bitmap(width, height, vec);
+        if (!fs::exists(ICON_FOLDER(get_icccm_class())))
+        {
+            file_system->create(ICON_FOLDER(get_icccm_class()));
+        }
+
+        if (file_system->check_status())
+        {
+            color_bitmap.exportToPng(PNG_PATH(get_icccm_class()).c_str());
+        }
+    }
+
+    auto window::set_backround_png(char const* imagePath) const -> void
+    {
+        auto const image = imlib_load_image(imagePath);
+        if (!image)
+        {
+            loutE << "Failed to load image: " << imagePath << '\n';
+            return;
+        }
+
+        imlib_context_set_image(image);
+
+        int const originalWidth  = imlib_image_get_width();
+        int const originalHeight = imlib_image_get_height();
+
+        // Calculate new size maintaining aspect ratio
+        double const aspectRatio = static_cast<double>(originalWidth) / originalHeight;
+        int          newHeight   = _height;
+        int          newWidth    =  static_cast<int>(newHeight * aspectRatio);
+
+        if (newWidth > _width)
+        {
+            newWidth  = _width;
+            newHeight = static_cast<int>(newWidth / aspectRatio);
+        }
+
+        auto const scaledImage = imlib_create_cropped_scaled_image
+        (
+            0,
+            0,
+            originalWidth,
+            originalHeight,
+            newWidth,
+            newHeight
+        );
+
+        /* Free original image */
+        imlib_free_image();
+        imlib_context_set_image(scaledImage);
+
+        /* Get the scaled image data */
+        u32* data = imlib_image_get_data();
+
+        /* Create an XCB image from the scaled data */
+        xcb_image_t* xcb_image = xcb_image_create_native
+        (
+            conn,
+            newWidth,
+            newHeight,
+            XCB_IMAGE_FORMAT_Z_PIXMAP,
+            screen->root_depth,
+            nullptr,
+            ~0,
+            reinterpret_cast<u8*>(data)
+        );
+
+        u32 const pixmap = create_pixmap();
+        u32 const gc     = create_graphics_exposure_gc();
+
+        xcb_rectangle_t const rect = {0, 0, _width, _height};
+        xcb_poly_fill_rectangle
+        (
+            conn,
+            pixmap,
+            gc,
+            1,
+            &rect
+        );
+
+        /* Init x and y */
+        int x(0), y(0);
+        if (newWidth != _width)
+        {
+            x = (_width - newWidth) / 2;
+        }
+
+        /* Calculate position to center the image */
+        if (newHeight != _height)
+        {
+            y = (_height - newHeight) / 2;
+        }
+
+        /* Put the scaled image onto the pixmap at the calculated position */
+        xcb_image_put
+        (
+            conn,
+            pixmap,
+            gc,
+            xcb_image,
+            static_cast<i16>(x),
+            static_cast<i16>(y),
+            0
+        );
+
+        xcb_flush(conn);
+
+        /* Set the pixmap as the background of the window */
+        change_attributes(XCB_CW_BACK_PIXMAP, &pixmap);
+        xcb_flush(conn);
+
+        // Free the GC
+        xcb_free_gc(conn, gc);
+        xcb_flush(conn);
+        xcb_image_destroy(xcb_image);
+
+        // Free scaled image
+        imlib_free_image();
+        clear();
+    }
+
+    auto window::create_pixmap() const -> u32
+    {
+        u32 const pixmap = xcb_generate_id(conn);
+        xcb_create_pixmap
+        (
+            conn,
+            screen->root_depth,
+            pixmap,
+            _window,
+            _width,
+            _height
+        );
+
+        xcb_flush(conn);
+        return pixmap;
     }
 }

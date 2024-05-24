@@ -67,18 +67,17 @@
 
 
 #include "globals.h"
-
-
-#include <fstream>
-
+#include "tools.h"
 
 using namespace std;
+
 
 typedef struct pid_data_t
 {
     pid_t  pid;
     string name;
 } pid_data_t;
+
 
 namespace NXlib
 {
