@@ -300,8 +300,6 @@ namespace NXlib
 {
     /// @class window
 
-    /// PUBLIC:
-
     auto window::get_window_u32() const -> u32
     {
         return _window;

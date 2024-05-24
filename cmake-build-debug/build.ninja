@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_NXlib_static: phony || CMakeFiles/NXlib_
 build CMakeFiles/NXlib_static.dir/window.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/window.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/window.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/window.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/window.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/window.cpp.o.ddi.i
@@ -60,7 +60,7 @@ build CMakeFiles/NXlib_static.dir/window.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug
 build CMakeFiles/NXlib_static.dir/window.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/window.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/window.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/window.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/window.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -69,7 +69,7 @@ build CMakeFiles/NXlib_static.dir/window.cpp.o: CXX_COMPILER__NXlib_static_scann
 build CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/lout.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/lout.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi.i
@@ -77,7 +77,7 @@ build CMakeFiles/NXlib_static.dir/lout.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /
 build CMakeFiles/NXlib_static.dir/lout.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/lout.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/lout.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/lout.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/lout.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -86,7 +86,7 @@ build CMakeFiles/NXlib_static.dir/lout.cpp.o: CXX_COMPILER__NXlib_static_scanned
 build CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/TIME.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/TIME.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi.i
@@ -94,7 +94,7 @@ build CMakeFiles/NXlib_static.dir/TIME.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /
 build CMakeFiles/NXlib_static.dir/TIME.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/TIME.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/TIME.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/TIME.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/TIME.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -103,7 +103,7 @@ build CMakeFiles/NXlib_static.dir/TIME.cpp.o: CXX_COMPILER__NXlib_static_scanned
 build CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/prof.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/prof.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi.i
@@ -111,7 +111,7 @@ build CMakeFiles/NXlib_static.dir/prof.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /
 build CMakeFiles/NXlib_static.dir/prof.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/prof.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/prof.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/prof.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/prof.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -120,7 +120,7 @@ build CMakeFiles/NXlib_static.dir/prof.cpp.o: CXX_COMPILER__NXlib_static_scanned
 build CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/tools.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/tools.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi.i
@@ -128,7 +128,7 @@ build CMakeFiles/NXlib_static.dir/tools.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug 
 build CMakeFiles/NXlib_static.dir/tools.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/tools.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/tools.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/tools.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/tools.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -137,7 +137,7 @@ build CMakeFiles/NXlib_static.dir/tools.cpp.o: CXX_COMPILER__NXlib_static_scanne
 build CMakeFiles/NXlib_static.dir/color.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/color.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/color.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/color.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/color.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/color.cpp.o.ddi.i
@@ -145,7 +145,7 @@ build CMakeFiles/NXlib_static.dir/color.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug 
 build CMakeFiles/NXlib_static.dir/color.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/color.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/color.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/color.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/color.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -154,7 +154,7 @@ build CMakeFiles/NXlib_static.dir/color.cpp.o: CXX_COMPILER__NXlib_static_scanne
 build CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/NXlib.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/NXlib.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi.i
@@ -162,7 +162,7 @@ build CMakeFiles/NXlib_static.dir/NXlib.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug 
 build CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/NXlib.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/NXlib.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/NXlib.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/NXlib.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -171,7 +171,7 @@ build CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CXX_COMPILER__NXlib_static_scanne
 build CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/Key_Codes.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.ddi.i
@@ -179,7 +179,7 @@ build CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.ddi: CXX_SCAN__NXlib_static_De
 build CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/Key_Codes.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -188,7 +188,7 @@ build CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: CXX_COMPILER__NXlib_static_sc
 build CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.ddi.i
@@ -196,7 +196,7 @@ build CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.ddi: CXX_SCAN__NXlib_static_
 build CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -205,7 +205,7 @@ build CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: CXX_COMPILER__NXlib_static_
 build CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug /home/mellw/CLionProjects/NXlib/Bitmap.cpp || cmake_object_order_depends_target_NXlib_static
   DEP_FILE = CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_static.dir/Bitmap.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.ddi.i
@@ -213,7 +213,7 @@ build CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.ddi: CXX_SCAN__NXlib_static_Debug
 build CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: CXX_COMPILER__NXlib_static_scanned_Debug /home/mellw/CLionProjects/NXlib/Bitmap.cpp || cmake_object_order_depends_target_NXlib_static CMakeFiles/NXlib_static.dir/CXX.dd CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.modmap
   DEP_FILE = CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_static.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_static.dir
@@ -250,7 +250,7 @@ build CMakeFiles/NXlib_shared.dir/window.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/window.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/window.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/window.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/window.cpp.o.ddi.i
@@ -259,7 +259,7 @@ build CMakeFiles/NXlib_shared.dir/window.cpp.o: CXX_COMPILER__NXlib_shared_scann
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/window.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/window.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -269,7 +269,7 @@ build CMakeFiles/NXlib_shared.dir/lout.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug /
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/lout.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/lout.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/lout.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/lout.cpp.o.ddi.i
@@ -278,7 +278,7 @@ build CMakeFiles/NXlib_shared.dir/lout.cpp.o: CXX_COMPILER__NXlib_shared_scanned
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/lout.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/lout.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -288,7 +288,7 @@ build CMakeFiles/NXlib_shared.dir/TIME.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug /
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/TIME.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/TIME.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/TIME.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/TIME.cpp.o.ddi.i
@@ -297,7 +297,7 @@ build CMakeFiles/NXlib_shared.dir/TIME.cpp.o: CXX_COMPILER__NXlib_shared_scanned
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/TIME.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/TIME.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -307,7 +307,7 @@ build CMakeFiles/NXlib_shared.dir/prof.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug /
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/prof.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/prof.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/prof.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/prof.cpp.o.ddi.i
@@ -316,7 +316,7 @@ build CMakeFiles/NXlib_shared.dir/prof.cpp.o: CXX_COMPILER__NXlib_shared_scanned
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/prof.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/prof.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -326,7 +326,7 @@ build CMakeFiles/NXlib_shared.dir/tools.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug 
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/tools.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/tools.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/tools.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/tools.cpp.o.ddi.i
@@ -335,7 +335,7 @@ build CMakeFiles/NXlib_shared.dir/tools.cpp.o: CXX_COMPILER__NXlib_shared_scanne
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/tools.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/tools.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -345,7 +345,7 @@ build CMakeFiles/NXlib_shared.dir/color.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug 
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/color.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/color.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/color.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/color.cpp.o.ddi.i
@@ -354,7 +354,7 @@ build CMakeFiles/NXlib_shared.dir/color.cpp.o: CXX_COMPILER__NXlib_shared_scanne
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/color.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/color.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -364,7 +364,7 @@ build CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug 
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/NXlib.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.ddi.i
@@ -373,7 +373,7 @@ build CMakeFiles/NXlib_shared.dir/NXlib.cpp.o: CXX_COMPILER__NXlib_shared_scanne
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -383,7 +383,7 @@ build CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.ddi: CXX_SCAN__NXlib_shared_De
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.ddi.i
@@ -392,7 +392,7 @@ build CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o: CXX_COMPILER__NXlib_shared_sc
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -402,7 +402,7 @@ build CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.ddi: CXX_SCAN__NXlib_shared_
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.ddi.i
@@ -411,7 +411,7 @@ build CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o: CXX_COMPILER__NXlib_shared_
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -421,7 +421,7 @@ build CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.ddi: CXX_SCAN__NXlib_shared_Debug
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.ddi
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJ_FILE = CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o
   PREPROCESSED_OUTPUT_FILE = CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.ddi.i
@@ -430,7 +430,7 @@ build CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o: CXX_COMPILER__NXlib_shared_scann
   DEFINES = -DNXlib_shared_EXPORTS
   DEP_FILE = CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.modmap
-  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fPIC -fdiagnostics-color=always -O3 -march=native
   INCLUDES = -I/home/mellw/CLionProjects/NXlib
   OBJECT_DIR = CMakeFiles/NXlib_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/NXlib_shared.dir
@@ -545,14 +545,14 @@ build all: phony libNXlib.a libNXlib.so
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/mellw/CLionProjects/NXlib/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/mellw/CLionProjects/NXlib/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPNG.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindZLIB.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/mellw/CLionProjects/NXlib/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build /home/mellw/CLionProjects/NXlib/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPNG.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindZLIB.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
 
 
 #############################################

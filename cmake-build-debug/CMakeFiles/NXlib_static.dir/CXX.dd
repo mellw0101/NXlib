@@ -17,3 +17,5 @@ build CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: dyndep
 
 build CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: dyndep
 
+build CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: dyndep
+

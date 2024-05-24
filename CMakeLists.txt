@@ -72,6 +72,19 @@ set(NXLIB_HEADERS
         Pid_Manager.h
         Bitmap.h
 )
+# Find XCB using pkg-config
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(XCB REQUIRED xcb xcb-ewmh xcb-keysyms xcb-proto xcb-cursor xcb-icccm)
+
+# Find libpng
+find_package(PNG REQUIRED)
+
+# Find imlib2 using pkg-config
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(IMLIB2 REQUIRED imlib2)
+
+# Include directories
+include_directories(${IMLIB2_INCLUDE_DIRS} ${PNG_INCLUDE_DIRS} ${XCB_INCLUDE_DIRS})
 
 # Create the static library
 add_library(NXlib_static STATIC ${NXLIB_SOURCES} ${NXLIB_HEADERS})
@@ -82,6 +95,21 @@ add_library(NXlib_shared SHARED ${NXLIB_SOURCES} ${NXLIB_HEADERS})
 # Specify the include directories for the libraries
 target_include_directories(NXlib_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(NXlib_shared PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Link the static versions of the required libraries to the shared library
+target_link_libraries(NXlib_shared
+        ${IMLIB2_STATIC_LIBRARIES}
+        ${PNG_STATIC_LIBRARIES}
+        ${XCB_LIBRARIES}
+        ${XCB_STATIC_LIBRARIES}
+)
+
+target_link_libraries(NXlib_static
+        ${IMLIB2_STATIC_LIBRARIES}
+        ${PNG_STATIC_LIBRARIES}
+        ${XCB_LIBRARIES}
+        ${XCB_STATIC_LIBRARIES}
+)
 
 # Set the properties for the shared library
 set_target_properties(NXlib_shared PROPERTIES OUTPUT_NAME "NXlib")

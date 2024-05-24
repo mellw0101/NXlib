@@ -79,7 +79,9 @@ CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: /home/mellw/CLionProjects/NXlib/Bitmap
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -461,7 +463,9 @@ CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: /home/mellw/CLionProjects/NXlib/Key
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -830,7 +834,9 @@ CMakeFiles/NXlib_static.dir/NXlib.cpp.o: /home/mellw/CLionProjects/NXlib/NXlib.c
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1213,7 +1219,9 @@ CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: /home/mellw/CLionProjects/NXlib/P
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1587,7 +1595,9 @@ CMakeFiles/NXlib_static.dir/TIME.cpp.o: /home/mellw/CLionProjects/NXlib/TIME.cpp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1954,7 +1964,9 @@ CMakeFiles/NXlib_static.dir/color.cpp.o: /home/mellw/CLionProjects/NXlib/color.c
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2330,7 +2342,9 @@ CMakeFiles/NXlib_static.dir/lout.cpp.o: /home/mellw/CLionProjects/NXlib/lout.cpp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2709,7 +2723,9 @@ CMakeFiles/NXlib_static.dir/prof.cpp.o: /home/mellw/CLionProjects/NXlib/prof.cpp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3076,7 +3092,9 @@ CMakeFiles/NXlib_static.dir/tools.cpp.o: /home/mellw/CLionProjects/NXlib/tools.c
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3455,7 +3473,9 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3962,6 +3982,10 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 
 /usr/include/c++/14.1.1/deque:
 
+/usr/include/c++/14.1.1/debug/debug.h:
+
+/usr/include/c++/14.1.1/debug/assertions.h:
+
 /usr/include/bits/types/struct_tm.h:
 
 /usr/include/pnglibconf.h:
@@ -4158,8 +4182,6 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 
 /home/mellw/CLionProjects/NXlib/globals.h:
 
-/usr/include/bits/uintn-identity.h:
-
 /usr/include/bits/cpu-set.h:
 
 /usr/include/errno.h:
@@ -4240,6 +4262,12 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 
 /usr/include/bits/environments.h:
 
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/usr/include/c++/14.1.1/charconv:
+
 /usr/include/bits/fcntl-linux.h:
 
 /usr/include/bits/fcntl.h:
@@ -4298,21 +4326,11 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 
 /usr/include/bits/pthreadtypes.h:
 
-/usr/include/bits/types/error_t.h:
-
-/usr/include/c++/14.1.1/bits/stl_queue.h:
-
 /usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/X11/Xfuncproto.h:
 
 /usr/include/c++/14.1.1/bits/locale_classes.tcc:
-
-/usr/include/c++/14.1.1/clocale:
-
-/usr/include/asm/errno.h:
-
-/usr/include/bits/stdint-uintn.h:
 
 /usr/include/c++/14.1.1/bits/istream.tcc:
 
@@ -4325,6 +4343,18 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/bits/setjmp.h:
+
+/usr/include/bits/uintn-identity.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/bits/stdint-uintn.h:
+
+/usr/include/c++/14.1.1/clocale:
+
+/usr/include/bits/types/error_t.h:
+
+/usr/include/c++/14.1.1/bits/stl_queue.h:
 
 /usr/include/bits/math-vector.h:
 
@@ -4339,6 +4369,10 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 /usr/include/bits/waitflags.h:
 
 /usr/include/bits/wctype-wchar.h:
+
+/usr/include/c++/14.1.1/bits/allocator.h:
+
+/usr/include/c++/14.1.1/bits/quoted_string.h:
 
 /usr/include/stdio.h:
 
@@ -4361,14 +4395,6 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 /usr/include/c++/14.1.1/backward/binders.h:
 
 /usr/include/c++/14.1.1/bits/allocated_ptr.h:
-
-/usr/include/c++/14.1.1/bits/quoted_string.h:
-
-/usr/include/c++/14.1.1/bits/allocator.h:
-
-/usr/include/bits/thread-shared-types.h:
-
-/usr/include/c++/14.1.1/charconv:
 
 /usr/include/c++/14.1.1/bits/basic_ios.h:
 
@@ -4522,6 +4548,8 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 
 /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++io.h:
 
+/usr/include/bits/stdlib-bsearch.h:
+
 /usr/include/c++/14.1.1/bits/shared_ptr.h:
 
 /usr/include/time.h:
@@ -4597,7 +4625,3 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window
 /usr/include/bits/timesize.h:
 
 /usr/include/c++/14.1.1/ctime:
-
-/usr/include/c++/14.1.1/debug/assertions.h:
-
-/usr/include/c++/14.1.1/debug/debug.h:
