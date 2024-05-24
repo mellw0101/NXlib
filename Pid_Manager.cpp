@@ -274,14 +274,21 @@ namespace NXlib
     {
         for (auto const & [pid, name] : _pid_vec)
         {
-            if (name == "code") continue;
+            if (name == "code")
+            {
+                continue;
+            }
+
             kill_pid(pid, name);
         }
     }
 
     void Pid_Manager::check_pid(pid_t const pid)
     {
-        if (pid == 0) return;
+        if (pid == 0)
+        {
+            return;
+        }
 
         bool found = false;
         for (auto const & [vec_pid, name] : _pid_vec)

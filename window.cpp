@@ -71,6 +71,7 @@
 
 #include "lout.h"
 #include "tools.h"
+
 #include <xcb/xcb_cursor.h>
 #include <xcb/xcb_icccm.h>
 
