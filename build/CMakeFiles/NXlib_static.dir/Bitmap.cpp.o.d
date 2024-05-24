@@ -255,12 +255,12 @@ CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: \
  /usr/include/xcb/xcb.h /usr/include/sys/uio.h \
  /usr/include/bits/uio_lim.h /usr/include/bits/uio-ext.h \
  /usr/include/xcb/xproto.h /usr/include/xcb/xcb.h \
- /usr/include/xcb/xcb_ewmh.h /usr/include/c++/14.1.1/stdlib.h \
- /usr/include/xcb/xcb_keysyms.h /usr/include/xcb/xcb_image.h \
- /usr/include/xcb/shm.h /usr/include/Imlib2.h /usr/include/X11/Xlib.h \
- /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
- /usr/include/X11/Xosdefs.h /usr/include/png.h /usr/include/pnglibconf.h \
- /usr/include/pngconf.h \
+ /usr/include/xcb/xproto.h /usr/include/xcb/xcb_ewmh.h \
+ /usr/include/c++/14.1.1/stdlib.h /usr/include/xcb/xcb_keysyms.h \
+ /usr/include/xcb/xcb_image.h /usr/include/xcb/shm.h \
+ /usr/include/Imlib2.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
+ /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
+ /usr/include/png.h /usr/include/pnglibconf.h /usr/include/pngconf.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix2_lim.h \

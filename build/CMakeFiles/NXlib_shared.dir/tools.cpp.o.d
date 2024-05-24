@@ -254,11 +254,12 @@ CMakeFiles/NXlib_shared.dir/tools.cpp.o: \
  /usr/include/xcb/xcb.h /usr/include/sys/uio.h \
  /usr/include/bits/uio_lim.h /usr/include/bits/uio-ext.h \
  /usr/include/xcb/xproto.h /usr/include/xcb/xcb.h \
- /usr/include/xcb/xcb_ewmh.h /usr/include/c++/14.1.1/stdlib.h \
- /usr/include/xcb/xcb_keysyms.h /usr/include/xcb/xcb_image.h \
- /usr/include/xcb/shm.h /usr/include/Imlib2.h /usr/include/X11/Xlib.h \
- /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
- /usr/include/X11/Xosdefs.h /home/mellw/CLionProjects/NXlib/tools.h \
+ /usr/include/xcb/xproto.h /usr/include/xcb/xcb_ewmh.h \
+ /usr/include/c++/14.1.1/stdlib.h /usr/include/xcb/xcb_keysyms.h \
+ /usr/include/xcb/xcb_image.h /usr/include/xcb/shm.h \
+ /usr/include/Imlib2.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
+ /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
+ /home/mellw/CLionProjects/NXlib/tools.h \
  /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \

@@ -83,6 +83,7 @@
 #include <sys/wait.h>
 
 #include <xcb/xcb.h>
+#include <xcb/xproto.h>
 #include <xcb/xcb_ewmh.h>
 #include <xcb/xcb_keysyms.h>
 #include <xcb/xcb_image.h>

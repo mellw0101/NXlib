@@ -295,7 +295,6 @@ constexpr const char *pointer_from_enum(NXlib::Cursor_t const CURSOR)
 
 using namespace std;
 
-
 namespace NXlib
 {
     /// @class window

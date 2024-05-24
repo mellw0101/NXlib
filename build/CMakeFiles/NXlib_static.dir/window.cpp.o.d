@@ -254,13 +254,13 @@ CMakeFiles/NXlib_static.dir/window.cpp.o: \
  /usr/include/xcb/xcb.h /usr/include/sys/uio.h \
  /usr/include/bits/uio_lim.h /usr/include/bits/uio-ext.h \
  /usr/include/xcb/xproto.h /usr/include/xcb/xcb.h \
- /usr/include/xcb/xcb_ewmh.h /usr/include/c++/14.1.1/stdlib.h \
- /usr/include/xcb/xcb_keysyms.h /usr/include/xcb/xcb_image.h \
- /usr/include/xcb/shm.h /usr/include/Imlib2.h /usr/include/X11/Xlib.h \
- /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
- /usr/include/X11/Xosdefs.h /home/mellw/CLionProjects/NXlib/NXlib.h \
- /usr/include/c++/14.1.1/iostream /usr/include/c++/14.1.1/filesystem \
- /usr/include/c++/14.1.1/bits/fs_fwd.h \
+ /usr/include/xcb/xproto.h /usr/include/xcb/xcb_ewmh.h \
+ /usr/include/c++/14.1.1/stdlib.h /usr/include/xcb/xcb_keysyms.h \
+ /usr/include/xcb/xcb_image.h /usr/include/xcb/shm.h \
+ /usr/include/Imlib2.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
+ /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
+ /home/mellw/CLionProjects/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream \
+ /usr/include/c++/14.1.1/filesystem /usr/include/c++/14.1.1/bits/fs_fwd.h \
  /usr/include/c++/14.1.1/bits/fs_path.h /usr/include/c++/14.1.1/codecvt \
  /usr/include/c++/14.1.1/bits/fs_dir.h \
  /usr/include/c++/14.1.1/bits/fs_ops.h \
