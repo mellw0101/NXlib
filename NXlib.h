@@ -135,7 +135,7 @@ namespace NXlib
         @return The total number of Unicode characters in the input string.
 
     */
-    u32           decode_utf8_char(char const** input);           /**
+    u32            decode_utf8_char(char const** input);           /**
 
         @brief Decodes a single UTF-8 encoded character from the input string
             and returns the Unicode code point.
@@ -151,7 +151,7 @@ namespace NXlib
     */
     void          get_window_geo(int16_t* x = nullptr, int16_t* y = nullptr, uint16_t* width = nullptr, uint16_t* height = nullptr);
     u32           get_color(u8 input_color);
-    constexpr rgb_color_code_t rgb_code(u8 input_color);
+    rgb_color_code_t rgb_code(u8 input_color);
 
     class Crypto
     {
@@ -253,7 +253,6 @@ namespace NXlib
     };
 
     static File_System* file_system = nullptr;
-
 }
 
 #endif //NXLIB_H

@@ -1,8 +1,7 @@
 CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o: \
- /home/mellw/CLionProjects/NXlib/Bitmap.cpp /usr/include/stdc-predef.h \
- /home/mellw/CLionProjects/NXlib/Bitmap.h \
- /home/mellw/CLionProjects/NXlib/globals.h \
- /usr/include/c++/14.1.1/algorithm \
+ /home/mellw/new_source/NXlib/Bitmap.cpp /usr/include/stdc-predef.h \
+ /home/mellw/new_source/NXlib/Bitmap.h \
+ /home/mellw/new_source/NXlib/globals.h /usr/include/c++/14.1.1/algorithm \
  /usr/include/c++/14.1.1/bits/stl_algobase.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -265,7 +264,7 @@ CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix2_lim.h \
  /usr/include/bits/xopen_lim.h /usr/include/setjmp.h \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
+ /home/mellw/new_source/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
  /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \

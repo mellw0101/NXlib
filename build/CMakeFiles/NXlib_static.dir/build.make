@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mellw/CLionProjects/NXlib
+CMAKE_SOURCE_DIR = /home/mellw/new_source/NXlib
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mellw/CLionProjects/NXlib/build
+CMAKE_BINARY_DIR = /home/mellw/new_source/NXlib/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/NXlib_static.dir/depend.make
@@ -70,144 +70,144 @@ include CMakeFiles/NXlib_static.dir/progress.make
 include CMakeFiles/NXlib_static.dir/flags.make
 
 CMakeFiles/NXlib_static.dir/window.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/CLionProjects/NXlib/window.cpp
+CMakeFiles/NXlib_static.dir/window.cpp.o: /home/mellw/new_source/NXlib/window.cpp
 CMakeFiles/NXlib_static.dir/window.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NXlib_static.dir/window.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/window.cpp.o -MF CMakeFiles/NXlib_static.dir/window.cpp.o.d -o CMakeFiles/NXlib_static.dir/window.cpp.o -c /home/mellw/CLionProjects/NXlib/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NXlib_static.dir/window.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/window.cpp.o -MF CMakeFiles/NXlib_static.dir/window.cpp.o.d -o CMakeFiles/NXlib_static.dir/window.cpp.o -c /home/mellw/new_source/NXlib/window.cpp
 
 CMakeFiles/NXlib_static.dir/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/window.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/window.cpp > CMakeFiles/NXlib_static.dir/window.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/window.cpp > CMakeFiles/NXlib_static.dir/window.cpp.i
 
 CMakeFiles/NXlib_static.dir/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/window.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/window.cpp -o CMakeFiles/NXlib_static.dir/window.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/window.cpp -o CMakeFiles/NXlib_static.dir/window.cpp.s
 
 CMakeFiles/NXlib_static.dir/lout.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/lout.cpp.o: /home/mellw/CLionProjects/NXlib/lout.cpp
+CMakeFiles/NXlib_static.dir/lout.cpp.o: /home/mellw/new_source/NXlib/lout.cpp
 CMakeFiles/NXlib_static.dir/lout.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NXlib_static.dir/lout.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/lout.cpp.o -MF CMakeFiles/NXlib_static.dir/lout.cpp.o.d -o CMakeFiles/NXlib_static.dir/lout.cpp.o -c /home/mellw/CLionProjects/NXlib/lout.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NXlib_static.dir/lout.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/lout.cpp.o -MF CMakeFiles/NXlib_static.dir/lout.cpp.o.d -o CMakeFiles/NXlib_static.dir/lout.cpp.o -c /home/mellw/new_source/NXlib/lout.cpp
 
 CMakeFiles/NXlib_static.dir/lout.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/lout.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/lout.cpp > CMakeFiles/NXlib_static.dir/lout.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/lout.cpp > CMakeFiles/NXlib_static.dir/lout.cpp.i
 
 CMakeFiles/NXlib_static.dir/lout.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/lout.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/lout.cpp -o CMakeFiles/NXlib_static.dir/lout.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/lout.cpp -o CMakeFiles/NXlib_static.dir/lout.cpp.s
 
 CMakeFiles/NXlib_static.dir/TIME.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/TIME.cpp.o: /home/mellw/CLionProjects/NXlib/TIME.cpp
+CMakeFiles/NXlib_static.dir/TIME.cpp.o: /home/mellw/new_source/NXlib/TIME.cpp
 CMakeFiles/NXlib_static.dir/TIME.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NXlib_static.dir/TIME.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/TIME.cpp.o -MF CMakeFiles/NXlib_static.dir/TIME.cpp.o.d -o CMakeFiles/NXlib_static.dir/TIME.cpp.o -c /home/mellw/CLionProjects/NXlib/TIME.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NXlib_static.dir/TIME.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/TIME.cpp.o -MF CMakeFiles/NXlib_static.dir/TIME.cpp.o.d -o CMakeFiles/NXlib_static.dir/TIME.cpp.o -c /home/mellw/new_source/NXlib/TIME.cpp
 
 CMakeFiles/NXlib_static.dir/TIME.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/TIME.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/TIME.cpp > CMakeFiles/NXlib_static.dir/TIME.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/TIME.cpp > CMakeFiles/NXlib_static.dir/TIME.cpp.i
 
 CMakeFiles/NXlib_static.dir/TIME.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/TIME.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/TIME.cpp -o CMakeFiles/NXlib_static.dir/TIME.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/TIME.cpp -o CMakeFiles/NXlib_static.dir/TIME.cpp.s
 
 CMakeFiles/NXlib_static.dir/prof.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/prof.cpp.o: /home/mellw/CLionProjects/NXlib/prof.cpp
+CMakeFiles/NXlib_static.dir/prof.cpp.o: /home/mellw/new_source/NXlib/prof.cpp
 CMakeFiles/NXlib_static.dir/prof.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NXlib_static.dir/prof.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/prof.cpp.o -MF CMakeFiles/NXlib_static.dir/prof.cpp.o.d -o CMakeFiles/NXlib_static.dir/prof.cpp.o -c /home/mellw/CLionProjects/NXlib/prof.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NXlib_static.dir/prof.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/prof.cpp.o -MF CMakeFiles/NXlib_static.dir/prof.cpp.o.d -o CMakeFiles/NXlib_static.dir/prof.cpp.o -c /home/mellw/new_source/NXlib/prof.cpp
 
 CMakeFiles/NXlib_static.dir/prof.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/prof.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/prof.cpp > CMakeFiles/NXlib_static.dir/prof.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/prof.cpp > CMakeFiles/NXlib_static.dir/prof.cpp.i
 
 CMakeFiles/NXlib_static.dir/prof.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/prof.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/prof.cpp -o CMakeFiles/NXlib_static.dir/prof.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/prof.cpp -o CMakeFiles/NXlib_static.dir/prof.cpp.s
 
 CMakeFiles/NXlib_static.dir/tools.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/tools.cpp.o: /home/mellw/CLionProjects/NXlib/tools.cpp
+CMakeFiles/NXlib_static.dir/tools.cpp.o: /home/mellw/new_source/NXlib/tools.cpp
 CMakeFiles/NXlib_static.dir/tools.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NXlib_static.dir/tools.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/tools.cpp.o -MF CMakeFiles/NXlib_static.dir/tools.cpp.o.d -o CMakeFiles/NXlib_static.dir/tools.cpp.o -c /home/mellw/CLionProjects/NXlib/tools.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NXlib_static.dir/tools.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/tools.cpp.o -MF CMakeFiles/NXlib_static.dir/tools.cpp.o.d -o CMakeFiles/NXlib_static.dir/tools.cpp.o -c /home/mellw/new_source/NXlib/tools.cpp
 
 CMakeFiles/NXlib_static.dir/tools.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/tools.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/tools.cpp > CMakeFiles/NXlib_static.dir/tools.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/tools.cpp > CMakeFiles/NXlib_static.dir/tools.cpp.i
 
 CMakeFiles/NXlib_static.dir/tools.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/tools.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/tools.cpp -o CMakeFiles/NXlib_static.dir/tools.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/tools.cpp -o CMakeFiles/NXlib_static.dir/tools.cpp.s
 
 CMakeFiles/NXlib_static.dir/color.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/color.cpp.o: /home/mellw/CLionProjects/NXlib/color.cpp
+CMakeFiles/NXlib_static.dir/color.cpp.o: /home/mellw/new_source/NXlib/color.cpp
 CMakeFiles/NXlib_static.dir/color.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NXlib_static.dir/color.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/color.cpp.o -MF CMakeFiles/NXlib_static.dir/color.cpp.o.d -o CMakeFiles/NXlib_static.dir/color.cpp.o -c /home/mellw/CLionProjects/NXlib/color.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NXlib_static.dir/color.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/color.cpp.o -MF CMakeFiles/NXlib_static.dir/color.cpp.o.d -o CMakeFiles/NXlib_static.dir/color.cpp.o -c /home/mellw/new_source/NXlib/color.cpp
 
 CMakeFiles/NXlib_static.dir/color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/color.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/color.cpp > CMakeFiles/NXlib_static.dir/color.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/color.cpp > CMakeFiles/NXlib_static.dir/color.cpp.i
 
 CMakeFiles/NXlib_static.dir/color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/color.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/color.cpp -o CMakeFiles/NXlib_static.dir/color.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/color.cpp -o CMakeFiles/NXlib_static.dir/color.cpp.s
 
 CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/NXlib.cpp.o: /home/mellw/CLionProjects/NXlib/NXlib.cpp
+CMakeFiles/NXlib_static.dir/NXlib.cpp.o: /home/mellw/new_source/NXlib/NXlib.cpp
 CMakeFiles/NXlib_static.dir/NXlib.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NXlib_static.dir/NXlib.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/NXlib.cpp.o -MF CMakeFiles/NXlib_static.dir/NXlib.cpp.o.d -o CMakeFiles/NXlib_static.dir/NXlib.cpp.o -c /home/mellw/CLionProjects/NXlib/NXlib.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NXlib_static.dir/NXlib.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/NXlib.cpp.o -MF CMakeFiles/NXlib_static.dir/NXlib.cpp.o.d -o CMakeFiles/NXlib_static.dir/NXlib.cpp.o -c /home/mellw/new_source/NXlib/NXlib.cpp
 
 CMakeFiles/NXlib_static.dir/NXlib.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/NXlib.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/NXlib.cpp > CMakeFiles/NXlib_static.dir/NXlib.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/NXlib.cpp > CMakeFiles/NXlib_static.dir/NXlib.cpp.i
 
 CMakeFiles/NXlib_static.dir/NXlib.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/NXlib.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/NXlib.cpp -o CMakeFiles/NXlib_static.dir/NXlib.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/NXlib.cpp -o CMakeFiles/NXlib_static.dir/NXlib.cpp.s
 
 CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: /home/mellw/CLionProjects/NXlib/Key_Codes.cpp
+CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: /home/mellw/new_source/NXlib/Key_Codes.cpp
 CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o -MF CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.d -o CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o -c /home/mellw/CLionProjects/NXlib/Key_Codes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o -MF CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o.d -o CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o -c /home/mellw/new_source/NXlib/Key_Codes.cpp
 
 CMakeFiles/NXlib_static.dir/Key_Codes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/Key_Codes.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/Key_Codes.cpp > CMakeFiles/NXlib_static.dir/Key_Codes.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/Key_Codes.cpp > CMakeFiles/NXlib_static.dir/Key_Codes.cpp.i
 
 CMakeFiles/NXlib_static.dir/Key_Codes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/Key_Codes.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/Key_Codes.cpp -o CMakeFiles/NXlib_static.dir/Key_Codes.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/Key_Codes.cpp -o CMakeFiles/NXlib_static.dir/Key_Codes.cpp.s
 
 CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp
+CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: /home/mellw/new_source/NXlib/Pid_Manager.cpp
 CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o -MF CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.d -o CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o -c /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o -MF CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o.d -o CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o -c /home/mellw/new_source/NXlib/Pid_Manager.cpp
 
 CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp > CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/Pid_Manager.cpp > CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.i
 
 CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/Pid_Manager.cpp -o CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/Pid_Manager.cpp -o CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.s
 
 CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: CMakeFiles/NXlib_static.dir/flags.make
-CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: /home/mellw/CLionProjects/NXlib/Bitmap.cpp
+CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: /home/mellw/new_source/NXlib/Bitmap.cpp
 CMakeFiles/NXlib_static.dir/Bitmap.cpp.o: CMakeFiles/NXlib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NXlib_static.dir/Bitmap.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/Bitmap.cpp.o -MF CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.d -o CMakeFiles/NXlib_static.dir/Bitmap.cpp.o -c /home/mellw/CLionProjects/NXlib/Bitmap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NXlib_static.dir/Bitmap.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NXlib_static.dir/Bitmap.cpp.o -MF CMakeFiles/NXlib_static.dir/Bitmap.cpp.o.d -o CMakeFiles/NXlib_static.dir/Bitmap.cpp.o -c /home/mellw/new_source/NXlib/Bitmap.cpp
 
 CMakeFiles/NXlib_static.dir/Bitmap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NXlib_static.dir/Bitmap.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/CLionProjects/NXlib/Bitmap.cpp > CMakeFiles/NXlib_static.dir/Bitmap.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mellw/new_source/NXlib/Bitmap.cpp > CMakeFiles/NXlib_static.dir/Bitmap.cpp.i
 
 CMakeFiles/NXlib_static.dir/Bitmap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NXlib_static.dir/Bitmap.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/CLionProjects/NXlib/Bitmap.cpp -o CMakeFiles/NXlib_static.dir/Bitmap.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mellw/new_source/NXlib/Bitmap.cpp -o CMakeFiles/NXlib_static.dir/Bitmap.cpp.s
 
 # Object files for target NXlib_static
 NXlib_static_OBJECTS = \
@@ -237,7 +237,7 @@ libNXlib.a: CMakeFiles/NXlib_static.dir/Pid_Manager.cpp.o
 libNXlib.a: CMakeFiles/NXlib_static.dir/Bitmap.cpp.o
 libNXlib.a: CMakeFiles/NXlib_static.dir/build.make
 libNXlib.a: CMakeFiles/NXlib_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mellw/CLionProjects/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library libNXlib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mellw/new_source/NXlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library libNXlib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/NXlib_static.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NXlib_static.dir/link.txt --verbose=$(VERBOSE)
 
@@ -250,6 +250,6 @@ CMakeFiles/NXlib_static.dir/clean:
 .PHONY : CMakeFiles/NXlib_static.dir/clean
 
 CMakeFiles/NXlib_static.dir/depend:
-	cd /home/mellw/CLionProjects/NXlib/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mellw/CLionProjects/NXlib /home/mellw/CLionProjects/NXlib /home/mellw/CLionProjects/NXlib/build /home/mellw/CLionProjects/NXlib/build /home/mellw/CLionProjects/NXlib/build/CMakeFiles/NXlib_static.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/mellw/new_source/NXlib/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mellw/new_source/NXlib /home/mellw/new_source/NXlib /home/mellw/new_source/NXlib/build /home/mellw/new_source/NXlib/build /home/mellw/new_source/NXlib/build/CMakeFiles/NXlib_static.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/NXlib_static.dir/depend
 

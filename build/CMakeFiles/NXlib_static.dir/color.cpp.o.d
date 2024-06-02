@@ -1,8 +1,7 @@
 CMakeFiles/NXlib_static.dir/color.cpp.o: \
- /home/mellw/CLionProjects/NXlib/color.cpp /usr/include/stdc-predef.h \
- /home/mellw/CLionProjects/NXlib/color.h \
- /home/mellw/CLionProjects/NXlib/globals.h \
- /usr/include/c++/14.1.1/algorithm \
+ /home/mellw/new_source/NXlib/color.cpp /usr/include/stdc-predef.h \
+ /home/mellw/new_source/NXlib/color.h \
+ /home/mellw/new_source/NXlib/globals.h /usr/include/c++/14.1.1/algorithm \
  /usr/include/c++/14.1.1/bits/stl_algobase.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -260,7 +259,7 @@ CMakeFiles/NXlib_static.dir/color.cpp.o: \
  /usr/include/xcb/xcb_image.h /usr/include/xcb/shm.h \
  /usr/include/Imlib2.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
  /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
+ /home/mellw/new_source/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
  /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \

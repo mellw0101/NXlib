@@ -1,7 +1,6 @@
 CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: \
- /home/mellw/CLionProjects/NXlib/Key_Codes.cpp /usr/include/stdc-predef.h \
- /home/mellw/CLionProjects/NXlib/globals.h \
- /usr/include/c++/14.1.1/algorithm \
+ /home/mellw/new_source/NXlib/Key_Codes.cpp /usr/include/stdc-predef.h \
+ /home/mellw/new_source/NXlib/globals.h /usr/include/c++/14.1.1/algorithm \
  /usr/include/c++/14.1.1/bits/stl_algobase.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -259,5 +258,5 @@ CMakeFiles/NXlib_static.dir/Key_Codes.cpp.o: \
  /usr/include/xcb/xcb_image.h /usr/include/xcb/shm.h \
  /usr/include/Imlib2.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
  /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
- /home/mellw/CLionProjects/NXlib/Key_Codes.h \
+ /home/mellw/new_source/NXlib/Key_Codes.h \
  /usr/include/c++/14.1.1/iostream

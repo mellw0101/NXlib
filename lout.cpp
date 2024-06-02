@@ -63,9 +63,10 @@
 
 
 #include "lout.h"
+#include <asmlib/lib.h>
 
-#include <vector>
-#include <utility>
+// #include <vector>
+// #include <utility>
 
 // For strerror
 #include <cstring>
@@ -76,8 +77,8 @@
 
 #include "TIME.h"
 #include "sstream"
-#include <type_traits>
-#include "tools.h"
+// #include <type_traits>
+// #include "tools.h"
 
 using namespace std;
 
@@ -225,16 +226,12 @@ string Lout::getLogPrefix(const LogLevel level)
     }
 }
 
-
-
-
 /**
 
     Helper Functions to correcly order elements so that the log
     message always is orderd 'DATE' 'TIME' 'LOG_LEVEL' 'FUNCTION_NAME' 'LINE'
 
 */
-
 FuncNameWrapper func(const char* name)
 {
     return FuncNameWrapper{name};

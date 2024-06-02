@@ -1,8 +1,7 @@
 CMakeFiles/NXlib_static.dir/lout.cpp.o: \
- /home/mellw/CLionProjects/NXlib/lout.cpp /usr/include/stdc-predef.h \
- /home/mellw/CLionProjects/NXlib/lout.h \
- /home/mellw/CLionProjects/NXlib/globals.h \
- /usr/include/c++/14.1.1/algorithm \
+ /home/mellw/new_source/NXlib/lout.cpp /usr/include/stdc-predef.h \
+ /home/mellw/new_source/NXlib/lout.h \
+ /home/mellw/new_source/NXlib/globals.h /usr/include/c++/14.1.1/algorithm \
  /usr/include/c++/14.1.1/bits/stl_algobase.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -264,8 +263,6 @@ CMakeFiles/NXlib_static.dir/lout.cpp.o: \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
  /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \
  /usr/include/c++/14.1.1/bits/deque.tcc \
- /usr/include/c++/14.1.1/bits/stl_queue.h /usr/include/c++/14.1.1/utility \
- /usr/include/c++/14.1.1/bits/stl_relops.h \
+ /usr/include/c++/14.1.1/bits/stl_queue.h /usr/include/asmlib/lib.h \
  /usr/include/c++/14.1.1/cstring /usr/include/string.h \
- /usr/include/strings.h /home/mellw/CLionProjects/NXlib/TIME.h \
- /home/mellw/CLionProjects/NXlib/tools.h
+ /usr/include/strings.h /home/mellw/new_source/NXlib/TIME.h

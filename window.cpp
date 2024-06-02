@@ -67,7 +67,7 @@
 
 #include "window.h"
 
-#include <csignal>
+// #include <csignal>
 
 #include "lout.h"
 #include "tools.h"

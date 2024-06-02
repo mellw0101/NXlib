@@ -1,4 +1,4 @@
-# Install script for directory: /home/mellw/CLionProjects/NXlib
+# Install script for directory: /home/mellw/new_source/NXlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/mellw/CLionProjects/NXlib/build/libNXlib.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/mellw/new_source/NXlib/build/libNXlib.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -53,7 +53,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libNXlib.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/mellw/CLionProjects/NXlib/build/libNXlib.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/mellw/new_source/NXlib/build/libNXlib.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libNXlib.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libNXlib.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -67,17 +67,17 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/NXlib" TYPE FILE FILES
-    "/home/mellw/CLionProjects/NXlib/window.h"
-    "/home/mellw/CLionProjects/NXlib/lout.h"
-    "/home/mellw/CLionProjects/NXlib/TIME.h"
-    "/home/mellw/CLionProjects/NXlib/prof.h"
-    "/home/mellw/CLionProjects/NXlib/tools.h"
-    "/home/mellw/CLionProjects/NXlib/globals.h"
-    "/home/mellw/CLionProjects/NXlib/color.h"
-    "/home/mellw/CLionProjects/NXlib/NXlib.h"
-    "/home/mellw/CLionProjects/NXlib/Key_Codes.h"
-    "/home/mellw/CLionProjects/NXlib/Pid_Manager.h"
-    "/home/mellw/CLionProjects/NXlib/Bitmap.h"
+    "/home/mellw/new_source/NXlib/window.h"
+    "/home/mellw/new_source/NXlib/lout.h"
+    "/home/mellw/new_source/NXlib/TIME.h"
+    "/home/mellw/new_source/NXlib/prof.h"
+    "/home/mellw/new_source/NXlib/tools.h"
+    "/home/mellw/new_source/NXlib/globals.h"
+    "/home/mellw/new_source/NXlib/color.h"
+    "/home/mellw/new_source/NXlib/NXlib.h"
+    "/home/mellw/new_source/NXlib/Key_Codes.h"
+    "/home/mellw/new_source/NXlib/Pid_Manager.h"
+    "/home/mellw/new_source/NXlib/Bitmap.h"
     )
 endif()
 
@@ -89,5 +89,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mellw/CLionProjects/NXlib/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mellw/new_source/NXlib/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

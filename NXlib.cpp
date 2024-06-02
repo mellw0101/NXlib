@@ -392,7 +392,7 @@ namespace NXlib
         return string{};
     }
 
-    constexpr rgb_color_code_t rgb_code(u8 const input_color)
+    rgb_color_code_t rgb_code(u8 const input_color)
     {
         rgb_color_code_t color;
         u8 r, g, b;

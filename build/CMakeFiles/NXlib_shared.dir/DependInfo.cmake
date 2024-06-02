@@ -8,16 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mellw/CLionProjects/NXlib/Bitmap.cpp" "CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/Key_Codes.cpp" "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/NXlib.cpp" "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/Pid_Manager.cpp" "CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/TIME.cpp" "CMakeFiles/NXlib_shared.dir/TIME.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/TIME.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/color.cpp" "CMakeFiles/NXlib_shared.dir/color.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/color.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/lout.cpp" "CMakeFiles/NXlib_shared.dir/lout.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/lout.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/prof.cpp" "CMakeFiles/NXlib_shared.dir/prof.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/prof.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/tools.cpp" "CMakeFiles/NXlib_shared.dir/tools.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/tools.cpp.o.d"
-  "/home/mellw/CLionProjects/NXlib/window.cpp" "CMakeFiles/NXlib_shared.dir/window.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/window.cpp.o.d"
+  "/home/mellw/new_source/NXlib/Bitmap.cpp" "CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Bitmap.cpp.o.d"
+  "/home/mellw/new_source/NXlib/Key_Codes.cpp" "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Key_Codes.cpp.o.d"
+  "/home/mellw/new_source/NXlib/NXlib.cpp" "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/NXlib.cpp.o.d"
+  "/home/mellw/new_source/NXlib/Pid_Manager.cpp" "CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/Pid_Manager.cpp.o.d"
+  "/home/mellw/new_source/NXlib/TIME.cpp" "CMakeFiles/NXlib_shared.dir/TIME.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/TIME.cpp.o.d"
+  "/home/mellw/new_source/NXlib/color.cpp" "CMakeFiles/NXlib_shared.dir/color.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/color.cpp.o.d"
+  "/home/mellw/new_source/NXlib/lout.cpp" "CMakeFiles/NXlib_shared.dir/lout.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/lout.cpp.o.d"
+  "/home/mellw/new_source/NXlib/prof.cpp" "CMakeFiles/NXlib_shared.dir/prof.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/prof.cpp.o.d"
+  "/home/mellw/new_source/NXlib/tools.cpp" "CMakeFiles/NXlib_shared.dir/tools.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/tools.cpp.o.d"
+  "/home/mellw/new_source/NXlib/window.cpp" "CMakeFiles/NXlib_shared.dir/window.cpp.o" "gcc" "CMakeFiles/NXlib_shared.dir/window.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

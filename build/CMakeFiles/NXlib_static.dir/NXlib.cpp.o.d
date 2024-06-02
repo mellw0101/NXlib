@@ -1,6 +1,6 @@
 CMakeFiles/NXlib_static.dir/NXlib.cpp.o: \
- /home/mellw/CLionProjects/NXlib/NXlib.cpp /usr/include/stdc-predef.h \
- /home/mellw/CLionProjects/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream \
+ /home/mellw/new_source/NXlib/NXlib.cpp /usr/include/stdc-predef.h \
+ /home/mellw/new_source/NXlib/NXlib.h /usr/include/c++/14.1.1/iostream \
  /usr/include/c++/14.1.1/bits/requires_hosted.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -172,8 +172,7 @@ CMakeFiles/NXlib_static.dir/NXlib.cpp.o: \
  /usr/include/c++/14.1.1/bits/stl_uninitialized.h \
  /usr/include/c++/14.1.1/bits/fs_dir.h \
  /usr/include/c++/14.1.1/bits/fs_ops.h \
- /home/mellw/CLionProjects/NXlib/globals.h \
- /usr/include/c++/14.1.1/algorithm \
+ /home/mellw/new_source/NXlib/globals.h /usr/include/c++/14.1.1/algorithm \
  /usr/include/c++/14.1.1/bits/stl_algo.h \
  /usr/include/c++/14.1.1/bits/algorithmfwd.h \
  /usr/include/c++/14.1.1/bits/stl_heap.h \
@@ -263,10 +262,10 @@ CMakeFiles/NXlib_static.dir/NXlib.cpp.o: \
  /usr/include/xcb/xcb_image.h /usr/include/xcb/shm.h \
  /usr/include/Imlib2.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
  /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
- /home/mellw/CLionProjects/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
+ /home/mellw/new_source/NXlib/lout.h /usr/include/c++/14.1.1/mutex \
  /usr/include/c++/14.1.1/bits/std_mutex.h \
  /usr/include/c++/14.1.1/bits/unique_lock.h /usr/include/c++/14.1.1/queue \
  /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \
  /usr/include/c++/14.1.1/bits/deque.tcc \
  /usr/include/c++/14.1.1/bits/stl_queue.h \
- /home/mellw/CLionProjects/NXlib/tools.h
+ /home/mellw/new_source/NXlib/tools.h

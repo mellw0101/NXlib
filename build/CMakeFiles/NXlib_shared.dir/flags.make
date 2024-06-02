@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DNXlib_shared_EXPORTS
 
-CXX_INCLUDES = -I/home/mellw/CLionProjects/NXlib
+CXX_INCLUDES = -I/home/mellw/new_source/NXlib
 
 CXX_FLAGS = -std=gnu++20 -fPIC -O3 -march=native
 
